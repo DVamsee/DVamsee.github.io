@@ -8,15 +8,10 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
       
     </head>
-    <body class= 'bg-black'>
-       <!-- <div  class = 'px-10 py-10 text-center' >
-            <p class = 'text-4xl font-extralight  text-green-500'>Hi !</p>
-            <p id="intro" class = 'py-10 text-4xl font-extralight  text-green-500' >This is 
-                <span class="bg-green-800 rounded-lg px-2 font-medium text-gray-300">Vamsee</span></p>
-            </div>-->
-      <div class="flex flex-col min-h-screen">
+    <body class= 'bg-black'>  
+      
         <!--nav bar-->
-        <header class="fixed backdrop-blur-md bg-black/80 text-green-600 body-font  w-full sm:backdrop-blur-none bg-none">
+        <header class="fixed z-20 backdrop-blur-md bg-black/80 text-green-600 body-font  w-full sm:backdrop-blur-none bg-none">
             <div class="hidden container mx-auto rounded-lg flex-wrap p-5 bg-black flex-col md:flex-row items-center sm:flex">
               <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
@@ -108,14 +103,14 @@
           <section id="skills" class="text-gray-400 body-font">
             <div class="container px-5 py-24 mx-auto">
               <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Skills</h1>
+                <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Skills</h1>
                 
               </div>
               <div class="flex flex-wrap -m-4">
                 <div class="lg:w-1/3 sm:w-1/2 p-4">
                   <div class="flex relative">
                     <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x360">
-                    <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                    <div class="px-8 py-10 relative z-0 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                       <h2 class="tracking-widest text-sm title-font font-medium text-green-400 mb-1">THE SUBTITLE</h2>
                       <h1 class="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
                       <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
@@ -130,7 +125,7 @@
           <section id="certifications" class="text-gray-400 body-font">
             <div class="container px-5 py-24 mx-auto">
               <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Certifications</h1>
+                <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Certifications</h1>
               </div>
               <div class="flex flex-wrap -m-4">
                 <div class="xl:w-1/3 md:w-1/2 p-4">
@@ -217,19 +212,21 @@
             </div>
           </section>
 
-
           <!-- Contact-->
           <section id="contact" class="text-gray-400 body-font relative">
             <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-col text-center w-full mb-">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Contact me</h1>
+              <!--<div class="flex flex-col text-center w-full mb-">
+                <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Contact me</h1>
               </div>
+              -->
+              
               <div class="lg:w-1/2 md:w-2/3 mx-auto">
                   
                   <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
-                    <a class="text-green-400">example@email.com</a>
+                    <a class="text-green-400 ">vamseegit@gmail.com</a> <br>
+
                     
-                    <span class="inline-flex">
+                    <span class="inline-flex mt-4">
                       <a class="text-gray-500">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                           <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -259,13 +256,7 @@
           </section>
 
         </div>
-        
-
-
-
-    
-
-      </div>   
+      
         
 
         <script type="text/javascript" src="dist/main.js"></script>
