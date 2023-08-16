@@ -8,10 +8,10 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
       
     </head>
-    <body class= 'bg-black'>  
+    <body class="bg-black" >  
       
         <!--nav bar-->
-        <header class="fixed z-20 backdrop-blur-md bg-black/80 text-green-600 body-font  w-full sm:backdrop-blur-none bg-none">
+        <header class="fixed z-20 text-green-600 body-font  w-full sm:backdrop-blur-none bg-none">
             <div class="hidden container mx-auto rounded-lg flex-wrap p-5 bg-black flex-col md:flex-row items-center sm:flex">
               <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
@@ -61,10 +61,11 @@
             <!-- HOme -->  
             <section id="home" class="body-font sm:pt-20 lg:pt-5">
               <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
-                  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img class="object-center rounded-lg " alt="myself" src="dist/img/me2.png">
+                  <div class="lg:max-w-lg lg:w-full md:w-1/2  w-5/6 mb-10 md:mb-0">
+                    <!-- Updated image with circular styling for mobile view -->
+                    <img class="object-center rounded-full md:rounded-lg" alt="myself" src="dist/img/me2.png">
                   </div>
-                  <div class="px-4 py-2 mr-5 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                  <div class="backdrop-blur-sm bg-white/10 px-2 py-2 sm:px-10 sm:py-4 rounded-xl shadow-sm shadow-slate-400 mr-5 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                     <h1 id="typedeffect" class="title-font text-4xl sm:text-4xl md:text-6xl  mb-4 font-medium text-white">Hi! I'm Vamsee</h1>
                     <p class="mb-8 text-green-600 text-3xl">I am a passionate and dedicated Computer Science graduate with a strong foundation in software development,<br>problem-solving and innovation.</p>
                     <button class="inline-flex items-center text-xl text-white bg-red-700 border-0 py-1 px-4 focus:outline-none hover:bg-red-500 rounded-lg active:bg-red-600 tracking-wide mt-4 md:mt-0">
@@ -73,15 +74,15 @@
                   </div>
                   
               </div>
-          </section>
+            </section>
 
           <!-- Projects -->
           <section id="projects" class="text-gray-400 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-10 lg:px-20 py-24 mx-auto">
               <div class="flex flex-col text-center w-full mb-20">
                 <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Projects</h1>
-                
               </div>
+
               <div class="flex flex-wrap">
                 <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-green-800">
                   <h2 class="text-2xl sm:text-4xl text-white font-medium title-font mb-2">Veggy</h2>
@@ -92,7 +93,6 @@
                     </svg>
                   </a>
                 </div>
-                
               </div>
               
             </div>
@@ -100,29 +100,85 @@
 
           <!-- TEch stack-->
           <section id="skills" class="text-gray-400 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 lg:px-20 py-24 mx-auto">
               <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Skills</h1>
-                
+                <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Skills</h1> 
               </div>
-              <div class="flex flex-wrap -m-4">
-                <div class="lg:w-1/3 sm:w-1/2 p-4">
+
+              <div class="flex flex-wrap -m-4 mx-4 sm:mx-2 ">
+                <div class="w-full lg:w-1/3 sm:w-1/2 p-4">
                   <div class="flex relative">
-                    <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x360">
-                    <div class="px-8 py-10 relative z-0 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                      <h2 class="tracking-widest text-sm title-font font-medium text-green-400 mb-1">THE SUBTITLE</h2>
-                      <h1 class="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
-                      <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                    <div class="absolute inset-0 h-full w-full border-2 border-green-500 rounded-lg object-cover object-center">
+                      <div class="flex-shrink-0 w-32 h-32 mx-auto py-5">
+                        <img src="dist/img/coding.png"  alt="Programming languages">
+                      </div>
+                      <h1 class="text-center text-green-500 mt-7 font-bold text-3xl">Programming languages</h1>
+                    </div>
+                    <div class="px-8 py-10 relative z-0 w-full  rounded-lg border-4 border-green-800 bg-gray-900 opacity-0 hover:opacity-100">
+                      <h1 class="tracking-widest text-2xl text-center title-font font-medium text-green-400 mb-4">Programing Languages</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">Python</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-7">Java</h1><br>
                     </div>
                   </div>
                 </div>
+
+                <div class="w-full lg:w-1/3 sm:w-1/2 p-4">
+                  <div class="flex relative">
+                    <div class="absolute inset-0 h-full w-full border-2 border-green-500 rounded-lg object-cover object-center">
+                      <div class="flex-shrink-0 w-32 h-32 mx-auto py-5">
+                        <img src="dist/img/webpage.png"  alt="Web Development">
+                      </div>
+                      <h1 class="text-center text-green-500 mt-7 font-bold text-3xl">Web Development</h1>
+                    </div>
+                    <div class="px-8 py-10 relative z-0 w-full  rounded-lg border-4 border-green-800 bg-gray-900 opacity-0 hover:opacity-100">
+                      <h1 class="tracking-widest text-2xl text-center title-font font-medium text-green-400 mb-4">Web Development</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">HTML</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">CSS</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">Java Script</h1>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full lg:w-1/3 sm:w-1/2 p-4">
+                  <div class="flex relative">
+                    <div class="absolute inset-0 h-full w-full border-2 border-green-500 rounded-lg object-cover object-center">
+                      <div class="flex-shrink-0 w-32 h-32 mx-auto py-5">
+                        <img src="dist/img/framework.png"  alt="Framework">
+                      </div>
+                      <h1 class="text-center text-green-500 mt-7 font-bold text-3xl">Frameworks</h1>
+                    </div>
+                    <div class="px-8 py-10 relative z-0 w-full  rounded-lg border-4 border-green-800 bg-gray-900 opacity-0 hover:opacity-100">
+                      <h1 class="tracking-widest text-2xl text-center title-font font-medium text-green-400 mb-4">Frameworks</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">Django</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-7">Flask</h1><br>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full lg:w-1/3 sm:w-1/2 p-4">
+                  <div class="flex relative items-center justify-center">
+                    <div class="absolute inset-0 h-full w-full border-2 border-green-500 rounded-lg object-cover object-center">
+                      <div class="flex-shrink-0 w-32 h-32 mx-auto py-5">
+                        <img src="dist/img/database.png"  alt="database">
+                      </div>
+                      <h1 class="text-center text-green-500 mt-7 font-bold text-3xl">Database</h1>
+                    </div>
+                    <div class="px-8 py-10 relative z-0 w-full  rounded-lg border-4 border-green-800 bg-gray-900 opacity-0 hover:opacity-100">
+                      <h1 class="tracking-widest text-2xl text-center title-font font-medium text-green-400 mb-4">Database</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-3">Oracle SQL</h1>
+                      <h1 class="title-font text-center text-xl font-medium text-white mb-7">PostgreSQL</h1><br>
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
           </section>
 
           <!-- Certifications -->
           <section id="certifications" class="text-gray-400 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 lg:px-20 py-24 mx-auto">
               <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
                 <h1 class="text-green-500 pb-5 text-4xl font-medium text-center sm:text-6xl">Certifications</h1>
               </div>
@@ -155,7 +211,7 @@
                 </div>
                 <div class="flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2019-23</div>
                 <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400 bg-gray-950 text-green-400 rounded-full inline-flex items-center justify-center">
+                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400  text-green-400  inline-flex items-center justify-center">
                     <img src="dist/img/sietk-logo.png" alt="sietk logo">
                       
                   </div>
@@ -174,7 +230,7 @@
                 </div>
                 <div class="flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2017-19</div>
                 <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400 bg-gray-950 text-green-400 rounded-full inline-flex items-center justify-center">
+                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400 text-green-400  inline-flex items-center justify-center">
                     <img src="dist/img/bvb_logo_1.png" alt="sietk logo">
                       
                   </div>
@@ -193,7 +249,7 @@
                 </div>
                 <div class="flex-shrink-0 rounded-xl px-5 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2017</div>
                 <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400 bg-gray-950 text-green-400 rounded-full inline-flex items-center justify-center">
+                  <div class="flex-shrink-0 mx-4 w-32 h-32 shadow-lg shadow-green-400 text-green-400 inline-flex items-center justify-center">
                     <img src="dist/img/chinmaya_logo.png" alt="sietk logo">
                       
                   </div>
