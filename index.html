@@ -10,7 +10,25 @@
         
     </head>
     <body class="bg-black font-mono" >  
-      
+
+      <canvas id="bg-canvas"></canvas>
+
+      <style>
+        #bg-canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          pointer-events: none;
+        }
+        body > *:not(#bg-canvas) {
+          position: relative;
+          z-index: 1;
+        }
+      </style>
+
         <!--nav bar-->
         <header class="fixed z-20 text-green-600 body-font  w-full sm:backdrop-blur-none bg-none">
             <div class="hidden bg-black container mx-auto rounded-lg flex-wrap px-4 py-2 flex-col lg:flex-row items-center md:flex">
@@ -477,6 +495,103 @@
         
 
         <script type="text/javascript" src="dist/main.js"></script>
+
+        <script>
+        (function () {
+          const canvas = document.getElementById('bg-canvas');
+          const ctx = canvas.getContext('2d');
+          let w, h, particles, mouse;
+
+          function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+          }
+          window.addEventListener('resize', resize);
+          resize();
+
+          mouse = { x: w / 2, y: h / 2 };
+          document.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+          });
+
+          const PARTICLE_COUNT = 60;
+          const CONNECTION_DIST = 120;
+
+          function createParticle() {
+            return {
+              x: Math.random() * w,
+              y: Math.random() * h,
+              vx: (Math.random() - 0.5) * 0.3,
+              vy: (Math.random() - 0.5) * 0.3,
+              radius: Math.random() * 1.5 + 0.5,
+              opacity: Math.random() * 0.4 + 0.1,
+              pulse: Math.random() * Math.PI * 2,
+            };
+          }
+
+          particles = Array.from({ length: PARTICLE_COUNT }, createParticle);
+
+          function draw() {
+            ctx.clearRect(0, 0, w, h);
+
+            for (let i = 0; i < particles.length; i++) {
+              const p = particles[i];
+              p.pulse += 0.008;
+              const alpha = p.opacity * (0.6 + 0.4 * Math.sin(p.pulse));
+
+              p.x += p.vx;
+              p.y += p.vy;
+
+              if (p.x < 0) p.x = w;
+              if (p.x > w) p.x = 0;
+              if (p.y < 0) p.y = h;
+              if (p.y > h) p.y = 0;
+
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(74, 222, 128, ${alpha})`;
+              ctx.fill();
+
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.radius * 3, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(74, 222, 128, ${alpha * 0.15})`;
+              ctx.fill();
+
+              for (let j = i + 1; j < particles.length; j++) {
+                const q = particles[j];
+                const dx = p.x - q.x;
+                const dy = p.y - q.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECTION_DIST) {
+                  ctx.beginPath();
+                  ctx.moveTo(p.x, p.y);
+                  ctx.lineTo(q.x, q.y);
+                  ctx.strokeStyle = `rgba(74, 222, 128, ${0.06 * (1 - dist / CONNECTION_DIST)})`;
+                  ctx.lineWidth = 0.5;
+                  ctx.stroke();
+                }
+              }
+
+              const mdx = p.x - mouse.x;
+              const mdy = p.y - mouse.y;
+              const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+              if (mDist < 160) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.strokeStyle = `rgba(74, 222, 128, ${0.08 * (1 - mDist / 160)})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+            }
+
+            requestAnimationFrame(draw);
+          }
+
+          draw();
+        })();
+        </script>
       
     </body>
 </html>
