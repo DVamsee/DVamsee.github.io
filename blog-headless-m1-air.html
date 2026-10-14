@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth post-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama.">
+    <link rel="icon" type="image/x-icon" href="dist/img/1c1.png">
+    <link href = 'dist/output.css' rel = 'stylesheet' type = 'text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="dist/site.css" rel="stylesheet">
+    <title>Headless M1 Air — Server Runbook · Vamsee</title>
+</head>
+<body class="bg-black font-mono" data-page="blog" data-detail>
+
+    <canvas id="bg-canvas"></canvas>
+    <div id="site-header"></div>
+
+    <article class="post text-gray-400 body-font">
+
+    <!-- Post hero -->
+    <section class="container mx-auto px-5 lg:px-20 pt-28 md:pt-48 lg:pt-36 pb-10 sm:pb-14">
+      <a href="blog.html" class="inline-flex items-center text-green-400 hover:text-green-300 mb-8">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-2 transform rotate-180" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        All posts
+      </a>
+      <div class="post-hero-grid">
+        <div class="hero-stagger">
+          <p class="text-green-400 text-xs sm:text-sm tracking-widest uppercase mb-3 opacity-80">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
+          <h1 class="title-font text-gradient text-4xl sm:text-6xl font-bold text-white mb-5 leading-tight">Close the lid.<br>Keep it running.</h1>
+          <div class="w-16 sm:w-24 h-1 bg-green-500 rounded-full mb-5 opacity-70"></div>
+          <p class="text-gray-400 text-base sm:text-lg leading-relaxed">A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Fill in your details once and every command below updates.</p>
+        </div>
+        <svg class="lid-art w-full reveal" data-reveal="zoom" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
+          <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
+          <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
+          <rect class="shell" x="110" y="160" width="180" height="8" rx="4"/>
+          <circle class="pulse" cx="200" cy="80" r="6"/>
+          <circle class="pulse b" cx="200" cy="80" r="6"/>
+          <circle class="pulse c" cx="200" cy="80" r="6"/>
+          <circle class="led" cx="200" cy="80" r="6"/>
+          <text x="200" y="205" text-anchor="middle" id="svgHost">m1-server.tailnet.ts.net</text>
+        </svg>
+      </div>
+    </section>
+
+    <div class="post-wrap container mx-auto px-5 lg:px-20 pb-20">
+    <nav class="post-toc" aria-label="Sections">
+      <div class="progress post-panel">
+        <strong id="pct">0%</strong>
+        <span id="count">0 of 0 steps done</span>
+        <div class="bar"><i id="barFill"></i></div>
+      </div>
+      <ol id="tocList">
+        <li><a href="#p0">Reality check <em data-sec="p0"></em></a></li>
+        <li><a href="#p1">macOS prep <em data-sec="p1"></em></a></li>
+        <li><a href="#p2">Remote access <em data-sec="p2"></em></a></li>
+        <li><a href="#p3">Automation stack <em data-sec="p3"></em></a></li>
+        <li><a href="#p4">Verify <em data-sec="p4"></em></a></li>
+        <li><a href="#arch">Architecture</a></li>
+        <li><a href="#ops">Daily ops</a></li>
+      </ol>
+      <button class="reset-btn" id="resetBtn" type="button">Clear checkmarks</button>
+    </nav>
+
+    <main class="post-main">
+    <div class="config post-panel">
+      <h2>Your machine</h2>
+      <p>Saved in this browser only. Values are highlighted in every command.</p>
+      <div class="fields">
+        <label>macOS username<input id="f-USER" value="vamsee" autocomplete="off" spellcheck="false"></label>
+        <label>Hostname<input id="f-HOST" value="m1-server" autocomplete="off" spellcheck="false"></label>
+        <label>Tailnet DNS name (admin console → DNS)<input id="f-TAILNET" value="tail1234.ts.net" autocomplete="off" spellcheck="false"></label>
+        <label>Timezone<input id="f-TZ" value="UTC" autocomplete="off" spellcheck="false"></label>
+      </div>
+    </div>
+
+    <aside class="fixes">
+      <h2>What changed from the original guide</h2>
+      <ul>
+        <li><b>n8n is no longer fully public.</b> The original funnels the whole editor to the internet. Here only <code>/webhook</code> paths go public on port 8443; the editor stays private on your tailnet over HTTPS.</li>
+        <li><b>n8n login works.</b> Plain <code>http://100.x.y.z:5678</code> trips n8n's secure-cookie check. Tailscale Serve gives it real HTTPS.</li>
+        <li><b>Tailscale survives reboots before login</b> by running as a system daemon, and node-key expiry is disabled so it doesn't drop off after ~180 days.</li>
+        <li><b>FileVault is a choice, not a default-off.</b> The trade-off is spelled out in step 1.4.</li>
+        <li><b>Ollama uses the GPU (Metal), not the Neural Engine</b>, and macOS does not pin containers to performance cores. The architecture diagram is redrawn accordingly.</li>
+        <li><b>Added:</b> Homebrew PATH setup, SSH key-only login, update control, a RAM reality check, and a reboot test you run while sitting next to the machine.</li>
+      </ul>
+    </aside>
+
+    <!-- PHASE 0 -->
+    <section class="phase" id="p0">
+      <div class="phase-head reveal"><span class="n">00</span><h2>Reality check</h2></div>
+      <p class="lede">Five minutes here saves you from planning a stack the hardware can't hold.</p>
+
+      <div class="step" data-id="p0-ram">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Check RAM and macOS version <span class="tag new">Added</span></h3>
+          <div class="code" data-tpl><div class="lbl"><span>Terminal</span><button type="button">Copy</button></div><pre>sysctl -n hw.memsize | awk '{print $1/1073741824 " GB RAM"}'
+sw_vers -productVersion</pre></div>
+          <div class="note warn"><b>8 GB machine:</b> n8n + Postgres + a 3B Ollama model + a headless browser is roughly the ceiling. "Dozens of containers" is not realistic. On 16 GB you have real headroom.</div>
+        </div>
+      </div>
+
+      <div class="step" data-id="p0-place">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Pick a spot and a network <span class="tag new">Added</span></h3>
+          <ul>
+            <li>Hard, open surface or a vertical stand. The Air is fanless and sheds heat through the chassis; on fabric it throttles.</li>
+            <li>A USB-C Ethernet adapter is worth it. Wi-Fi drops are the most common reason a headless Mac "disappears".</li>
+            <li>Set a DHCP reservation for it on your router so its LAN IP never changes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 1 -->
+    <section class="phase" id="p1">
+      <div class="phase-head reveal"><span class="n">01</span><h2>macOS prep</h2></div>
+      <p class="lede">Do all of this with the lid open and a keyboard attached. Close the lid only after phase 4 passes.</p>
+
+      <div class="step" data-id="p1-name">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Name the machine <span class="tag new">Added</span></h3>
+          <p>This becomes its Tailscale name too, so pick it now.</p>
+          <div class="code" data-tpl><div class="lbl"><span>Terminal</span><button type="button">Copy</button></div><pre>sudo scutil --set ComputerName {{HOST}}
+sudo scutil --set HostName {{HOST}}
+sudo scutil --set LocalHostName {{HOST}}</pre></div>
+        </div>
+      </div>
+
+      <div class="step" data-id="p1-sharing">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Turn on SSH, Screen Sharing and accessories</h3>
+          <ul>
+            <li><span class="path">System Settings → General → Sharing</span>: turn on <b>Remote Login</b> and <b>Screen Sharing</b>.</li>
+            <li><span class="path">System Settings → Privacy &amp; Security → Allow accessories to connect</span>: set to <b>Always</b>, so USB devices (like the Ethernet adapter) work with the lid shut.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step" data-id="p1-power">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Stop it from sleeping with the lid closed</h3>
+          <div class="code" data-tpl><div class="lbl"><span>Terminal</span><button type="button">Copy</button></div><pre>sudo pmset -a sleep 0
+sudo pmset -a disksleep 0
+sudo pmset -a disablesleep 1
+sudo pmset -a tcpkeepalive 1
+sudo pmset -a displaysleep 5   <span class="c"># screen can sleep; the system won't</span>
+
+pmset -g   <span class="c"># verify: SleepDisabled 1, sleep 0</span></pre></div>
+          <p>Also: <span class="path">System Settings → Battery → Options</span> → turn on <b>Prevent automatic sleeping on power adapter when the display is off</b>.</p>
+          <p style="color:var(--muted);font-size:.92rem">To undo later: <code>sudo pmset -a disablesleep 0</code></p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p1-filevault">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Decide how it recovers from a reboot <span class="tag fix">Fixed</span></h3>
+          <p>OrbStack, PM2 and AlDente only start once a user is logged in. FileVault blocks auto-login. So you are choosing between unattended recovery and disk encryption:</p>
+          <div class="choice">
+            <div><b>A · Physically secure location</b>FileVault off, auto-login on. Fully unattended. Anyone who picks up the laptop has your data.</div>
+            <div><b>B · Laptop could walk away</b>Keep FileVault on. Planned reboots use <code>sudo fdesetup authrestart</code>. Unplanned reboots need you at the keyboard.</div>
+            <div><b>C · Hybrid</b>FileVault on, and keep secrets (API keys, n8n credentials) out of plain files. Accept manual recovery.</div>
+          </div>
+          <p>For option A: <span class="path">Privacy &amp; Security → FileVault → Off</span> (decryption takes a while), then <span class="path">Users &amp; Groups → Automatically log in as</span> → your user.</p>
+          <div class="code" data-tpl><div class="lbl"><span>Option B — planned reboot that skips the FileVault screen once</span><button type="button">Copy</button></div><pre>sudo fdesetup authrestart</pre></div>
+        </div>
+      </div>
+
+      <div class="step" data-id="p1-updates">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Stop surprise update reboots <span class="tag new">Added</span></h3>
+          <p><span class="path">System Settings → General → Software Update → Automatic updates (ⓘ)</span>: turn off <b>Install macOS updates</b>. Keep "Download new updates" on. Patch on your schedule:</p>
+          <div class="code" data-tpl><div class="lbl"><span>Monthly, while you're nearby</span><button type="button">Copy</button></div><pre>softwareupdate -l
+sudo softwareupdate -ia --restart</pre></div>
+        </div>
+      </div>
+
+      <div class="step" data-id="p1-battery">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Cap the battery at 80%</h3>
+          <p>Sitting at 100% on a charger for months accelerates wear and can lead to swelling. Two options:</p>
+          <div class="code" data-tpl><div class="lbl"><span>GUI app — needs a logged-in session; enable "Launch at login"</span><button type="button">Copy</button></div><pre>brew install --cask aldente</pre></div>
+          <div class="code" data-tpl><div class="lbl"><span>Headless daemon — runs before login</span><button type="button">Copy</button></div><pre>brew install batt
+sudo brew services start batt
+batt limit 80</pre></div>
+          <p>Run Homebrew setup (step 2.1) first if <code>brew</code> isn't installed yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 2 -->
+    <section class="phase" id="p2">
+      <div class="phase-head reveal"><span class="n">02</span><h2>Remote access</h2></div>
+      <p class="lede">Tailscale gives the Mac a stable private address reachable from anywhere, without opening router ports.</p>
+
+      <div class="step" data-id="p2-brew">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Install Homebrew and put it on your PATH <span class="tag fix">Fixed</span></h3>
+          <p>On Apple Silicon, Homebrew lives in <code>/opt/homebrew</code>, which isn't on PATH by default. The original guide skips this, so <code>brew</code> fails in new shells and over SSH.</p>
+          <div class="code" data-tpl><div class="lbl"><span>Terminal</span><button type="button">Copy</button></div><pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew --version</pre></div>
+        </div>
+      </div>
+
+      <div class="step" data-id="p2-tailscale">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Install Tailscale as a system daemon <span class="tag fix">Fixed</span></h3>
+          <p>The GUI app only connects after someone logs in. The daemon starts at boot, so the Mac is reachable even sitting at the login window.</p>
+          <div class="code" data-tpl><div class="lbl"><span>Terminal</span><button type="button">Copy</button></div><pre>brew install tailscale
+sudo brew services start tailscale
+sudo tailscale up --hostname={{HOST}}
+<span class="c"># open the printed URL to authorise the machine</span>
+
+tailscale ip -4</pre></div>
+          <p>Then in the <b>Tailscale admin console</b>:</p>
+          <ul>
+            <li><b>Machines → {{HOST}} → ⋯ → Disable key expiry.</b> Otherwise the server drops off your tailnet when its key expires.</li>
+            <li><b>DNS</b>: turn on <b>MagicDNS</b> and <b>HTTPS Certificates</b> (needed for steps 3.4 and 3.5).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step" data-id="p2-ssh">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Switch SSH to key-only login <span class="tag new">Added</span></h3>
+          <p>On your <b>client laptop</b>:</p>
+          <div class="code" data-tpl><div class="lbl"><span>Client machine</span><button type="button">Copy</button></div><pre>ssh-keygen -t ed25519 -C "laptop-to-{{HOST}}"
+ssh-copy-id {{USER}}@{{HOST}}
+
+cat >> ~/.ssh/config <<'EOF'
+Host {{HOST}}
+  HostName {{HOST}}
+  User {{USER}}
+  ServerAliveInterval 30
+EOF
+
+ssh {{HOST}}</pre></div>
+          <p>Once key login works, on the <b>server</b>:</p>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>sudo tee /etc/ssh/sshd_config.d/100-keys-only.conf <<'EOF'
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+EOF
+sudo launchctl kickstart -k system/com.openssh.sshd</pre></div>
+          <div class="note bad">Keep your current SSH session open and test a <b>new</b> connection before closing it. If the new one fails, you can still revert.</div>
+          <p>VS Code / Cursor: install <b>Remote-SSH</b>, then connect to host <code>{{HOST}}</code> — it reads the config above.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p2-vnc">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Remote desktop at a usable resolution</h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>brew install --cask betterdisplay</pre></div>
+          <p>In BetterDisplay, create a <b>virtual screen</b> (e.g. 1920×1080 HiDPI) and enable "Launch at login". Connect from another Mac with <code>vnc://{{HOST}}</code> in Finder → Go → Connect to Server.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 3 -->
+    <section class="phase" id="p3">
+      <div class="phase-head reveal"><span class="n">03</span><h2>Automation stack</h2></div>
+      <p class="lede">Containers via OrbStack, workflows in n8n, scripts under PM2, local models from Ollama.</p>
+
+      <div class="step" data-id="p3-orb">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Install OrbStack and make it start at login</h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>brew install --cask orbstack
+open -a OrbStack
+docker info | head -5</pre></div>
+          <p>In OrbStack <b>Settings</b>, turn on <b>Start at login</b>. Containers with <code>--restart unless-stopped</code> come back when OrbStack does.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p3-ollama">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Run Ollama as a background service <span class="tag fix">Fixed</span></h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>brew install ollama
+brew services start ollama
+ollama pull llama3.2:3b
+curl -s http://127.0.0.1:11434/api/tags | head -c 200</pre></div>
+          <p>Ollama runs on the GPU through Metal; the Neural Engine sits idle. Stick to 3B-class models on 8 GB, up to ~8B quantised on 16 GB. Containers reach it at <code>http://host.docker.internal:11434</code>.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p3-n8n">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Run n8n bound to localhost only <span class="tag fix">Fixed</span></h3>
+          <p>Binding to <code>127.0.0.1</code> keeps it off your LAN. Tailscale will be the only way in.</p>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>docker volume create n8n_data
+
+docker run -d \
+  --name n8n \
+  --restart unless-stopped \
+  -p 127.0.0.1:5678:5678 \
+  -e GENERIC_TIMEZONE="{{TZ}}" \
+  -e TZ="{{TZ}}" \
+  -e N8N_EDITOR_BASE_URL="https://{{HOST}}.{{TAILNET}}/" \
+  -e WEBHOOK_URL="https://{{HOST}}.{{TAILNET}}:8443/" \
+  -e N8N_PROXY_HOPS=1 \
+  -v n8n_data:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n</pre></div>
+          <p>In n8n, add an <b>Ollama</b> credential with base URL <code>http://host.docker.internal:11434</code>.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p3-serve">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Serve the n8n editor privately over HTTPS <span class="tag new">Added</span></h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>sudo tailscale serve --bg 5678</pre></div>
+          <p>Open <code>https://{{HOST}}.{{TAILNET}}</code> from any device on your tailnet. Nobody outside it can reach this.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p3-funnel">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Expose only webhooks to the internet <span class="tag risk">Security fix</span></h3>
+          <div class="note bad">The original <code>tailscale funnel --bg 5678</code> puts the whole n8n editor — login page included — on the public internet. n8n has shipped serious security fixes; don't hand attackers the editor.</div>
+          <p>First allow Funnel for this machine in the admin console (<b>Access controls → nodeAttrs → funnel</b>). Then publish just the webhook paths on port 8443:</p>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>sudo tailscale funnel --bg --https=8443 \
+  --set-path=/webhook http://127.0.0.1:5678/webhook
+
+<span class="c"># only while building workflows (n8n "test" URLs):</span>
+sudo tailscale funnel --bg --https=8443 \
+  --set-path=/webhook-test http://127.0.0.1:5678/webhook-test
+
+tailscale funnel status</pre></div>
+          <p>Public webhook URLs look like <code>https://{{HOST}}.{{TAILNET}}:8443/webhook/…</code>. Add header auth on every public Webhook node.</p>
+        </div>
+      </div>
+
+      <div class="step" data-id="p3-pm2">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Keep native scripts alive with PM2</h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>brew install node
+npm install -g pm2
+
+cd ~/bots/my-bot
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+pm2 start main.py --name automation-bot --interpreter ./.venv/bin/python
+
+pm2 save
+pm2 startup   <span class="c"># run the sudo command it prints</span></pre></div>
+          <p>Point <code>--interpreter</code> at the venv's Python. A bare <code>python3</code> won't see your packages after a reboot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 4 -->
+    <section class="phase" id="p4">
+      <div class="phase-head reveal"><span class="n">04</span><h2>Verify before you walk away</h2></div>
+      <p class="lede">Run this with the machine in front of you. If anything fails here, it would have failed at 2 a.m. too.</p>
+
+      <div class="step" data-id="p4-reboot">
+        <input type="checkbox" aria-label="Mark done">
+        <div>
+          <h3>Reboot test with the lid closed <span class="tag new">Added</span></h3>
+          <div class="code" data-tpl><div class="lbl"><span>Server</span><button type="button">Copy</button></div><pre>sudo reboot   <span class="c"># or: sudo fdesetup authrestart  (FileVault on)</span></pre></div>
+          <p>Close the lid. After ~2 minutes, from another device:</p>
+          <div class="code" data-tpl><div class="lbl"><span>Client machine</span><button type="button">Copy</button></div><pre>tailscale ping {{HOST}}
+ssh {{HOST}} 'pmset -g | grep -i sleep; docker ps --format "{{.Names}}: {{.Status}}"; pm2 status'
+curl -sI https://{{HOST}}.{{TAILNET}} | head -1
+curl -sI https://{{HOST}}.{{TAILNET}}:8443/webhook/healthcheck | head -1</pre></div>
+          <div class="note ok">Pass = ping replies, SSH works, <code>n8n</code> shows "Up", PM2 lists your bot as online, and both HTTPS checks return a status line. Then leave it closed.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCH -->
+    <section class="phase" id="arch">
+      <div class="phase-head reveal"><span class="n">—</span><h2>How it fits together</h2></div>
+      <p class="lede">Green is reachable only from your tailnet. Amber is public.</p>
+      <div class="arch">
+        <div class="tier">
+          <h4>Who connects</h4>
+          <div class="row">
+            <div class="chip priv">Your laptop, phone, tablet<small>SSH · VNC · browser</small></div>
+            <div class="chip pub">GitHub, Stripe, Telegram<small>webhook POSTs</small></div>
+          </div>
+        </div>
+        <div class="flow">WireGuard tunnel (private) &nbsp;|&nbsp; HTTPS :8443 /webhook only (public)</div>
+        <div class="tier">
+          <h4>Tailscale daemon (starts at boot)</h4>
+          <div class="row">
+            <div class="chip priv">SSH<small>:22</small></div>
+            <div class="chip priv">Screen Sharing<small>:5900</small></div>
+            <div class="chip priv">Serve → n8n editor<small>:443 → 127.0.0.1:5678</small></div>
+            <div class="chip pub">Funnel → webhooks<small>:8443/webhook → 127.0.0.1:5678</small></div>
+          </div>
+        </div>
+        <div class="flow">all cores shared · macOS schedules everything</div>
+        <div class="tier">
+          <h4>The Mac</h4>
+          <div class="row">
+            <div class="chip">macOS host<small>sshd · BetterDisplay · PM2 bots</small></div>
+            <div class="chip">OrbStack<small>n8n · Postgres/Redis · headless browsers</small></div>
+            <div class="chip">Ollama<small>:11434 · GPU via Metal</small></div>
+            <div class="chip">Power<small>battery as UPS · capped at 80%</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPS -->
+    <section class="phase" id="ops">
+      <div class="phase-head reveal"><span class="n">—</span><h2>Daily ops</h2></div>
+      <p class="lede">Install once with <code>brew install tmux btop</code>.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Task</th><th>Command</th></tr></thead>
+          <tbody>
+            <tr><td>Live CPU, RAM, processes</td><td><code>btop</code></td></tr>
+            <tr><td>Session that survives disconnects</td><td><code>tmux new -s work</code> · reattach <code>tmux attach -t work</code></td></tr>
+            <tr><td>Thermal throttling?</td><td><code>sudo powermetrics --samplers thermal -n 1</code></td></tr>
+            <tr><td>Battery level and cap working?</td><td><code>pmset -g batt</code></td></tr>
+            <tr><td>Containers</td><td><code>docker ps</code> · <code>docker logs -f n8n</code></td></tr>
+            <tr><td>Docker disk usage</td><td><code>docker system df</code></td></tr>
+            <tr><td>PM2 scripts</td><td><code>pm2 status</code> · <code>pm2 logs</code></td></tr>
+            <tr><td>What Tailscale exposes</td><td><code>tailscale serve status</code></td></tr>
+            <tr><td>Update n8n</td><td><code>docker pull docker.n8n.io/n8nio/n8n</code>, then <code>docker rm -f n8n</code> and rerun step 3.3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+      <p class="post-note">Checkmarks and your machine details are stored only in this browser.</p>
+    </main>
+    </div>
+
+    </article>
+
+    <div id="site-footer"></div>
+
+    <script type="text/javascript" src="dist/main.js"></script>
+<script>
+(function(){
+  var KEYS=["USER","HOST","TAILNET","TZ"];
+  var STORE_CFG="m1rb-config", STORE_DONE="m1rb-done";
+  function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+  var cfg=load(STORE_CFG,{});
+  KEYS.forEach(function(k){var el=document.getElementById("f-"+k);if(cfg[k])el.value=cfg[k];});
+
+  // stash original templates
+  var blocks=[].slice.call(document.querySelectorAll(".code[data-tpl] pre"));
+  blocks.forEach(function(pre){pre.dataset.src=pre.innerHTML;});
+  var inline=[].slice.call(document.querySelectorAll(".step h3, .step p, .step li"));
+  inline.forEach(function(n){if(n.innerHTML.indexOf("{{")>-1)n.dataset.src=n.innerHTML;});
+
+  function vals(){var o={};KEYS.forEach(function(k){o[k]=document.getElementById("f-"+k).value.trim()||k.toLowerCase();});return o;}
+  function render(){
+    var v=vals();
+    blocks.forEach(function(pre){
+      pre.innerHTML=pre.dataset.src.replace(/\{\{(USER|HOST|TAILNET|TZ)\}\}/g,function(_,k){return '<span class="v">'+esc(v[k])+'</span>';});
+    });
+    inline.forEach(function(n){
+      if(!n.dataset.src)return;
+      n.innerHTML=n.dataset.src.replace(/\{\{(USER|HOST|TAILNET|TZ)\}\}/g,function(_,k){return esc(v[k]);});
+    });
+    document.getElementById("svgHost").textContent=v.HOST+"."+v.TAILNET;
+  }
+  KEYS.forEach(function(k){
+    document.getElementById("f-"+k).addEventListener("input",function(){
+      var o={};KEYS.forEach(function(x){o[x]=document.getElementById("f-"+x).value;});save(STORE_CFG,o);render();
+    });
+  });
+  render();
+
+  // copy buttons
+  document.querySelectorAll(".code button").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var text=btn.closest(".code").querySelector("pre").innerText;
+      var done=function(){btn.textContent="Copied";setTimeout(function(){btn.textContent="Copy"},1400);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){fallback(text);done();});}
+      else{fallback(text);done();}
+    });
+  });
+  function fallback(t){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")}catch(e){}document.body.removeChild(ta);}
+
+  // progress
+  var doneMap=load(STORE_DONE,{});
+  var steps=[].slice.call(document.querySelectorAll(".step"));
+  function updateProgress(){
+    var total=steps.length,n=0,sec={};
+    steps.forEach(function(s){
+      var id=s.closest("section").id; sec[id]=sec[id]||[0,0]; sec[id][1]++;
+      if(doneMap[s.dataset.id]){n++;sec[id][0]++;}
+    });
+    var pct=Math.round(n/total*100);
+    document.getElementById("pct").textContent=pct+"%";
+    document.getElementById("count").textContent=n+" of "+total+" steps done";
+    document.getElementById("barFill").style.width=pct+"%";
+    document.querySelectorAll("[data-sec]").forEach(function(em){
+      var s=sec[em.dataset.sec]; if(!s)return;
+      em.textContent=s[0]+"/"+s[1];
+      em.parentElement.classList.toggle("done",s[0]===s[1]);
+    });
+  }
+  steps.forEach(function(s){
+    var cb=s.querySelector("input[type=checkbox]");
+    cb.checked=!!doneMap[s.dataset.id]; s.classList.toggle("checked",cb.checked);
+    cb.addEventListener("change",function(){
+      doneMap[s.dataset.id]=cb.checked; s.classList.toggle("checked",cb.checked); save(STORE_DONE,doneMap); updateProgress();
+    });
+  });
+  document.getElementById("resetBtn").addEventListener("click",function(){
+    doneMap={};save(STORE_DONE,doneMap);
+    steps.forEach(function(s){s.querySelector("input").checked=false;s.classList.remove("checked");});
+    updateProgress();
+  });
+  updateProgress();
+})();
+</script>
+</body>
+</html>

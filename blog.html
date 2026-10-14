@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Vamsee's blog — runbooks, notes and write-ups on backend, infra and self-hosting.">
+
+        <title>Blog · Vamsee</title>
+        <link rel="icon" type="image/x-icon" href="dist/img/1c1.png">
+        <link href = 'dist/output.css' rel = 'stylesheet' type = 'text/css'>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="dist/site.css" rel="stylesheet">
+    </head>
+    <body class="bg-black font-mono" data-page="blog">
+
+      <canvas id="bg-canvas"></canvas>
+      <div id="site-header"></div>
+
+          <!-- Page hero -->
+          <section class="body-font px-5 pt-28 md:pt-48 lg:pt-36 pb-6 sm:pb-10">
+            <div class="hero-stagger max-w-3xl mx-auto flex flex-col items-center text-center" data-parallax>
+              <p class="text-green-400 text-xs sm:text-sm tracking-widest uppercase mb-3 opacity-80">~/blog</p>
+              <h1 class="title-font text-gradient text-4xl sm:text-6xl font-bold text-white mb-4">Blog</h1>
+              <div class="w-16 sm:w-24 h-1 bg-green-500 rounded-full mb-5 opacity-70"></div>
+              <p class="text-gray-400 text-base sm:text-xl leading-relaxed">Runbooks, notes and write-ups from things I've set up, built and broken.</p>
+            </div>
+          </section>
+
+          <!-- Posts -->
+          <section id="posts" class="text-gray-400 body-font">
+            <div class="container px-5 lg:px-20 py-10 sm:py-16 mx-auto">
+              <div class="dim-group grid gap-8">
+
+                <!--headless m1 air-->
+                <a href="blog-headless-m1-air.html" class="reveal glass-card rounded-xl overflow-hidden flex flex-col md:flex-row" data-reveal="zoom">
+                  <div class="post-cover md:w-2/5 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-green-900 border-opacity-40">
+                    <svg class="lid-art w-full max-w-xs" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
+                      <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
+                      <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
+                      <rect class="shell" x="110" y="160" width="180" height="8" rx="4"/>
+                      <circle class="pulse" cx="200" cy="80" r="6"/>
+                      <circle class="pulse b" cx="200" cy="80" r="6"/>
+                      <circle class="pulse c" cx="200" cy="80" r="6"/>
+                      <circle class="led" cx="200" cy="80" r="6"/>
+                      <text x="200" y="205" text-anchor="middle">m1-server.tailnet.ts.net</text>
+                    </svg>
+                  </div>
+                  <div class="p-6 sm:p-8 flex flex-col flex-grow md:w-3/5">
+                    <p class="text-xs sm:text-sm text-green-400 opacity-80 tracking-widest uppercase mb-3">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
+                    <h2 class="text-2xl sm:text-4xl text-white font-medium title-font mb-3">Headless M1 Air: Close the lid, keep it running</h2>
+                    <p class="leading-relaxed text-base sm:text-lg mb-5 flex-grow text-gray-500">A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server &mdash; SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Interactive: fill in your details once and every command updates.</p>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">macOS</span>
+                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">Self-hosting</span>
+                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">Tailscale</span>
+                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">Docker</span>
+                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">n8n</span>
+                    </div>
+                    <span class="cta text-green-400 inline-flex items-center">Read post
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </section>
+
+      <div id="site-footer"></div>
+
+        <script type="text/javascript" src="dist/main.js"></script>
+    </body>
+</html>

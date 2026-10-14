@@ -6,6 +6,7 @@ const PAGES = [
     { id: 'home', href: 'index.html', label: 'Home' },
     { id: 'experience', href: 'experience.html', label: 'Experience' },
     { id: 'projects', href: 'projects.html', label: 'Projects' },
+    { id: 'blog', href: 'blog.html', label: 'Blog' },
     { id: 'skills', href: 'skills.html', label: 'Skills' },
     { id: 'education', href: 'education.html', label: 'Education' },
     { id: 'contact', href: 'contact.html', label: 'Contact' },
@@ -26,7 +27,7 @@ function current(id) {
 
 function headerHtml() {
     const desktopLinks = PAGES.map(function (p) {
-        return '<a href="' + p.href + '"' + current(p.id) + ' class="nav-link mx-5 md:text-2xl hover:text-green-500">' + p.label + '</a>';
+        return '<a href="' + p.href + '"' + current(p.id) + ' class="nav-link mx-4 xl:mx-5 md:text-2xl hover:text-green-500">' + p.label + '</a>';
     }).join('');
 
     const mobileLinks = PAGES.map(function (p) {
