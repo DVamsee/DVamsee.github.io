@@ -14,8 +14,6 @@ const PAGES = [
 
 const SOCIALS = [
     { href: 'https://github.com/DVamsee', img: 'dist/img/github.png', label: 'GitHub' },
-    { href: 'https://wa.me/qr/SMBMSEBHDWYIE1', img: 'dist/img/whatsapp.png', label: 'WhatsApp' },
-    { href: 'https://instagram.com/vamsee.d?igshid=MzNlNGNkZWQ4Mg==', img: 'dist/img/instagram.png', label: 'Instagram' },
     { href: 'https://twitter.com/one_c_d', img: 'dist/img/twitter.png', label: 'Twitter' },
 ];
 
