@@ -3,75 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selected projects by Vamsee — Veggy, an agri e-commerce platform, and Taskify, a task manager.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="description" content="Projects by Vamsee — Veggy, an agricultural e-commerce platform, and Taskify, a task management app.">
+    <meta name="theme-color" content="#d8d9d4">
     <title>Projects · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kalam:wght@400;700&family=Karla:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t})()</script>
 </head>
 <body data-page="projects">
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="book">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 02 &middot; Projects</p>
-                    <h1 class="display">Selected <em>work</em></h1>
-                    <p class="lede">Things I've designed and built end to end.</p>
+        <!-- Veggy -->
+        <section class="spread" aria-labelledby="veggy-title">
+            <div class="page dots">
+                <p class="small-caps-label">chapter 02</p>
+                <h1 class="page-title"><span class="ul">Projects</span></h1>
+                <p class="page-lede">Things I&rsquo;ve designed and built end to end. Screenshots printed and clipped in &mdash; tap any of them to see it larger.</p>
+
+                <div class="rv" style="margin-top:38px">
+                    <p class="small-caps-label">no. 1 &middot; E-Commerce &middot; C2C</p>
+                    <h2 class="project-title lettered" id="veggy-title" style="margin-bottom:12px">
+                        <span class="logo-tag" style="--r:-4deg"><span class="tape" aria-hidden="true"></span><img src="dist/img/veggy/veggy_logo.jpg" alt="" width="577" height="632"></span>
+                        Veggy
+                    </h2>
+                    <p>An e-commerce application to market <span class="hl">agricultural products</span>, letting consumers buy <span class="hl">directly from farmers</span> and compare quality and price against the market rate.</p>
+                    <div class="links-row">
+                        <a class="pen-link" href="veggy.html"><span class="label">open the Veggy pages</span><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg></a>
+                        <a class="pen-link" href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener"><span class="label">source on GitHub</span> &nearr;</a>
+                    </div>
                 </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="6" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <rect class="wash" filter="url(#wc)" x="44" y="36" width="104" height="126" fill="#D9714E" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="142" cy="138" r="38" fill="#6E9C82" opacity=".86"/>
-                    <path class="ink" pathLength="1" d="M32 26 H160 V174 H32 Z M64 174 L46 198 M128 174 L146 198 M96 26 V10"/>
-                </svg>
+            </div>
+
+            <div class="page dots">
+                <figure class="pinned shot drop rv" style="--r:1.2deg;margin-top:26px">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Veggy — home page with filters and product cards" aria-label="View the Veggy home page larger">
+                            <img src="dist/img/veggy/home.png" alt="Veggy home page: a filter sidebar for farmer, product and distance, and a product card for tomatoes priced in rupees per kilo with an order button." width="1402" height="678">
+                            <span class="ring" data-n="1" style="left:1.5%;top:13%;width:21%;height:66%"></span>
+                            <span class="ring r-right" data-n="2" style="left:80.5%;top:0;width:12%;height:9%"></span>
+                            <span class="ring r-bottom" data-n="3" style="left:24.5%;top:72%;width:16.5%;height:10%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <ol class="callouts">
+                            <li>filter by farmer, product and distance</li>
+                            <li>switch the whole site between English and Telugu</li>
+                            <li>price per kg, available stock, and an order button</li>
+                        </ol>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="works">
+        <!-- Taskify -->
+        <section class="spread" aria-labelledby="taskify-title">
+            <div class="page grid">
+                <figure class="pinned shot drop rv" style="--r:-1deg;margin-top:26px">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:34px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Taskify — the task dashboard" aria-label="View the Taskify dashboard larger">
+                            <img src="dist/img/taskify/Home.png" alt="Taskify dashboard: a profile card with an Add Task button, a September 2023 calendar, and a task card tagged Medium with a status menu showing Pending, In-Progress and Completed." width="3134" height="1600" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:61%;top:10%;width:35.5%;height:8.5%"></span>
+                            <span class="ring r-right" data-n="2" style="left:78%;top:27%;width:9.5%;height:14%"></span>
+                            <span class="ring r-bottom" data-n="3" style="left:1%;top:55%;width:26.5%;height:37%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <ol class="callouts">
+                            <li>filter tasks by priority and status</li>
+                            <li>move a task: Pending &rarr; In-Progress &rarr; Completed</li>
+                            <li>a calendar right next to the task list</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+            </div>
 
-                    <article class="work reveal a-sage">
-                        <a href="veggy.html" class="frame" aria-label="Veggy — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate I &middot; E-Commerce &middot; C2C</p>
-                            <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
-                            <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
-                            <a href="veggy.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work reveal a-indigo">
-                        <a href="taskify.html" class="frame" aria-label="Taskify — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate II &middot; Productivity &middot; Web app</p>
-                            <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
-                            <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
-                            <a href="taskify.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
+            <div class="page dots">
+                <div class="rv" style="margin-top:26px">
+                    <p class="small-caps-label">no. 2 &middot; Productivity &middot; Web app</p>
+                    <h2 class="project-title lettered" id="taskify-title" style="margin-bottom:12px">
+                        <span class="logo-tag" style="--r:3deg"><span class="tape" aria-hidden="true"></span><img src="dist/img/taskify/logo.png" alt="" width="257" height="259"></span>
+                        Taskify
+                    </h2>
+                    <p>An online task management application to <span class="hl">organise, prioritise and track</span> work for individuals and teams &mdash; built around a user-friendly interface and a seamless flow for managing tasks.</p>
+                    <div class="links-row">
+                        <a class="pen-link" href="taskify.html"><span class="label">open the Taskify pages</span><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg></a>
+                        <a class="pen-link" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener"><span class="label">source on GitHub</span> &nearr;</a>
+                    </div>
                 </div>
 
-                <p class="aside-note reveal"><span class="hand">more sketches &amp; experiments on</span> <a href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub</a></p>
+                <a class="sticky drop" href="https://github.com/DVamsee" target="_blank" rel="noopener" style="--r:3deg;margin:56px 0 0 auto;max-width:280px">
+                    More sketches &amp; experiments live on GitHub
+                    <span class="go">github.com/DVamsee &nearr;</span>
+                </a>
             </div>
         </section>
 

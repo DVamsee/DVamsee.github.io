@@ -3,73 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vamsee's blog — runbooks, notes and write-ups on backend, infra and self-hosting.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="description" content="Vamsee's blog — runbooks, notes and write-ups from things he has set up, built and broken.">
+    <meta name="theme-color" content="#d8d9d4">
     <title>Blog · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kalam:wght@400;700&family=Karla:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t})()</script>
 </head>
 <body data-page="blog">
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="book">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 03 &middot; Blog</p>
-                    <h1 class="display">Field <em>notes</em></h1>
-                    <p class="lede">Runbooks, notes and write-ups from things I've set up, built and broken.</p>
-                </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="5" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <path class="wash" filter="url(#wc)" d="M30 120 C 34 60, 90 22, 176 20 C 180 92, 126 134, 30 120 Z" fill="#6E9C82" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="56" cy="52" r="26" fill="#3E5C8A" opacity=".82"/>
-                    <path class="ink" pathLength="1" d="M28 150 H172 M28 168 H140 M28 186 H156"/>
-                </svg>
+        <section class="spread" aria-labelledby="page-title">
+            <div class="page lined">
+                <p class="small-caps-label">chapter 04</p>
+                <h1 class="page-title" id="page-title"><span class="ul">Blog</span></h1>
+                <p class="page-lede">Runbooks, notes and write-ups from things I&rsquo;ve set up, built and broken.</p>
+
+                <article class="journal-entry rv">
+                    <p class="when">Oct 14<br>2026</p>
+                    <div>
+                        <h2><a href="blog-headless-m1-air.html">Headless M1 Air: close the lid, keep it running</a></h2>
+                        <p class="meta">Runbook &middot; ~15 min read &middot; interactive</p>
+                        <p>A corrected, step-by-step runbook for turning an M1 MacBook Air into a <span class="hl">silent headless server</span> &mdash; SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Fill in your details once and every command updates.</p>
+                        <ul class="keywords" aria-label="Tags">
+                            <li>macOS</li>
+                            <li>Self-hosting</li>
+                            <li>Tailscale</li>
+                            <li>Docker</li>
+                            <li>n8n</li>
+                        </ul>
+                        <div class="links-row">
+                            <a class="pen-link" href="blog-headless-m1-air.html"><span class="label">read the entry</span><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg></a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </section>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="journal">
-
-                    <a href="blog-headless-m1-air.html" class="journal-entry reveal" data-reveal="zoom">
-                        <div class="journal-cover">
-                            <svg class="lid-art" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
-                                <ellipse class="shadow" cx="200" cy="176" rx="180" ry="10"/>
-                                <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
-                                <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
-                                <rect class="shell" x="110" y="160" width="180" height="8" rx="4"/>
-                                <circle class="pulse" cx="200" cy="80" r="6"/>
-                                <circle class="pulse b" cx="200" cy="80" r="6"/>
-                                <circle class="pulse c" cx="200" cy="80" r="6"/>
-                                <circle class="led" cx="200" cy="80" r="6"/>
-                                <text x="200" y="205" text-anchor="middle">m1-server.tailnet.ts.net</text>
-                            </svg>
-                        </div>
-                        <div class="journal-body">
-                            <p class="meta">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
-                            <h2>Headless M1 Air: close the lid, keep it running</h2>
-                            <p>A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server &mdash; SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Interactive: fill in your details once and every command updates.</p>
-                            <ul class="tags">
-                                <li class="tag-pill">macOS</li>
-                                <li class="tag-pill">Self-hosting</li>
-                                <li class="tag-pill">Tailscale</li>
-                                <li class="tag-pill">Docker</li>
-                                <li class="tag-pill">n8n</li>
-                            </ul>
-                            <span class="link-arrow">Read post
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </span>
-                        </div>
-                    </a>
-
+            <div class="page dots">
+                <div class="feature">
+                    <figure class="rv" style="margin:0;width:100%;display:grid;justify-items:center">
+                        <svg class="lid-art" viewBox="0 0 400 250" role="img" aria-label="A pencil sketch of a closed laptop with its status light sending out a signal">
+                            <path class="shadow draw" pathLength="1" d="M40 214 C 140 232, 300 214, 384 176"/>
+                            <path class="shell draw" pathLength="1" d="M44 150 L 262 112 C 270 111, 276 112, 282 116 L 372 170 C 376 173, 375 177, 370 179 L 136 214 C 128 215, 122 214, 116 210 L 40 158 C 36 155, 38 151, 44 150 Z"/>
+                            <path class="shell draw" pathLength="1" style="--d:.5s" d="M40 158 L 40 166 L 116 219 C 122 223, 128 224, 136 223 L 370 188 C 375 187, 376 183, 374 179"/>
+                            <path class="hatch draw" pathLength="1" style="--d:.9s" d="M60 172 l 8 -6 M76 183 l 8 -6 M92 194 l 8 -6 M108 205 l 8 -6 M150 216 l 6 -6 M180 212 l 6 -6 M210 207 l 6 -6 M240 203 l 6 -6 M270 198 l 6 -6 M300 194 l 6 -6 M330 189 l 6 -6"/>
+                            <path class="seam draw" pathLength="1" style="--d:.7s" d="M66 152 L 258 119 M120 204 L 352 172"/>
+                            <circle class="pulse" cx="206" cy="66" r="6"/>
+                            <circle class="pulse b" cx="206" cy="66" r="6"/>
+                            <circle class="pulse c" cx="206" cy="66" r="6"/>
+                            <circle class="led" cx="206" cy="66" r="5.5"/>
+                            <text x="206" y="246" text-anchor="middle">m1-server.tailnet.ts.net</text>
+                        </svg>
+                    </figure>
+                    <p class="hand" style="font-size:1.2rem;margin:10px 0 34px;text-align:center">lid closed, still answering &uarr;</p>
+                    <div class="printout drop" style="--r:1.5deg;max-width:380px;width:100%">
+                        <span class="tape t-top" aria-hidden="true" style="width:80px"></span>
+                        <span class="muted"># the line that keeps it awake</span><br>
+                        sudo pmset -a disablesleep 1<br>
+                        <span class="muted"># verify: SleepDisabled 1</span><br>
+                        pmset -g
+                    </div>
                 </div>
             </div>
         </section>

@@ -4,66 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veggy — an e-commerce application to market agricultural products directly from farmers to consumers.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="theme-color" content="#d8d9d4">
     <title>Veggy · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kalam:wght@400;700&family=Karla:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t})()</script>
 </head>
 <body data-page="projects" data-detail>
 
     <div id="site-header"></div>
 
-    <main id="main" class="a-sage">
+    <main id="main" class="book">
 
-        <section class="detail-hero">
-            <div class="wrap">
-                <a href="projects.html" class="link-arrow link-back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    All projects
-                </a>
-                <div class="detail-head hero-stagger">
-                    <div>
-                        <p class="eyebrow">Plate I &middot; E-Commerce &middot; C2C</p>
-                        <h1 class="display"><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h1>
-                        <p class="lede">E-Commerce application to market agricultural products.</p>
+        <section class="spread" aria-labelledby="page-title">
+            <div class="page dots">
+                <a class="pen-link back" href="projects.html"><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg><span class="label">all projects</span></a>
+                <p class="small-caps-label" style="margin-top:34px">Project no. 1 &middot; E-Commerce &middot; C2C</p>
+                <h1 class="page-title project-title" id="page-title">
+                    <span class="logo-tag" style="--r:-4deg"><span class="tape" aria-hidden="true"></span><img src="dist/img/veggy/veggy_logo.jpg" alt="" width="577" height="632"></span>
+                    <span class="ul">Veggy</span>
+                </h1>
+                <p class="page-lede">E-Commerce application to market agricultural products.</p>
+                <div class="facts-card drop" style="--r:-1deg">
+                    <p class="card-title">VEGGY &mdash; index card</p>
+                    <dl>
+                            <dt>Type</dt><dd>E-Commerce &middot; Consumer to Consumer</dd>
+                            <dt>For</dt><dd>Farmers and local consumers</dd>
+                            <dt>Source</dt><dd><a href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener">github.com/DVamsee/veggy</a></dd>
+                    </dl>
+                </div>
+                <div class="links-row">
+                    <a class="pen-link" href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener"><span class="label">view the source on GitHub</span> &nearr;</a>
+                </div>
+            </div>
+
+            <div class="page dots">
+                <figure class="pinned shot drop rv" style="--r:1.2deg;margin-top:60px">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Home" aria-label="View larger: Home">
+                            <img src="dist/img/veggy/home.png" alt="Veggy home page: a filter sidebar for farmer, product and distance, and a product card for tomatoes priced in rupees per kilo with an order button." width="1402" height="678">
+                            <span class="ring" data-n="1" style="left:1.5%;top:13%;width:21%;height:66%"></span>
+                            <span class="ring r-right" data-n="2" style="left:80.5%;top:0;width:12%;height:9%"></span>
+                            <span class="ring r-bottom" data-n="3" style="left:24.5%;top:72%;width:16.5%;height:10%"></span>
+                        </button>
                     </div>
-                    <a class="btn btn-line" href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener">View on GitHub
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-                    </a>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Home</b></p>
+                        <ol class="callouts">
+                            <li>filter by farmer, product and distance</li>
+                            <li>English / Telugu switch</li>
+                            <li>price per kg, stock, and an order button</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="spread" aria-label="Notes and screenshots">
+            <div class="page grid">
+                <h2 class="lettered">Notes</h2>
+                <p class="rv">The website guides the consumer to <span class="hl">compare the quality and price</span> of a product against the market rate, and builds a platform for consumers to check the availability of a product in their surrounding areas. It acts as a unique and secure way to perform agro-marketing. E-farming serves as a way for farmers to sell their products for a better price with only basic knowledge of how to use the website. The project enables users to purchase products <span class="hl">directly from the farmer</span> (Consumer to Consumer [C2C] commerce).</p>
+                <div class="shots-grid" style="margin-top:34px">
+                <figure class="pinned shot drop rv" style="--r:-1.2deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Home, in Telugu" aria-label="View larger: Home, in Telugu">
+                            <img src="dist/img/veggy/home_te.png" alt="The Veggy home page in Telugu, with the language switch at the top right." width="1280" height="390" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:83.5%;top:0;width:11.5%;height:13%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Home, in Telugu</b></p>
+                        <ol class="callouts">
+                            <li>the same page in Telugu &mdash; one switch</li>
+                        </ol>
+                    </figcaption>
+                </figure>
                 </div>
-                <div class="frame reveal" data-reveal="zoom">
-                    <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
+            </div>
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:1deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:30px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Registration" aria-label="View larger: Registration">
+                            <img src="dist/img/veggy/registration.png" alt="Veggy registration form with personal details and location details: village, mandal, city, district, state and zipcode." width="1022" height="744" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:34.5%;top:56%;width:59%;height:18%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Registration</b></p>
+                        <ol class="callouts">
+                            <li>location fields: village, mandal, city, district</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                <figure class="pinned shot drop rv" style="--r:-0.8deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Orders" aria-label="View larger: Orders">
+                            <img src="dist/img/veggy/orders.png" alt="Veggy orders table listing who ordered, product, quantity, date, mobile, total price, and Confirm and Cancel buttons." width="706" height="176" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:70.5%;top:64%;width:23%;height:28%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Orders</b></p>
+                        <ol class="callouts">
+                            <li>confirm or cancel each order</li>
+                        </ol>
+                    </figcaption>
+                </figure>
                 </div>
             </div>
         </section>
 
-        <section class="wrap detail-body">
-            <dl class="facts reveal" data-reveal="left">
-                <div><dt>Type</dt><dd>E-Commerce &middot; Consumer to Consumer</dd></div>
-                <div><dt>For</dt><dd>Farmers and local consumers</dd></div>
-                <div><dt>Source</dt><dd><a href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener">github.com/DVamsee/veggy</a></dd></div>
-            </dl>
-            <div class="detail-text reveal">
-                <p>The website guides the consumer to compare the quality and price of a product against the market rate, and builds a platform for consumers to check the availability of a product in their surrounding areas. It acts as a unique and secure way to perform agro-marketing. E-farming serves as a way for farmers to sell their products for a better price with only basic knowledge of how to use the website. The project enables users to purchase products directly from the farmer (Consumer to Consumer [C2C] commerce).</p>
+        <section class="spread" aria-label="More screenshots">
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:1.2deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:40px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Sell a product" aria-label="View larger: Sell a product">
+                            <img src="dist/img/veggy/sell.png" alt="Veggy seller page: a products table, a price change form, and a market price table comparing market and retail price per kilo." width="1091" height="469" loading="lazy">
+                            <span class="ring r-bottom" data-n="1" style="left:21.5%;top:64%;width:35%;height:18%"></span>
+                            <span class="ring r-right" data-n="2" style="left:65.5%;top:6%;width:33%;height:38%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Sell a product</b></p>
+                        <ol class="callouts">
+                            <li>market price vs retail price, per kg</li>
+                            <li>change a listing&rsquo;s price</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                </div>
             </div>
-        </section>
-
-        <section class="wrap" style="padding-bottom:40px">
-            <div class="section-head reveal">
-                <p class="eyebrow">Studies</p>
-                <h2 class="display">Project <em class="mark" data-color="sage">screenshots</em></h2>
-            </div>
-            <div class="gallery">
-                <figure class="reveal"><img src="dist/img/veggy/home.png" alt="Veggy home page" loading="lazy"><figcaption>Home</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/veggy/registration.png" alt="Veggy registration page" loading="lazy"><figcaption>Registration</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/veggy/orders.png" alt="Veggy orders page" loading="lazy"><figcaption>Orders</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/veggy/sell.png" alt="Veggy sell page" loading="lazy"><figcaption>Sell a product</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/veggy/home_te.png" alt="Veggy home page, localised" loading="lazy"><figcaption>Home, localised</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/veggy/profile.png" alt="Veggy profile page" loading="lazy"><figcaption>Profile</figcaption></figure>
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:-1.2deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="veggy" data-caption="Profile" aria-label="View larger: Profile">
+                            <img src="dist/img/veggy/profile.png" alt="Veggy profile page with name, mobile, email and address, and Orders and QR code tabs." width="778" height="408" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:46.5%;top:2%;width:25%;height:13%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Profile</b></p>
+                        <ol class="callouts">
+                            <li>orders and a QR code, one tab each</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                </div>
+                <div class="links-row" style="margin-top:46px">
+                    <a class="pen-link back" href="projects.html"><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg><span class="label">back to all projects</span></a>
+                </div>
             </div>
         </section>
 

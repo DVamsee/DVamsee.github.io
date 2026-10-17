@@ -3,67 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taskify — a task management application to organise, prioritise and track work for individuals and teams.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="description" content="Taskify — an online task management application to organise, prioritise and track work for individuals and teams.">
+    <meta name="theme-color" content="#d8d9d4">
     <title>Taskify · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Kalam:wght@400;700&family=Karla:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t})()</script>
 </head>
 <body data-page="projects" data-detail>
 
     <div id="site-header"></div>
 
-    <main id="main" class="a-indigo">
+    <main id="main" class="book">
 
-        <section class="detail-hero">
-            <div class="wrap">
-                <a href="projects.html" class="link-arrow link-back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    All projects
-                </a>
-                <div class="detail-head hero-stagger">
-                    <div>
-                        <p class="eyebrow">Plate II &middot; Productivity &middot; Web app</p>
-                        <h1 class="display"><img src="dist/img/taskify/logo.png" alt="">Taskify</h1>
-                        <p class="lede">Online task management app.</p>
+        <section class="spread" aria-labelledby="page-title">
+            <div class="page dots">
+                <a class="pen-link back" href="projects.html"><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg><span class="label">all projects</span></a>
+                <p class="small-caps-label" style="margin-top:34px">Project no. 2 &middot; Productivity &middot; Web app</p>
+                <h1 class="page-title project-title" id="page-title">
+                    <span class="logo-tag" style="--r:-4deg"><span class="tape" aria-hidden="true"></span><img src="dist/img/taskify/logo.png" alt="" width="257" height="259"></span>
+                    <span class="ul">Taskify</span>
+                </h1>
+                <p class="page-lede">Online task management app.</p>
+                <div class="facts-card drop" style="--r:-1deg">
+                    <p class="card-title">TASKIFY &mdash; index card</p>
+                    <dl>
+                            <dt>Type</dt><dd>Productivity &middot; Web app</dd>
+                            <dt>For</dt><dd>Individuals and teams</dd>
+                            <dt>Source</dt><dd><a href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">github.com/DVamsee/taskify</a></dd>
+                    </dl>
+                </div>
+                <div class="links-row">
+                    <a class="pen-link" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener"><span class="label">view the source on GitHub</span> &nearr;</a>
+                </div>
+            </div>
+
+            <div class="page dots">
+                <figure class="pinned shot drop rv" style="--r:1.2deg;margin-top:60px">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Landing page" aria-label="View larger: Landing page">
+                            <img src="dist/img/taskify/home_.png" alt="Taskify landing page: the headline One stop to organize your Tasks, Register and Login buttons, and an illustration of an open notebook with a pencil." width="3092" height="1554">
+                            <span class="ring r-bottom" data-n="1" style="left:1.5%;top:52.5%;width:16%;height:8.5%"></span>
+                        </button>
                     </div>
-                    <a class="btn btn-line" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">View on GitHub
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-                    </a>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Landing page</b></p>
+                        <ol class="callouts">
+                            <li>register or log in straight from the landing page</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="spread" aria-label="Notes and screenshots">
+            <div class="page grid">
+                <h2 class="lettered">Notes</h2>
+                <p class="rv">Taskify is a comprehensive task management application designed to help individuals and teams efficiently <span class="hl">organise and track</span> their tasks and projects. It was developed with the aim of providing a <span class="hl">user-friendly interface</span>, robust functionality, and a seamless experience for users to manage their tasks with ease.</p>
+                <div class="shots-grid" style="margin-top:34px">
+                <figure class="pinned shot drop rv" style="--r:-1deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Dashboard" aria-label="View larger: Dashboard">
+                            <img src="dist/img/taskify/Home.png" alt="Taskify dashboard: a profile card with an Add Task button, a September 2023 calendar, and a task card tagged Medium with a status menu showing Pending, In-Progress and Completed." width="3134" height="1600" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:61%;top:10%;width:35.5%;height:8.5%"></span>
+                            <span class="ring r-right" data-n="2" style="left:78%;top:27%;width:9.5%;height:14%"></span>
+                            <span class="ring r-bottom" data-n="3" style="left:1%;top:55%;width:26.5%;height:37%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Dashboard</b></p>
+                        <ol class="callouts">
+                            <li>filter by priority and status</li>
+                            <li>Pending &rarr; In-Progress &rarr; Completed</li>
+                            <li>a calendar beside the tasks</li>
+                        </ol>
+                    </figcaption>
+                </figure>
                 </div>
-                <div class="frame reveal" data-reveal="zoom">
-                    <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
+            </div>
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:1.2deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:30px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Login" aria-label="View larger: Login">
+                            <img src="dist/img/taskify/login.png" alt="Taskify login card titled Welcome Back, with username and password fields, a Submit button and a Register now link." width="1558" height="1240" loading="lazy">
+
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Login</b></p>
+                    </figcaption>
+                </figure>
+                <figure class="pinned shot drop rv" style="--r:-1deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Register" aria-label="View larger: Register">
+                            <img src="dist/img/taskify/register.png" alt="Taskify registration card with username, email address, password, first name and last name fields." width="2600" height="1644" loading="lazy">
+
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Register</b></p>
+                    </figcaption>
+                </figure>
                 </div>
             </div>
         </section>
 
-        <section class="wrap detail-body">
-            <dl class="facts reveal" data-reveal="left">
-                <div><dt>Type</dt><dd>Productivity &middot; Web app</dd></div>
-                <div><dt>For</dt><dd>Individuals and teams</dd></div>
-                <div><dt>Source</dt><dd><a href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">github.com/DVamsee/taskify</a></dd></div>
-            </dl>
-            <div class="detail-text reveal">
-                <p>Taskify is a comprehensive task management application designed to help individuals and teams efficiently organise and track their tasks and projects. It was developed with the aim of providing a user-friendly interface, robust functionality, and a seamless experience for users to manage their tasks with ease.</p>
+        <section class="spread" aria-label="More screenshots">
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:1deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:40px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Add a task" aria-label="View larger: Add a task">
+                            <img src="dist/img/taskify/addtask.png" alt="Taskify Add new task form with title, description, due date, priority and status fields and Cancel and Add buttons." width="2148" height="700" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:50%;top:26%;width:47.5%;height:15%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Add a task</b></p>
+                        <ol class="callouts">
+                            <li>every task gets a priority and a status</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                </div>
             </div>
-        </section>
-
-        <section class="wrap" style="padding-bottom:40px">
-            <div class="section-head reveal">
-                <p class="eyebrow">Studies</p>
-                <h2 class="display">Project <em class="mark" data-color="indigo">screenshots</em></h2>
-            </div>
-            <div class="gallery">
-                <figure class="reveal"><img src="dist/img/taskify/Home.png" alt="Taskify home" loading="lazy"><figcaption>Home</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/login.png" alt="Taskify login" loading="lazy"><figcaption>Login</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/register.png" alt="Taskify registration" loading="lazy"><figcaption>Register</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/addtask.png" alt="Taskify add task" loading="lazy"><figcaption>Add a task</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/priority.png" alt="Taskify priority view" loading="lazy"><figcaption>Priorities</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/comments.png" alt="Taskify comments" loading="lazy"><figcaption>Comments</figcaption></figure>
+            <div class="page dots">
+                <div class="shots-grid">
+                <figure class="pinned shot drop rv" style="--r:-1.5deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="left:28px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Priorities" aria-label="View larger: Priorities">
+                            <img src="dist/img/taskify/priority.png" alt="Taskify priority menu open on a task, offering High, Medium and Low." width="838" height="496" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:39%;top:25%;width:31.5%;height:47%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Priorities</b></p>
+                        <ol class="callouts">
+                            <li>High / Medium / Low</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                <figure class="pinned shot drop rv" style="--r:1.2deg">
+                    <div class="sheet lift">
+                        <span class="clip" style="right:34px" aria-hidden="true"></span>
+                        <button class="zoom shot-img" type="button" data-group="taskify" data-caption="Comments" aria-label="View larger: Comments">
+                            <img src="dist/img/taskify/comments.png" alt="Taskify comments popover on a task, showing a comment reading first task completed and a box to add a new comment." width="908" height="568" loading="lazy">
+                            <span class="ring r-right" data-n="1" style="left:35%;top:25%;width:59%;height:20%"></span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        <p class="caption" style="margin:0"><b>Comments</b></p>
+                        <ol class="callouts">
+                            <li>comments live on the task itself</li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                </div>
+                <div class="links-row" style="margin-top:46px">
+                    <a class="pen-link back" href="projects.html"><svg class="arrow" viewBox="0 0 46 22" aria-hidden="true"><path d="M2 12 C 12 9, 26 13, 42 10"/><path d="M33 3 C 37 6, 40 8, 43 10 C 39 12, 36 15, 33 19"/></svg><span class="label">back to all projects</span></a>
+                </div>
             </div>
         </section>
 
