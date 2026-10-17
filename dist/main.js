@@ -62,7 +62,7 @@ function headerHtml() {
     <header class="site-header">
         <div class="wrap nav-inner">
             <a href="index.html" class="brand" aria-label="Vamsee, home"${current('home')}>
-                <span class="brand-logo">Vamsee</span>
+                <span class="brand-logo" aria-hidden="true">1C</span>
                 <span class="brand-issue">Issue #01<br>Backend &amp; ink</span>
             </a>
             <nav class="nav-links" aria-label="Primary">${links}</nav>

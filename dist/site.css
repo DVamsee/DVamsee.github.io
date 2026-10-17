@@ -357,13 +357,16 @@ strong, b { color: var(--ink); font-weight: 700; }
 
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
 .brand-logo {
-  font-family: var(--logo); font-size: 2rem; line-height: 1; letter-spacing: 0.04em;
-  color: var(--ink); background: var(--yellow);
-  border: var(--bw) solid var(--ink);
-  padding: 4px 10px 1px;
-  rotate: -2.5deg;
-  box-shadow: 3px 3px 0 var(--ink);
+  display: grid; place-items: center;
+  width: 50px; height: 50px;
+  font-family: var(--logo); font-size: 2rem; line-height: 1; letter-spacing: 0.02em;
   color: #121316;
+  background: var(--yellow) radial-gradient(circle, rgba(18,19,22,0.22) 1.1px, transparent 1.4px) 0 0 / 5px 5px;
+  border: var(--bw) solid var(--ink);
+  padding-top: 3px;
+  rotate: -4deg;
+  box-shadow: 4px 4px 0 var(--ink);
+  text-shadow: 2px 2px 0 #fff;
   transition: rotate 0.3s var(--pop);
 }
 :root[data-theme="dark"] .brand-logo { box-shadow: 3px 3px 0 #000; border-color: var(--yellow); }
@@ -1051,7 +1054,7 @@ a.shot:hover img { scale: 1.03; }
   :root { --bw: 2.5px; --header-h: 62px; }
   body { font-size: 1rem; }
   .grid > [class*="c-"] { grid-column: 1 / -1; }
-  .brand-logo { font-size: 1.7rem; }
+  .brand-logo { width: 42px; height: 42px; font-size: 1.7rem; }
   .theme-btn { width: 40px; height: 40px; }
   .logo-title { -webkit-text-stroke-width: 2.5px; text-shadow: 4px 4px 0 #121316; }
   .cover-portrait .balloon { top: 3%; right: 3%; font-size: 0.86rem; max-width: 19ch; padding: 0.85em 1.2em 0.95em; }
