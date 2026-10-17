@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vamsee's experience — Backend Developer at Shipsy and SQL/PL-SQL intern at Virtusa.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="theme-color" content="#F1F2EE">
     <title>Experience · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -17,70 +17,70 @@
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="wrap page">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 01 &middot; Experience</p>
-                    <h1 class="display">Where I&rsquo;ve <em>worked</em></h1>
-                    <p class="lede">Where I've been building &mdash; from SQL internships to backend services for enterprise logistics.</p>
+        <section class="splash" aria-labelledby="page-title">
+            <div class="panel splash-title pop">
+                <div class="ht ht-br" aria-hidden="true"></div>
+                <p class="cap tl">Chapter 1</p>
+                <h1 class="display" id="page-title">Experience</h1>
+                <p class="lede">From SQL internships to backend services for enterprise logistics &mdash; the day job, panel by panel.</p>
+            </div>
+            <div class="panel splash-side yellow pop">
+                <p class="cap tl white">Right now</p>
+                <p class="display h-md" style="color:#121316;margin:0 0 10px">Backend Developer, Shipsy</p>
+                <p style="margin:0">Building and maintaining scalable backend services for enterprise transportation and supply-chain platforms. Started as an intern in 2023.</p>
+            </div>
+        </section>
+
+        <ol class="grid" style="list-style:none" aria-label="Roles, in the order they happened">
+
+            <li class="panel role-panel c-5 pop">
+                <div class="ht ht-bottom" aria-hidden="true"></div>
+                <p class="cap tl">May 2023. Remote.</p>
+                <article>
+                    <div class="role-head">
+                        <span class="logo-chip"><img src="dist/img/virtusa_logo.jpeg" alt="Virtusa logo"></span>
+                        <div>
+                            <h2 class="display">Virtusa</h2>
+                            <p class="role-title">Intern <span>&middot; May &ndash; Aug 2023</span></p>
+                        </div>
+                    </div>
+                    <p>Worked on SQL and PL/SQL during the internship, gaining hands-on experience with database development, query optimisation and stored procedures.</p>
+                </article>
+                <ul class="tags">
+                    <li>SQL</li><li>PL/SQL</li><li>Query optimisation</li><li>Stored procedures</li>
+                </ul>
+            </li>
+
+            <li class="panel role-panel c-7 pop">
+                <div class="ht cyan" aria-hidden="true"></div>
+                <p class="cap tl">2023. Meanwhile, at Shipsy&hellip;</p>
+                <article>
+                    <div class="role-head">
+                        <span class="logo-chip"><img src="dist/img/shipsy_logo.png" alt="Shipsy logo"></span>
+                        <div>
+                            <h2 class="display">Shipsy</h2>
+                            <p class="role-title">Backend Developer <span>&middot; 2023 &ndash; present &middot; started as an intern</span></p>
+                        </div>
+                    </div>
+                    <p>Backend Developer at Shipsy, a logistics software provider. Building and maintaining scalable backend services for enterprise transportation and supply-chain management platforms &mdash; microservices, REST APIs, databases and the cloud infrastructure underneath them.</p>
+                </article>
+                <ul class="tags">
+                    <li>Microservices</li><li>REST APIs</li><li>Databases</li><li>Cloud</li><li>Distributed systems</li>
+                </ul>
+            </li>
+
+            <li class="panel now-panel c-12 pop" style="flex-direction:row;align-items:center;flex-wrap:wrap;gap:8px 32px">
+                <div class="ht ht-full" aria-hidden="true"></div>
+                <p class="cap tl ink">Present day.</p>
+                <p class="balloon wide tail-bl"><span>Two-plus years in, I&rsquo;m still shipping backend services at Shipsy &mdash; the internship became the job.</span></p>
+                <div class="btn-row" style="margin:0 0 30px">
+                    <a href="projects.html" class="btn btn-ink">See the projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+                    <a href="skills.html" class="btn">Skills &amp; certifications</a>
                 </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <circle class="wash" filter="url(#wc)" cx="134" cy="66" r="46" fill="#E3A93B" opacity=".9"/>
-                    <rect class="wash" filter="url(#wc)" x="28" y="92" width="92" height="92" fill="#3E5C8A" opacity=".82"/>
-                    <path class="ink" pathLength="1" d="M18 186 H58 V150 H98 V114 H138 V78 H186"/>
-                </svg>
-            </div>
-        </section>
-
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <ol class="timeline">
-
-                    <li class="entry reveal a-ochre">
-                        <span class="entry-dot" aria-hidden="true"></span>
-                        <article class="entry-card">
-                            <div class="entry-logo"><img src="dist/img/shipsy_logo.png" alt="Shipsy logo"></div>
-                            <div>
-                                <p class="entry-when">2023 &mdash; Present</p>
-                                <h2>Shipsy</h2>
-                                <p class="role">Backend Developer <span>&middot; started as an intern</span></p>
-                                <p>Working as a Backend Developer at Shipsy, a leading logistics software solution provider. Building and maintaining scalable backend services for enterprise transportation and supply chain management platforms.</p>
-                                <ul class="tags">
-                                    <li class="tag-pill">Microservices</li>
-                                    <li class="tag-pill">REST APIs</li>
-                                    <li class="tag-pill">Databases</li>
-                                    <li class="tag-pill">Cloud</li>
-                                    <li class="tag-pill">Distributed systems</li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-
-                    <li class="entry reveal a-indigo">
-                        <span class="entry-dot" aria-hidden="true"></span>
-                        <article class="entry-card">
-                            <div class="entry-logo"><img src="dist/img/virtusa_logo.jpeg" alt="Virtusa logo"></div>
-                            <div>
-                                <p class="entry-when">May &mdash; Aug 2023</p>
-                                <h2>Virtusa</h2>
-                                <p class="role">Intern <span>&middot; remote</span></p>
-                                <p>Worked on SQL and PL/SQL during the internship, gaining hands-on experience with database development, query optimisation, and stored procedures.</p>
-                                <ul class="tags">
-                                    <li class="tag-pill">SQL</li>
-                                    <li class="tag-pill">PL/SQL</li>
-                                    <li class="tag-pill">Query optimisation</li>
-                                    <li class="tag-pill">Stored procedures</li>
-                                </ul>
-                            </div>
-                        </article>
-                    </li>
-
-                </ol>
-            </div>
-        </section>
+            </li>
+        </ol>
 
     </main>
 

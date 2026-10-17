@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vamsee's education — B.Tech in Computer Science and Engineering from SIETK.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="description" content="Vamsee's education — B.Tech in Computer Science and Engineering from SIETK, CGPA 9.36.">
+    <meta name="theme-color" content="#F1F2EE">
     <title>Education · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -17,78 +17,58 @@
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="wrap page">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 05 &middot; Education</p>
-                    <h1 class="display">Where I <em>learned</em></h1>
-                    <p class="lede">The foundations &mdash; from school to a degree in Computer Science.</p>
-                </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <path class="wash" filter="url(#wc)" d="M36 190 V112 a62 62 0 0 1 124 0 V190 Z" fill="#3E5C8A" opacity=".82"/>
-                    <circle class="wash" filter="url(#wc)" cx="156" cy="46" r="28" fill="#E3A93B" opacity=".9"/>
-                    <path class="ink" pathLength="1" d="M56 156 C 76 146, 92 146, 98 152 C 104 146, 120 146, 140 156 M98 152 V188 M56 156 V190 C 76 180, 92 180, 98 188 C 104 180, 120 180, 140 190 V156"/>
-                </svg>
+        <section class="splash" aria-labelledby="page-title">
+            <div class="panel splash-title pop">
+                <div class="ht ht-br" aria-hidden="true"></div>
+                <p class="cap tl">Chapter 0 &middot; Education</p>
+                <h1 class="display" id="page-title">Origins</h1>
+                <p class="lede">Every story starts somewhere. This one runs through three schools &mdash; and ends with a degree in Computer Science.</p>
+            </div>
+            <div class="panel splash-side inked pop">
+                <div class="ht ht-full" aria-hidden="true" style="--ht-c:rgba(255,255,255,.12)"></div>
+                <p class="cap tl">The short version</p>
+                <p class="display h-md" style="margin:22px 0 8px">B.Tech, CSE &middot; 9.36</p>
+                <p style="margin:0">Siddharth Institute of Engineering and Technology, 2019&ndash;2023.</p>
             </div>
         </section>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <ol class="timeline">
+        <ol class="grid" style="list-style:none" aria-label="Schools, oldest first">
+            <li class="panel origin c-4 pop">
+                <p class="cap tl">2017.</p>
+                <span class="logo-chip on-dark"><img src="dist/img/chinmaya_logo.png" alt="Chinmaya Vidyalaya logo"></span>
+                <h2 class="display">Secondary Education</h2>
+                <p class="where">MARG Chinmaya Vidyalaya</p>
+                <p class="score"><b>10</b><span>CGPA</span></p>
+            </li>
 
-                    <li class="entry reveal a-indigo">
-                        <span class="entry-dot" aria-hidden="true"></span>
-                        <article class="entry-card">
-                            <div class="entry-logo"><img src="dist/img/sietk-logo.png" alt="SIETK logo"></div>
-                            <div>
-                                <p class="entry-when">2019 &mdash; 2023</p>
-                                <h2>Bachelor of Technology</h2>
-                                <dl>
-                                    <dt>Institution</dt><dd>Siddharth Institute of Engineering and Technology</dd>
-                                    <dt>Course</dt><dd>Computer Science and Engineering</dd>
-                                    <dt>CGPA</dt><dd>9.36</dd>
-                                </dl>
-                            </div>
-                        </article>
-                    </li>
+            <li class="panel origin c-4 pop tilt-r">
+                <div class="ht ht-bottom" aria-hidden="true"></div>
+                <p class="cap tl">2017&ndash;2019.</p>
+                <span class="logo-chip"><img src="dist/img/bvb_logo_1.png" alt="Bharathiya Vidya Bhavan logo"></span>
+                <h2 class="display">Senior Secondary</h2>
+                <p class="where">Bharathiya Vidya Bhavan&rsquo;s SV Vidyalaya</p>
+                <p class="what">MPC &mdash; Mathematics, Physics, Chemistry</p>
+                <p class="score"><b>9.12</b><span>CGPA</span></p>
+            </li>
 
-                    <li class="entry reveal a-ochre">
-                        <span class="entry-dot" aria-hidden="true"></span>
-                        <article class="entry-card">
-                            <div class="entry-logo"><img src="dist/img/bvb_logo_1.png" alt="Bharathiya Vidya Bhavan logo"></div>
-                            <div>
-                                <p class="entry-when">2017 &mdash; 2019</p>
-                                <h2>Senior Secondary Education</h2>
-                                <dl>
-                                    <dt>Institution</dt><dd>Bharathiya Vidya Bhavan&rsquo;s SV Vidyalaya</dd>
-                                    <dt>Course</dt><dd>MPC (Mathematics, Physics, Chemistry)</dd>
-                                    <dt>CGPA</dt><dd>9.12</dd>
-                                </dl>
-                            </div>
-                        </article>
-                    </li>
+            <li class="panel origin c-4 pop">
+                <div class="ht ht-br" aria-hidden="true"></div>
+                <p class="cap tl">2019&ndash;2023.</p>
+                <span class="logo-chip"><img src="dist/img/sietk-logo.png" alt="SIETK logo"></span>
+                <h2 class="display">Bachelor of Technology</h2>
+                <p class="where">Siddharth Institute of Engineering and Technology</p>
+                <p class="what">Computer Science and Engineering</p>
+                <p class="score"><b>9.36</b><span>CGPA</span></p>
+            </li>
 
-                    <li class="entry reveal a-sage">
-                        <span class="entry-dot" aria-hidden="true"></span>
-                        <article class="entry-card">
-                            <div class="entry-logo"><img class="logo-light" src="dist/img/chinmaya_logo.png" alt="Chinmaya Vidyalaya logo"></div>
-                            <div>
-                                <p class="entry-when">2017</p>
-                                <h2>Secondary Education</h2>
-                                <dl>
-                                    <dt>Institution</dt><dd>MARG Chinmaya Vidyalaya</dd>
-                                    <dt>CGPA</dt><dd>10</dd>
-                                </dl>
-                            </div>
-                        </article>
-                    </li>
-
-                </ol>
-            </div>
-        </section>
+            <li class="panel c-12 pop yellow" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;padding-top:44px">
+                <p class="cap tl white">2023. And then&hellip;</p>
+                <p class="display h-md" style="color:#121316;margin:0">&hellip;an internship at Shipsy became the day job.</p>
+                <a href="experience.html" class="btn btn-ink">Chapter 1: Experience <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+            </li>
+        </ol>
 
     </main>
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vamsee's blog — runbooks, notes and write-ups on backend, infra and self-hosting.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="description" content="Vamsee's blog — runbooks, notes and write-ups from things he's set up, built and broken.">
+    <meta name="theme-color" content="#F1F2EE">
     <title>Blog · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -17,62 +17,47 @@
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="wrap page">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 03 &middot; Blog</p>
-                    <h1 class="display">Field <em>notes</em></h1>
-                    <p class="lede">Runbooks, notes and write-ups from things I've set up, built and broken.</p>
-                </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="5" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <path class="wash" filter="url(#wc)" d="M30 120 C 34 60, 90 22, 176 20 C 180 92, 126 134, 30 120 Z" fill="#6E9C82" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="56" cy="52" r="26" fill="#3E5C8A" opacity=".82"/>
-                    <path class="ink" pathLength="1" d="M28 150 H172 M28 168 H140 M28 186 H156"/>
+        <section class="splash" aria-labelledby="page-title">
+            <div class="panel splash-title pop">
+                <div class="ht ht-br" aria-hidden="true"></div>
+                <p class="cap tl">Chapter 4</p>
+                <h1 class="display" id="page-title">Field notes</h1>
+                <p class="lede">Runbooks, notes and write-ups from things I&rsquo;ve set up, built and broken. Each post is an issue; start anywhere.</p>
+            </div>
+            <div class="panel splash-side pop">
+                <div class="ht ht-full cyan" aria-hidden="true"></div>
+                <p class="cap tl">Back issues</p>
+                <p class="display h-md" style="margin:22px 0 6px">1 issue in print</p>
+                <p class="quiet" style="margin:0">Newest first.</p>
+            </div>
+        </section>
+
+        <a href="blog-headless-m1-air.html" class="issue-card pop">
+            <div class="mini-cover">
+                <div class="ht ht-full" aria-hidden="true"></div>
+                <div class="mc-top"><span>Runbook<br>Oct 2026</span><span class="mc-no">No.<b>01</b></span></div>
+                <svg class="laptop" viewBox="0 0 300 150" aria-hidden="true">
+                    <rect x="20" y="88" width="260" height="30" fill="#fff" stroke="#121316" stroke-width="4"/>
+                    <line x1="28" y1="103" x2="272" y2="103" stroke="#121316" stroke-width="2.5"/>
+                    <rect x="90" y="118" width="120" height="8" fill="#121316"/>
+                    <circle cx="150" cy="46" r="9" fill="#19A7DA" stroke="#121316" stroke-width="3"/>
+                    <path d="M126 22 a34 34 0 0 1 48 0 M114 10 a52 52 0 0 1 72 0" fill="none" stroke="#121316" stroke-width="4" stroke-linecap="square"/>
+                    <path d="M60 140 h180" stroke="#121316" stroke-width="3" stroke-dasharray="2 8"/>
                 </svg>
+                <p class="mc-title">Close the lid. Keep it running.</p>
             </div>
-        </section>
-
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="journal">
-
-                    <a href="blog-headless-m1-air.html" class="journal-entry reveal" data-reveal="zoom">
-                        <div class="journal-cover">
-                            <svg class="lid-art" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
-                                <ellipse class="shadow" cx="200" cy="176" rx="180" ry="10"/>
-                                <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
-                                <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
-                                <rect class="shell" x="110" y="160" width="180" height="8" rx="4"/>
-                                <circle class="pulse" cx="200" cy="80" r="6"/>
-                                <circle class="pulse b" cx="200" cy="80" r="6"/>
-                                <circle class="pulse c" cx="200" cy="80" r="6"/>
-                                <circle class="led" cx="200" cy="80" r="6"/>
-                                <text x="200" y="205" text-anchor="middle">m1-server.tailnet.ts.net</text>
-                            </svg>
-                        </div>
-                        <div class="journal-body">
-                            <p class="meta">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
-                            <h2>Headless M1 Air: close the lid, keep it running</h2>
-                            <p>A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server &mdash; SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Interactive: fill in your details once and every command updates.</p>
-                            <ul class="tags">
-                                <li class="tag-pill">macOS</li>
-                                <li class="tag-pill">Self-hosting</li>
-                                <li class="tag-pill">Tailscale</li>
-                                <li class="tag-pill">Docker</li>
-                                <li class="tag-pill">n8n</li>
-                            </ul>
-                            <span class="link-arrow">Read post
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </span>
-                        </div>
-                    </a>
-
-                </div>
+            <div class="panel">
+                <p class="cap tl">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
+                <h2 class="display">Headless M1 Air: close the lid, keep it running</h2>
+                <p>A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server &mdash; SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Interactive: fill in your details once and every command updates.</p>
+                <ul class="tags">
+                    <li>macOS</li><li>Self-hosting</li><li>Tailscale</li><li>Docker</li><li>n8n</li>
+                </ul>
+                <span class="link-arrow">Read the issue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
             </div>
-        </section>
+        </a>
 
     </main>
 

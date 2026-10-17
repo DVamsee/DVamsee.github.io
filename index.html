@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vamsee — backend engineer building scalable microservices, REST APIs and data pipelines, and an artist who draws.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Vamsee — Engineer &amp; Artist</title>
+    <meta name="description" content="Vamsee — backend developer at Shipsy building microservices, REST APIs and data pipelines for enterprise logistics, and an artist who draws in ink.">
+    <meta name="theme-color" content="#F1F2EE">
+    <title>Vamsee — Backend Developer &amp; Artist</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -19,159 +19,161 @@
 
     <main id="main">
 
-        <!-- Hero -->
-        <section class="hero">
-            <div class="wrap hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Portfolio &middot; 2026</p>
-                    <h1 class="display">Vamsee<span class="sub">Engineer by profession, <em class="mark" data-color="ochre">artist</em> at heart.</span></h1>
-                    <p class="lede">I design and build <strong>scalable microservices</strong>, <strong>RESTful APIs</strong> and <strong>high-throughput data pipelines</strong> &mdash; currently powering enterprise logistics platforms at <strong>Shipsy</strong>. Off the clock, I draw. Both come down to structure, proportion, and knowing what to leave out.</p>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-ink">See selected work
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                        </a>
-                        <a href="contact.html" class="btn btn-line">Get in touch</a>
-                    </div>
-                    <p class="status"><i aria-hidden="true"></i>Backend Developer at Shipsy &middot; 2+ years</p>
+        <!-- The cover -->
+        <section class="cover wrap" aria-labelledby="cover-title">
+
+            <header class="masthead pop">
+                <div class="ht ht-br ht-big" aria-hidden="true"></div>
+                <p class="issue-box" aria-hidden="true"><span>No.</span><b>01</b><span>Oct 2026</span></p>
+                <h1 class="logo-title" id="cover-title">Vamsee</h1>
+                <div class="masthead-strap">
+                    <p class="role">Backend Developer<br>at Shipsy</p>
+                    <p class="cap">The engineer who draws</p>
                 </div>
+            </header>
 
-                <figure class="art" style="margin:0">
-                    <svg viewBox="0 0 560 600" role="img" aria-label="An abstract painting: an ochre sun, a terracotta arch with code brackets drawn on it in ink, a sage leaf and an indigo square.">
-                        <defs>
-                            <filter id="wc" x="-15%" y="-15%" width="130%" height="130%">
-                                <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="8" result="warp"/>
-                                <feDisplacementMap in="SourceGraphic" in2="warp" scale="13" xChannelSelector="R" yChannelSelector="G" result="shape"/>
-                                <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="3" result="grain"/>
-                                <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.3" result="paper"/>
-                                <feComposite in="shape" in2="paper" operator="in"/>
-                            </filter>
-                        </defs>
-
-                        <circle class="wash" filter="url(#wc)" cx="350" cy="185" r="118" fill="#E3A93B" opacity=".92"/>
-                        <path class="wash" filter="url(#wc)" d="M88 526 V328 a118 118 0 0 1 236 0 V526 Z" fill="#D9714E" opacity=".88" style="animation-delay:.15s"/>
-                        <path class="wash" filter="url(#wc)" d="M296 530 C 302 426, 370 358, 492 344 C 502 448, 436 522, 296 530 Z" fill="#6E9C82" opacity=".86" style="animation-delay:.3s"/>
-                        <g transform="rotate(-7 132 166)"><rect class="wash" filter="url(#wc)" x="70" y="104" width="124" height="124" fill="#3E5C8A" opacity=".84" style="animation-delay:.45s"/></g>
-                        <circle class="wash" filter="url(#wc)" cx="482" cy="80" r="26" fill="#D98C9C" opacity=".9" style="animation-delay:.6s"/>
-
-                        <g class="dots" aria-hidden="true">
-                            <circle cx="458" cy="252" r="2.2"/><circle cx="476" cy="252" r="2.2"/><circle cx="494" cy="252" r="2.2"/><circle cx="512" cy="252" r="2.2"/>
-                            <circle cx="458" cy="270" r="2.2"/><circle cx="476" cy="270" r="2.2"/><circle cx="494" cy="270" r="2.2"/><circle cx="512" cy="270" r="2.2"/>
-                            <circle cx="458" cy="288" r="2.2"/><circle cx="476" cy="288" r="2.2"/><circle cx="494" cy="288" r="2.2"/><circle cx="512" cy="288" r="2.2"/>
-                        </g>
-
-                        <g class="ink" aria-hidden="true">
-                            <path class="d1" pathLength="1" d="M34 532 C 160 524, 340 538, 528 528"/>
-                            <path class="d1 thin" pathLength="1" d="M82 98 L206 110 L196 236 L70 224 Z"/>
-                            <path class="d2" pathLength="1" d="M178 400 L148 432 L178 464"/>
-                            <path class="d2" pathLength="1" d="M234 400 L264 432 L234 464"/>
-                            <path class="d3" pathLength="1" d="M218 388 L194 476"/>
-                            <path class="d3" pathLength="1" d="M310 522 C 360 466, 410 416, 478 358"/>
-                            <path class="d4 thin" pathLength="1" d="M372 458 L382 426 M406 428 L424 400 M436 400 L456 376"/>
-                            <path class="d4 thin" pathLength="1" d="M270 222 L304 188 M278 244 L326 196 M292 260 L342 210 M312 270 L354 228"/>
-                            <path class="d5 thin" pathLength="1" d="M14 24 H34 M24 14 V34 M526 24 H546 M536 14 V34"/>
-                            <path class="d5" pathLength="1" d="M120 560 C 132 520, 150 498, 162 480 M150 486 L163 478 L166 494"/>
-                        </g>
-                        <text class="note" x="40" y="586">fig. 1 &mdash; code, in colour</text>
-                    </svg>
+            <div class="grid cover-grid">
+                <figure class="panel cover-portrait c-7 r-3 pop" style="margin:0">
+                    <div class="portrait-print"><img src="dist/img/me/halftone/portrait.webp" alt="Portrait of Vamsee, smiling, wearing glasses and a red t-shirt, printed as a comic halftone with a hill and wind turbines behind him." width="1054" height="1400"></div>
+                    <p class="balloon big tail-bl" style="--tail-x:18%"><span>Hi, I&rsquo;m Vamsee. I build backend systems&hellip; and I draw.</span></p>
+                    <figcaption class="cap bl">Backend developer &middot; Shipsy &middot; enterprise logistics SaaS &middot; 2023&ndash;present</figcaption>
                 </figure>
+
+                <div class="panel story c-5 pop">
+                    <div class="ht" aria-hidden="true"></div>
+                    <p class="cap tl">The story so far&hellip;</p>
+                    <h2 class="display h-md">Microservices, APIs &amp; pipelines for logistics at scale.</h2>
+                    <p>By day he designs and builds <strong>scalable microservices</strong>, <strong>RESTful APIs</strong> and <strong>high-throughput data pipelines</strong> for enterprise transportation and supply-chain platforms at <strong>Shipsy</strong>. Off the clock, he draws. Both come down to structure, proportion and knowing what to leave out.</p>
+                    <div class="btn-row">
+                        <a href="projects.html" class="btn btn-ink">See the work
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="experience.html" class="btn">Experience</a>
+                    </div>
+                </div>
+
+                <a href="art.html" class="panel teaser c-5 pop tilt-r">
+                    <div class="ink-art"><img src="dist/img/art/black-panther.jpg" alt="Ink drawing of Black Panther's ornate geometric mask and necklace."></div>
+                    <div class="teaser-body">
+                        <p class="cap" style="align-self:flex-start">Also in this issue</p>
+                        <h3 class="display">The sketch archive</h3>
+                        <p>Nine drawings in ink and pencil &mdash; heroes, gods and geometry.</p>
+                        <span class="link-arrow">Open the archive <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="panel yellow c-5 pop" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px">
+                    <span class="lettering" style="font-size:1rem;color:#121316">Hiring, or building something? Say hello.</span>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#121316" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </section>
 
-        <!-- At a glance -->
-        <section class="section-tight" aria-label="At a glance">
-            <div class="wrap">
-                <div class="stats">
-                    <div class="stat reveal a-ochre">
-                        <p class="stat-num" data-count="2" data-suffix="+">2+</p>
-                        <p class="stat-label">Years of experience</p>
+        <!-- Page two: by day / by night, the facts -->
+        <section class="wrap page" aria-label="About">
+            <div class="grid">
+                <article class="panel duo-panel c-7 pop">
+                    <div class="ht cyan" aria-hidden="true"></div>
+                    <p class="cap tl">By day&hellip;</p>
+                    <h2 class="display h-md">Systems that hold up under load.</h2>
+                    <p>Two-plus years building backend services for enterprise transportation and supply-chain platforms &mdash; working across database optimisation, distributed systems and cloud infrastructure. It started as an internship at Shipsy and became the day job.</p>
+                    <ul class="tags">
+                        <li>Python</li><li>Django</li><li>PostgreSQL</li><li>Microservices</li><li>REST APIs</li>
+                    </ul>
+                </article>
+
+                <article class="panel duo-panel night-panel inked c-5 pop">
+                    <p class="cap tl">&hellip;by night</p>
+                    <div>
+                        <h2 class="display h-md">Drawing as a way of seeing.</h2>
+                        <p style="margin:0">Black-and-white ink and pencil. Drawing trains the eye for structure, proportion and negative space &mdash; the same instincts that make an API feel obvious or a schema feel right.</p>
                     </div>
-                    <div class="stat reveal a-terracotta">
-                        <p class="stat-num" data-count="3">3</p>
-                        <p class="stat-label">Certifications</p>
-                    </div>
-                    <div class="stat reveal a-sage">
-                        <p class="stat-num" data-count="2">2</p>
-                        <p class="stat-label">Featured projects</p>
-                    </div>
-                    <div class="stat reveal a-indigo">
-                        <p class="stat-num" data-count="9.36" data-decimals="2">9.36</p>
-                        <p class="stat-label">B.Tech CGPA</p>
-                    </div>
+                    <div class="ink-art"><img src="dist/img/art/deadpool.jpg" alt="Ink drawing of Deadpool giving a thumbs-up, with heavy black shading."></div>
+                </article>
+
+                <div class="panel fact c-3 pop">
+                    <div class="ht ht-full" aria-hidden="true"></div>
+                    <p class="cap tl">Experience</p>
+                    <p class="num">2<sup>+</sup></p>
+                    <p>Years building backend at Shipsy</p>
+                </div>
+                <div class="panel fact c-3 pop yellow">
+                    <p class="cap tl white">Certified</p>
+                    <p class="num">3</p>
+                    <p>Certifications &mdash; Oracle SQL, PL/SQL &amp; data science</p>
+                </div>
+                <div class="panel fact c-3 pop">
+                    <div class="ht ht-bottom red" aria-hidden="true"></div>
+                    <p class="cap tl">Built</p>
+                    <p class="num">2</p>
+                    <p>Featured projects: Veggy &amp; Taskify</p>
+                </div>
+                <div class="panel fact c-3 pop">
+                    <div class="ht ht-br" aria-hidden="true"></div>
+                    <p class="cap tl">Graduated</p>
+                    <p class="num">9.36</p>
+                    <p>B.Tech CGPA, Computer Science</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Two practices -->
-        <section class="section">
-            <div class="wrap">
-                <div class="section-head reveal">
-                    <p class="eyebrow">No. 01 &mdash; Two practices</p>
-                    <h2 class="display">Logic by day, <em class="mark" data-color="terracotta">line</em> in the sketchbook.</h2>
-                </div>
-                <div class="duo">
-                    <article class="practice reveal a-indigo">
-                        <svg class="blob" viewBox="0 0 200 200" aria-hidden="true"><path fill="#E0E7F1" d="M42 38c30-30 92-28 122 6s30 92-6 120-96 30-124-6S12 68 42 38z"/></svg>
-                        <p class="eyebrow">The engineer</p>
-                        <h3>Systems that hold up under load</h3>
-                        <p>Two-plus years building backend services for enterprise transportation and supply-chain platforms &mdash; working across database optimisation, distributed systems and cloud infrastructure.</p>
-                        <ul class="tags">
-                            <li class="tag-pill">Python</li>
-                            <li class="tag-pill">Django</li>
-                            <li class="tag-pill">PostgreSQL</li>
-                            <li class="tag-pill">Microservices</li>
-                            <li class="tag-pill">REST APIs</li>
-                        </ul>
-                    </article>
-                    <article class="practice reveal a-terracotta">
-                        <svg class="blob" viewBox="0 0 200 200" aria-hidden="true"><path fill="#F8E3DA" d="M56 30c40-18 98 4 116 46s-4 98-50 112-96-8-108-52S16 48 56 30z"/></svg>
-                        <p class="eyebrow">The artist</p>
-                        <h3>Drawing as a way of seeing</h3>
-                        <p>I sketch whenever I can. Drawing trains the eye for structure, proportion and negative space &mdash; the same instincts that make an API feel obvious or a schema feel right.</p>
-                        <p class="hand">&mdash; this site is built in that same spirit</p>
-                    </article>
-                </div>
+            <!-- From the sketchbook -->
+            <div class="strip-head">
+                <h2 class="display">From the sketch archive</h2>
+                <a href="art.html" class="link-arrow">All nine drawings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
             </div>
-        </section>
+            <div class="strip">
+                <a href="art.html" class="tall pop"><div class="ink-art"><img src="dist/img/art/batman.jpg" alt="Full-figure ink drawing of The Batman with heavy blacks and a halo behind his head." loading="lazy"></div><span class="cap bl">The Batman &middot; 2020</span></a>
+                <a href="art.html" class="sq pop"><div class="ink-art lift"><img src="dist/img/art/geometric-owl.jpg" alt="Pen drawing of an owl in flight, its body shattering into geometric shards." loading="lazy"></div><span class="cap bl">Geometric Owl &middot; 2018</span></a>
+                <a href="art.html" class="sq pop"><div class="ink-art lift2"><img src="dist/img/art/mandala-eye.jpg" alt="Pen drawing of an eye surrounded by zentangle and mandala ornament." loading="lazy"></div><span class="cap bl">Mandala Eye &middot; 2018</span></a>
+                <a href="art.html" class="tall pop"><div class="ink-art"><img src="dist/img/art/krishna.jpg" alt="Fineliner drawing of Krishna playing the flute, leaning on a cow." loading="lazy"></div><span class="cap bl">Krishna &middot; 2020</span></a>
+                <a href="art.html" class="sq pop"><div class="ink-art lift2"><img src="dist/img/art/iron-man.jpg" alt="Pen line drawing of Iron Man's armour, standing with fists clenched." loading="lazy"></div><span class="cap bl">Iron Man &middot; 2019</span></a>
+            </div>
 
-        <!-- Index -->
-        <section class="section" style="padding-top:0">
-            <div class="wrap">
-                <div class="section-head reveal">
-                    <p class="eyebrow">No. 02 &mdash; Index</p>
-                    <h2 class="display">Find your way <em class="mark" data-color="sage">around</em>.</h2>
-                </div>
-                <ol class="catalogue">
-                    <li class="reveal a-ochre"><a href="experience.html">
-                        <span class="no">01</span><span class="title">Experience</span>
-                        <span class="desc">Backend Developer at Shipsy, and a database internship at Virtusa.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                    <li class="reveal a-terracotta"><a href="projects.html">
-                        <span class="no">02</span><span class="title">Projects</span>
-                        <span class="desc">Veggy, an agri e-commerce platform, and Taskify, a task manager.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                    <li class="reveal a-sage"><a href="blog.html">
-                        <span class="no">03</span><span class="title">Blog</span>
-                        <span class="desc">Runbooks and write-ups &mdash; starting with turning an M1 Air into a headless server.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                    <li class="reveal a-indigo"><a href="skills.html">
-                        <span class="no">04</span><span class="title">Skills</span>
-                        <span class="desc">Python, Java, Django, SQL &mdash; and Oracle-certified in SQL and PL/SQL.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                    <li class="reveal a-rose"><a href="education.html">
-                        <span class="no">05</span><span class="title">Education</span>
-                        <span class="desc">B.Tech in Computer Science and Engineering from SIETK.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                    <li class="reveal a-ochre"><a href="contact.html">
-                        <span class="no">06</span><span class="title">Contact</span>
-                        <span class="desc">Want to talk backend, logistics tech, or a new opportunity? Say hi.</span>
-                        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                    </a></li>
-                </ol>
+            <!-- Contents -->
+            <div class="contents-head">
+                <h2 class="display">In this issue</h2>
+                <p class="cap white">Seven chapters &middot; read in any order</p>
+            </div>
+            <div class="grid">
+                <a href="experience.html" class="panel chapter c-7 pop">
+                    <div class="ht" aria-hidden="true"></div>
+                    <span class="cap tl">Chapter 1</span>
+                    <div><h3 class="display">Experience</h3><p>Backend Developer at Shipsy since 2023, after a SQL &amp; PL/SQL internship at Virtusa.</p></div>
+                    <span class="go"><span class="lettering quiet" style="font-size:.8rem">2 roles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="projects.html" class="panel chapter has-thumb c-5 pop">
+                    <span class="cap tl">Chapter 2</span>
+                    <div><h3 class="display">Projects</h3><p>Veggy, a farm-to-consumer marketplace, and Taskify, a task manager.</p></div>
+                    <span class="go"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                    <span class="thumb shot" aria-hidden="true"><img src="dist/img/veggy/veggy_logo.jpg" alt="" style="aspect-ratio:1;object-position:center" loading="lazy"></span>
+                </a>
+                <a href="art.html" class="panel chapter c-4 pop">
+                    <span class="cap tl">Chapter 3</span>
+                    <div><h3 class="display">Art</h3><p>The sketch archive: nine drawings, 2018&ndash;2020.</p></div>
+                    <span class="go"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="blog.html" class="panel chapter c-4 pop">
+                    <div class="ht ht-br cyan" aria-hidden="true"></div>
+                    <span class="cap tl">Chapter 4</span>
+                    <div><h3 class="display">Blog</h3><p>Runbooks and write-ups, starting with a headless M1 Air server.</p></div>
+                    <span class="go"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="skills.html" class="panel chapter c-4 pop">
+                    <span class="cap tl">Chapter 5</span>
+                    <div><h3 class="display">Skills</h3><p>Python, Java, Django, SQL &mdash; Oracle-certified in SQL and PL/SQL.</p></div>
+                    <span class="go"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="education.html" class="panel chapter c-6 pop">
+                    <div class="ht ht-bottom" aria-hidden="true"></div>
+                    <span class="cap tl">Chapter 0</span>
+                    <div><h3 class="display">Origins</h3><p>B.Tech in Computer Science and Engineering, SIETK &mdash; CGPA 9.36.</p></div>
+                    <span class="go"><span class="lettering quiet" style="font-size:.8rem">Education</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="contact.html" class="panel chapter yellow c-6 pop">
+                    <span class="cap tl white">Last page</span>
+                    <div><h3 class="display">Contact</h3><p>Backend, logistics tech, or a new opportunity &mdash; GitHub, X and Instagram.</p></div>
+                    <span class="go"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="#121316" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
+                </a>
             </div>
         </section>
 

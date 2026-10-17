@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="theme-color" content="#F1F2EE">
     <title>Headless M1 Air — Server Runbook · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -20,31 +20,34 @@
     <article id="main" class="post">
 
     <!-- Post hero -->
-    <section class="post-hero">
-      <div class="wrap">
+    <section class="post-hero wrap">
         <a href="blog.html" class="link-arrow link-back">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
           All posts
         </a>
         <div class="post-hero-grid">
-          <div class="hero-stagger">
+          <div class="panel title-panel pop">
+            <div class="ht ht-br" aria-hidden="true"></div>
+            <p class="cap tl">Field notes &middot; No. 01</p>
             <p class="meta">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
-            <h1 class="display">Close the lid.<br><em class="mark" data-color="sage">Keep it running.</em></h1>
+            <h1 class="display">Close the lid.<br>Keep it running.</h1>
             <p class="lede">A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Fill in your details once and every command below updates.</p>
           </div>
-          <svg class="lid-art reveal" data-reveal="zoom" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
-            <ellipse class="shadow" cx="200" cy="176" rx="180" ry="10"/>
-            <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
-            <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
-            <rect class="shell" x="110" y="160" width="180" height="8" rx="4"/>
-            <circle class="pulse" cx="200" cy="80" r="6"/>
-            <circle class="pulse b" cx="200" cy="80" r="6"/>
-            <circle class="pulse c" cx="200" cy="80" r="6"/>
-            <circle class="led" cx="200" cy="80" r="6"/>
-            <text x="200" y="205" text-anchor="middle" id="svgHost">ram-machine.tail1234.ts.net</text>
-          </svg>
+          <div class="panel art-panel yellow pop">
+            <div class="ht ht-full" aria-hidden="true" style="--ht-c:rgba(18,19,22,.18)"></div>
+            <svg class="lid-art" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
+              <ellipse class="shadow" cx="200" cy="176" rx="180" ry="10"/>
+              <rect class="shell" x="30" y="120" width="340" height="40"/>
+              <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
+              <rect class="shell" x="110" y="160" width="180" height="8"/>
+              <circle class="pulse" cx="200" cy="80" r="6"/>
+              <circle class="pulse b" cx="200" cy="80" r="6"/>
+              <circle class="pulse c" cx="200" cy="80" r="6"/>
+              <circle class="led" cx="200" cy="80" r="6"/>
+              <text x="200" y="205" text-anchor="middle" id="svgHost">ram-machine.tail1234.ts.net</text>
+            </svg>
+          </div>
         </div>
-      </div>
     </section>
 
     <div class="post-wrap wrap">
@@ -68,7 +71,7 @@
 
     <main class="post-main">
     <div class="config post-panel">
-      <h2>Your machine</h2>
+      <h2 class="cap">Your machine</h2>
       <p>Saved in this browser only. Values are highlighted in every command.</p>
       <div class="fields">
         <label>macOS username<input id="f-USER" value="ram" autocomplete="off" spellcheck="false"></label>
@@ -79,7 +82,7 @@
     </div>
 
     <aside class="fixes">
-      <h2>What changed from the original guide</h2>
+      <h2 class="cap">What changed from the original guide</h2>
       <ul>
         <li><b>n8n is no longer fully public.</b> The original funnels the whole editor to the internet. Here only <code>/webhook</code> paths go public on port 8443; the editor stays private on your tailnet over HTTPS.</li>
         <li><b>n8n login works.</b> Plain <code>http://100.x.y.z:5678</code> trips n8n's secure-cookie check. Tailscale Serve gives it real HTTPS.</li>

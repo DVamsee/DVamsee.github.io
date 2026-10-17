@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Selected projects by Vamsee — Veggy, an agri e-commerce platform, and Taskify, a task manager.">
-    <meta name="theme-color" content="#FBF8F3">
+    <meta name="theme-color" content="#F1F2EE">
     <title>Projects · Vamsee</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bangers&family=JetBrains+Mono:wght@400;500&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -17,63 +17,77 @@
 
     <div id="site-header"></div>
 
-    <main id="main">
+    <main id="main" class="wrap page">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 02 &middot; Projects</p>
-                    <h1 class="display">Selected <em>work</em></h1>
-                    <p class="lede">Things I've designed and built end to end.</p>
-                </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="6" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <rect class="wash" filter="url(#wc)" x="44" y="36" width="104" height="126" fill="#D9714E" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="142" cy="138" r="38" fill="#6E9C82" opacity=".86"/>
-                    <path class="ink" pathLength="1" d="M32 26 H160 V174 H32 Z M64 174 L46 198 M128 174 L146 198 M96 26 V10"/>
-                </svg>
+        <section class="splash" aria-labelledby="page-title">
+            <div class="panel splash-title pop">
+                <div class="ht ht-br" aria-hidden="true"></div>
+                <p class="cap tl">Chapter 2</p>
+                <h1 class="display" id="page-title">Projects</h1>
+                <p class="lede">Things I&rsquo;ve designed and built end to end. Each one gets its own issue, screenshots included.</p>
+            </div>
+            <div class="panel splash-side pop">
+                <div class="ht ht-full cyan" aria-hidden="true"></div>
+                <p class="balloon tail-bl"><span>Two builds in this chapter. The source for both is on GitHub.</span></p>
+                <a href="https://github.com/DVamsee" class="link-arrow" target="_blank" rel="noopener">github.com/DVamsee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
             </div>
         </section>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="works">
-
-                    <article class="work reveal a-sage">
-                        <a href="veggy.html" class="frame" aria-label="Veggy — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate I &middot; E-Commerce &middot; C2C</p>
-                            <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
-                            <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
-                            <a href="veggy.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work reveal a-indigo">
-                        <a href="taskify.html" class="frame" aria-label="Taskify — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate II &middot; Productivity &middot; Web app</p>
-                            <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
-                            <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
-                            <a href="taskify.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
+        <!-- Veggy -->
+        <article class="grid spread" aria-labelledby="veggy-title">
+            <div class="panel spread-title c-4 r-2 pop">
+                <p class="cap tl">Issue #1 &middot; Veggy</p>
+                <h2 class="display" id="veggy-title"><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
+                <p class="kind">E-commerce &middot; consumer to consumer</p>
+                <p>An e-commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
+                <div class="btn-row">
+                    <a href="veggy.html" class="btn btn-ink">Read the issue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+                    <a href="https://github.com/DVamsee/veggy.git" class="btn" target="_blank" rel="noopener">GitHub</a>
                 </div>
-
-                <p class="aside-note reveal"><span class="hand">more sketches &amp; experiments on</span> <a href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub</a></p>
             </div>
-        </section>
+            <a href="veggy.html" class="panel flush shot hero-shot c-8 pop" aria-label="Veggy — read the issue">
+                <img src="dist/img/veggy/home.png" alt="Veggy home page">
+                <span class="cap bl">The home page</span>
+            </a>
+            <div class="panel narration yellow c-4 pop">
+                <p>Compare a product&rsquo;s quality and price against the market rate&hellip;</p>
+            </div>
+            <div class="panel narration c-4 pop">
+                <div class="ht ht-full" aria-hidden="true"></div>
+                <p style="color:var(--ink)">&hellip;check what&rsquo;s available nearby, and buy straight from the farmer.</p>
+            </div>
+        </article>
+
+        <!-- Taskify -->
+        <article class="grid spread" aria-labelledby="taskify-title">
+            <a href="taskify.html" class="panel flush shot hero-shot c-8 r-2 pop" aria-label="Taskify — read the issue">
+                <img src="dist/img/taskify/home_.png" alt="Taskify home page">
+                <span class="cap bl">The task board</span>
+            </a>
+            <div class="panel spread-title c-4 r-2 pop">
+                <div class="ht ht-br cyan" aria-hidden="true"></div>
+                <p class="cap tl">Issue #2 &middot; Taskify</p>
+                <h2 class="display" id="taskify-title"><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
+                <p class="kind">Productivity &middot; web app</p>
+                <p>An online task management application to organise, prioritise and track work for individuals and teams.</p>
+                <div class="btn-row">
+                    <a href="taskify.html" class="btn btn-ink">Read the issue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+                    <a href="https://github.com/DVamsee/taskify.git" class="btn" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+            <a href="taskify.html" class="panel flush shot c-4 pop tilt-l" aria-label="Taskify priorities view">
+                <img src="dist/img/taskify/priority.png" alt="Taskify priority view">
+                <span class="cap bl">Priorities</span>
+            </a>
+            <a href="taskify.html" class="panel flush shot c-4 pop" aria-label="Taskify comments view">
+                <img src="dist/img/taskify/comments.png" alt="Taskify comments">
+                <span class="cap bl">Comments</span>
+            </a>
+            <div class="panel narration inked c-4 pop">
+                <div class="ht ht-full" aria-hidden="true" style="--ht-c:rgba(255,255,255,.12)"></div>
+                <p style="color:#F4F4EF">Organise it. Prioritise it. Track it &mdash; alone or as a team.</p>
+            </div>
+        </article>
 
     </main>
 
