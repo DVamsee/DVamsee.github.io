@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selected projects by Vamsee — Veggy, an agri e-commerce platform, and Taskify, a task manager.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Projects · Vamsee</title>
+    <meta name="description" content="Projects: Veggy, an e-commerce platform for agricultural products, and Taskify, a task management app.">
+    <meta name="theme-color" content="#F3F0E9">
+    <title>Projects · VAMSEE Issue 02</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -19,61 +19,71 @@
 
     <main id="main">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 02 &middot; Projects</p>
-                    <h1 class="display">Selected <em>work</em></h1>
-                    <p class="lede">Things I've designed and built end to end.</p>
+        <header class="opener">
+            <div class="wrap crops opener-in">
+                <p class="runhead"><b>p.08 &mdash; Spreads</b><span>Projects</span></p>
+                <div class="opener-grid">
+                    <h1 data-reg>Selected work</h1>
+                    <p class="lede">Things I&rsquo;ve designed and built end to end. Two spreads; hover a print to see the proof in full colour.</p>
                 </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="6" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <rect class="wash" filter="url(#wc)" x="44" y="36" width="104" height="126" fill="#D9714E" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="142" cy="138" r="38" fill="#6E9C82" opacity=".86"/>
-                    <path class="ink" pathLength="1" d="M32 26 H160 V174 H32 Z M64 174 L46 198 M128 174 L146 198 M96 26 V10"/>
-                </svg>
             </div>
-        </section>
+        </header>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="works">
-
-                    <article class="work reveal a-sage">
-                        <a href="veggy.html" class="frame" aria-label="Veggy — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate I &middot; E-Commerce &middot; C2C</p>
-                            <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
-                            <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
-                            <a href="veggy.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work reveal a-indigo">
-                        <a href="taskify.html" class="frame" aria-label="Taskify — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate II &middot; Productivity &middot; Web app</p>
-                            <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
-                            <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
-                            <a href="taskify.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
+        <article class="proj" aria-labelledby="veggy-h">
+            <div class="wrap proj-grid">
+                <div class="proj-text reveal">
+                    <p class="plate-no" data-reg aria-hidden="true">01</p>
+                    <p class="meta">pp.10&ndash;11 &middot; E-Commerce &middot; Consumer to Consumer</p>
+                    <h2 id="veggy-h"><img data-ink="logo-ink" src="dist/img/veggy/veggy_logo.jpg" width="577" height="632" alt="">Veggy</h2>
+                    <p>An e-commerce application to market agricultural products, letting consumers buy directly from farmers &mdash; and compare quality and price against the market rate.</p>
+                    <div class="actions">
+                        <a class="btn" href="veggy.html">Read the feature <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+                        <a class="link" href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener">Source on GitHub</a>
+                    </div>
                 </div>
-
-                <p class="aside-note reveal"><span class="hand">more sketches &amp; experiments on</span> <a href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub</a></p>
+                <figure class="bleed reveal" style="margin:0">
+                    <span class="tint tint-bl" aria-hidden="true"></span>
+                    <a href="veggy.html" aria-label="Veggy: read the feature">
+                        <span class="duo shot" style="display:block">
+                            <img src="dist/img/veggy/home.png" width="1402" height="678" alt="Veggy home page: product filters on the left and a product card for the Open Air Market.">
+                            <img src="dist/img/veggy/home.png" width="1402" height="678" alt="" aria-hidden="true">
+                            <img class="proof" src="dist/img/veggy/home.png" width="1402" height="678" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+                    <figcaption>Fig. 3 &mdash; Veggy, home page. Printed in two inks; full-colour proof on hover.</figcaption>
+                </figure>
             </div>
-        </section>
+        </article>
+
+        <article class="proj" aria-labelledby="taskify-h">
+            <div class="wrap proj-grid">
+                <div class="proj-text reveal">
+                    <p class="plate-no" data-reg aria-hidden="true">02</p>
+                    <p class="meta">pp.12&ndash;13 &middot; Productivity &middot; Web app</p>
+                    <h2 id="taskify-h"><img data-ink="logo-ink" src="dist/img/taskify/logo.png" width="257" height="259" alt="">Taskify</h2>
+                    <p>An online task management application to organise, prioritise and track work &mdash; for individuals and for teams.</p>
+                    <div class="actions">
+                        <a class="btn" href="taskify.html">Read the feature <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+                        <a class="link" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">Source on GitHub</a>
+                    </div>
+                </div>
+                <figure class="bleed reveal" style="margin:0">
+                    <span class="tint tint-pk" aria-hidden="true"></span>
+                    <a href="taskify.html" aria-label="Taskify: read the feature">
+                        <span class="duo shot" style="display:block">
+                            <img src="dist/img/taskify/home_.png" width="3092" height="1554" alt="Taskify landing page: &lsquo;One stop to organize your Tasks&rsquo; beside an illustration of an open notebook.">
+                            <img src="dist/img/taskify/home_.png" width="3092" height="1554" alt="" aria-hidden="true">
+                            <img class="proof" src="dist/img/taskify/home_.png" width="3092" height="1554" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+                    <figcaption>Fig. 4 &mdash; Taskify, landing page.</figcaption>
+                </figure>
+            </div>
+        </article>
+
+        <div class="wrap">
+            <p class="more-note reveal"><span class="kicker" style="margin:0">Stop press</span> More experiments and smaller builds live on <a class="link" href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub @DVamsee</a></p>
+        </div>
 
     </main>
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vamsee's skills — Python, Java, Django, SQL, PostgreSQL — and Oracle SQL and PL/SQL certifications.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Skills · Vamsee</title>
+    <meta name="description" content="Skills: Python, Java, HTML, CSS, JavaScript, Django, Oracle SQL and PostgreSQL — plus Oracle SQL and PL/SQL certifications and an APSSDC data science internship.">
+    <meta name="theme-color" content="#F3F0E9">
+    <title>Skills · VAMSEE Issue 02</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
@@ -19,125 +19,97 @@
 
     <main id="main">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 04 &middot; Skills</p>
-                    <h1 class="display">The <em>palette</em></h1>
-                    <p class="lede">The languages, frameworks and databases I work with &mdash; and the certifications behind them.</p>
+        <header class="opener">
+            <div class="wrap crops opener-in">
+                <p class="runhead"><b>p.24 &mdash; Ink index</b><span>Skills</span></p>
+                <div class="opener-grid">
+                    <h1 data-reg>The ink index</h1>
+                    <p class="lede">The languages, frameworks and databases I work with, laid out like a swatch chart &mdash; and the certifications behind them, stamped.</p>
                 </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="2" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <circle class="wash" filter="url(#wc)" cx="62" cy="62" r="32" fill="#D9714E" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="136" cy="58" r="32" fill="#E3A93B" opacity=".9"/>
-                    <circle class="wash" filter="url(#wc)" cx="64" cy="136" r="32" fill="#6E9C82" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="138" cy="134" r="32" fill="#3E5C8A" opacity=".82"/>
-                    <path class="ink" pathLength="1" d="M16 192 C 66 166, 120 200, 188 170"/>
-                </svg>
             </div>
-        </section>
+        </header>
 
-        <!-- Swatches -->
-        <section class="section" style="padding-top:24px" aria-label="Tech stack">
+        <section class="section" aria-labelledby="stack-h">
             <div class="wrap">
+                <div class="section-h reveal">
+                    <h2 id="stack-h" class="sec-h" data-reg>Swatches</h2>
+                    <p class="proof-note">Four inks &middot; one per discipline</p>
+                </div>
                 <div class="swatches">
-
-                    <article class="swatch reveal a-terracotta">
-                        <div class="swatch-chip">
-                            <svg viewBox="0 0 200 180" aria-hidden="true"><path d="M84 50 C 66 50, 72 86, 58 90 C 72 94, 66 130, 84 130 M116 50 C 134 50, 128 86, 142 90 C 128 94, 134 130, 116 130"/></svg>
-                        </div>
-                        <div class="swatch-body">
-                            <p class="swatch-code"><span>VM 01</span><span>Terracotta</span></p>
-                            <h3>Languages</h3>
-                            <ul><li>Python</li><li>Java</li></ul>
-                        </div>
+                    <article class="swatch reveal">
+                        <div class="chip c-bl"><p class="sw-code"><span>VMS 01</span><span>Riso Blue</span></p><h3>Lang&shy;uages</h3></div>
+                        <div class="tints" aria-hidden="true"><i class="tint-bl"></i><i class="tint-bl" style="background-size:4px 4px"></i><i style="background:var(--blue)"></i></div>
+                        <ul><li>Python <span>Lang.</span></li><li>Java <span>Lang.</span></li></ul>
                     </article>
-
-                    <article class="swatch reveal a-ochre">
-                        <div class="swatch-chip">
-                            <svg viewBox="0 0 200 180" aria-hidden="true"><path d="M48 52 H152 V128 H48 Z M48 70 H152"/><circle cx="58" cy="61" r="2.5"/><circle cx="67" cy="61" r="2.5"/><path d="M84 92 L72 102 L84 112 M116 92 L128 102 L116 112"/></svg>
-                        </div>
-                        <div class="swatch-body">
-                            <p class="swatch-code"><span>VM 02</span><span>Ochre</span></p>
-                            <h3>Web</h3>
-                            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-                        </div>
+                    <article class="swatch reveal">
+                        <div class="chip c-pk"><p class="sw-code"><span>VMS 02</span><span>Fluor. Pink</span></p><h3>Web</h3></div>
+                        <div class="tints" aria-hidden="true"><i class="tint-pk"></i><i class="tint-pk" style="background-size:4px 4px"></i><i style="background:var(--pink)"></i></div>
+                        <ul><li>HTML <span>Markup</span></li><li>CSS <span>Style</span></li><li>JavaScript <span>Lang.</span></li></ul>
                     </article>
-
-                    <article class="swatch reveal a-sage">
-                        <div class="swatch-chip">
-                            <svg viewBox="0 0 200 180" aria-hidden="true"><path d="M100 46 L152 72 L100 98 L48 72 Z M48 94 L100 120 L152 94 M48 116 L100 142 L152 116"/></svg>
-                        </div>
-                        <div class="swatch-body">
-                            <p class="swatch-code"><span>VM 03</span><span>Sage</span></p>
-                            <h3>Frameworks</h3>
-                            <ul><li>Django</li></ul>
-                        </div>
+                    <article class="swatch reveal">
+                        <div class="chip c-ye"><p class="sw-code"><span>VMS 03</span><span>Yellow</span></p><h3>Frame&shy;works</h3></div>
+                        <div class="tints" aria-hidden="true"><i class="tint-ye"></i><i class="tint-ye" style="background-size:4px 4px"></i><i style="background:var(--yellow)"></i></div>
+                        <ul><li>Django <span>Python</span></li></ul>
                     </article>
-
-                    <article class="swatch reveal a-indigo">
-                        <div class="swatch-chip">
-                            <svg viewBox="0 0 200 180" aria-hidden="true"><path d="M60 58 a40 12 0 1 0 80 0 a40 12 0 1 0 -80 0 M60 58 V122 a40 12 0 0 0 80 0 V58 M60 90 a40 12 0 0 0 80 0"/></svg>
-                        </div>
-                        <div class="swatch-body">
-                            <p class="swatch-code"><span>VM 04</span><span>Indigo</span></p>
-                            <h3>Databases</h3>
-                            <ul><li>Oracle SQL</li><li>PostgreSQL</li></ul>
-                        </div>
+                    <article class="swatch reveal">
+                        <div class="chip c-ov"><p class="sw-code"><span>VMS 04</span><span>Blue &times; Pink</span></p><h3>Data&shy;bases</h3></div>
+                        <div class="tints" aria-hidden="true"><i class="tint-pk"></i><i class="tint-bl"></i><i class="c-ov-flat"></i></div>
+                        <ul><li>Oracle SQL <span>RDBMS</span></li><li>PostgreSQL <span>RDBMS</span></li></ul>
                     </article>
-
+                </div>
+                <div class="also reveal">
+                    <p>Also on press</p>
+                    <span>Microservices</span><span>REST APIs</span><span>Distributed systems</span><span>Cloud</span><span>Query optimisation</span><span>Stored procedures</span>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications -->
-        <section class="section" style="padding-top:0">
+        <section class="section" aria-labelledby="certs-h">
             <div class="wrap">
-                <div class="section-head reveal">
-                    <p class="eyebrow">Certified</p>
-                    <h2 class="display">Signed &amp; <em class="mark" data-color="indigo">stamped</em>.</h2>
+                <div class="section-h reveal">
+                    <h2 id="certs-h" class="sec-h" data-reg>Stamped</h2>
+                    <p class="proof-note">Three certifications</p>
                 </div>
-                <div class="certs">
-
-                    <article class="cert reveal a-terracotta">
+                <div class="stamps">
+                    <article class="cert reveal">
                         <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true">
-                            <defs><path id="ring1" d="M50 50 m-35 0 a35 35 0 1 1 70 0 a35 35 0 1 1 -70 0"/></defs>
-                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
-                            <circle cx="50" cy="50" r="26" fill="none" stroke="currentColor" stroke-width="1.2"/>
-                            <text><textPath href="#ring1">ORACLE &middot; CERTIFIED &middot; PL/SQL &middot;</textPath></text>
-                            <text x="50" y="54" text-anchor="middle" style="font-size:11px;letter-spacing:0">1Z0-149</text>
+                            <defs><path id="ring1" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs>
+                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="42.5" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                            <text><textPath href="#ring1">ORACLE &#9733; CERTIFIED &#9733; PL/SQL &#9733;</textPath></text>
+                            <text class="mid" x="50" y="56" text-anchor="middle">1Z0-149</text>
                         </svg>
                         <p class="issuer">Oracle &middot; 1Z0-149</p>
                         <h3>PL/SQL Developer</h3>
                         <p>Oracle Database PL/SQL Developer Certified Professional.</p>
                     </article>
-
-                    <article class="cert reveal a-indigo">
+                    <article class="cert reveal">
                         <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true">
-                            <defs><path id="ring2" d="M50 50 m-35 0 a35 35 0 1 1 70 0 a35 35 0 1 1 -70 0"/></defs>
-                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
-                            <circle cx="50" cy="50" r="26" fill="none" stroke="currentColor" stroke-width="1.2"/>
-                            <text><textPath href="#ring2">ORACLE &middot; CERTIFIED &middot; SQL &middot; SQL &middot;</textPath></text>
-                            <text x="50" y="54" text-anchor="middle" style="font-size:11px;letter-spacing:0">1Z0-071</text>
+                            <defs><path id="ring2" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs>
+                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="42.5" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                            <text><textPath href="#ring2">ORACLE &#9733; CERTIFIED &#9733; SQL &#9733; SQL &#9733;</textPath></text>
+                            <text class="mid" x="50" y="56" text-anchor="middle">1Z0-071</text>
                         </svg>
                         <p class="issuer">Oracle &middot; 1Z0-071</p>
                         <h3>SQL Associate</h3>
                         <p>Oracle Database SQL Certified Associate.</p>
                     </article>
-
-                    <article class="cert reveal a-sage">
+                    <article class="cert reveal">
                         <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true">
-                            <defs><path id="ring3" d="M50 50 m-35 0 a35 35 0 1 1 70 0 a35 35 0 1 1 -70 0"/></defs>
-                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
-                            <circle cx="50" cy="50" r="26" fill="none" stroke="currentColor" stroke-width="1.2"/>
-                            <text><textPath href="#ring3">APSSDC &middot; DATA SCIENCE &middot; 6 MO &middot;</textPath></text>
-                            <text x="50" y="54" text-anchor="middle" style="font-size:11px;letter-spacing:0">DS</text>
+                            <defs><path id="ring3" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs>
+                            <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="42.5" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                            <text><textPath href="#ring3">APSSDC &#9733; DATA SCIENCE &#9733; 6 MONTHS &#9733;</textPath></text>
+                            <text class="mid" x="50" y="56" text-anchor="middle">DS</text>
                         </svg>
                         <p class="issuer">APSSDC &middot; Virtual internship</p>
                         <h3>Data Science</h3>
-                        <p>Completed a 6-month virtual internship with APSSDC on Data Science and applications.</p>
+                        <p>Completed a 6-month virtual internship with APSSDC on Data Science and its applications.</p>
                     </article>
-
                 </div>
             </div>
         </section>

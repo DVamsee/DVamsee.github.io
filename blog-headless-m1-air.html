@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Headless M1 Air — Server Runbook · Vamsee</title>
+    <meta name="theme-color" content="#F3F0E9">
+    <title>Headless M1 Air — Runbook · VAMSEE Issue 02</title>
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
     <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 </head>
-<body data-page="blog" data-detail>
+<body data-page="blog" data-detail data-folio="p.21">
 
     <div id="site-header"></div>
 
@@ -21,18 +21,15 @@
 
     <!-- Post hero -->
     <section class="post-hero">
-      <div class="wrap">
-        <a href="blog.html" class="link-arrow link-back">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          All posts
-        </a>
+      <div class="wrap crops post-hero-in">
+        <p class="runhead"><a class="back-link" href="blog.html"><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>All posts</a><span>p.21 &middot; Manual No.&nbsp;1</span></p>
         <div class="post-hero-grid">
-          <div class="hero-stagger">
-            <p class="meta">Oct 14, 2026 &middot; Runbook &middot; ~15 min</p>
-            <h1 class="display">Close the lid.<br><em class="mark" data-color="sage">Keep it running.</em></h1>
+          <div>
+            <p class="meta"><b>Runbook</b><span>Oct 14, 2026</span><span>&middot; ~15 min</span><span>&middot; Interactive</span></p>
+            <h1 data-reg>Close the lid. <em>Keep it running.</em></h1>
             <p class="lede">A corrected, step-by-step runbook for turning an M1 MacBook Air into a silent headless server: SSH and remote desktop over Tailscale, Docker via OrbStack, n8n, PM2 and Ollama. Fill in your details once and every command below updates.</p>
           </div>
-          <svg class="lid-art reveal" data-reveal="zoom" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
+          <svg class="lid-art" viewBox="0 0 400 220" role="img" aria-label="A closed laptop with a status light broadcasting a signal">
             <ellipse class="shadow" cx="200" cy="176" rx="180" ry="10"/>
             <rect class="shell" x="30" y="120" width="340" height="40" rx="10"/>
             <line class="seam" x1="40" y1="140" x2="360" y2="140"/>
@@ -391,7 +388,7 @@ curl -sI https://{{HOST}}.{{TAILNET}}:8443/webhook/healthcheck | head -1</pre></
     <!-- ARCH -->
     <section class="phase" id="arch">
       <div class="phase-head reveal"><span class="n">—</span><h2>How it fits together</h2></div>
-      <p class="lede">Green is reachable only from your tailnet. Amber is public.</p>
+      <p class="lede">Green is reachable only from your tailnet. Yellow is public.</p>
       <div class="arch">
         <div class="tier">
           <h4>Who connects</h4>

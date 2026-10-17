@@ -1,113 +1,117 @@
-// Shared layout: every page has <body data-page="..."> plus
-// <div id="site-header"></div> and <div id="site-footer"></div> placeholders.
-// Detail pages (e.g. a single project) add data-detail to skip the prev/next links.
+// VAMSEE — Issue 02 / 2026. A risograph zine in two inks (Fluorescent Pink, Riso Blue) plus black.
+//
+// Shared layout: every page has <body data-page="..."> plus <div id="site-header"></div> and
+// <div id="site-footer"></div> placeholders. Detail pages add data-detail (no prev/next) and
+// data-folio="p.10" for their own page number.
 
 const PAGES = [
-    { id: 'home', href: 'index.html', label: 'Home' },
-    { id: 'experience', href: 'experience.html', label: 'Experience' },
-    { id: 'projects', href: 'projects.html', label: 'Projects' },
-    { id: 'blog', href: 'blog.html', label: 'Blog' },
-    { id: 'skills', href: 'skills.html', label: 'Skills' },
-    { id: 'education', href: 'education.html', label: 'Education' },
-    { id: 'contact', href: 'contact.html', label: 'Contact' },
+    { id: 'home', href: 'index.html', label: 'Cover', p: '01', dek: 'Masthead, cover lines and the editor’s letter' },
+    { id: 'experience', href: 'experience.html', label: 'Experience', p: '04', dek: 'Backend Developer at Shipsy; SQL internship at Virtusa' },
+    { id: 'projects', href: 'projects.html', label: 'Projects', p: '08', dek: 'Veggy and Taskify, two builds start to finish' },
+    { id: 'art', href: 'art.html', label: 'Art', p: '14', dek: 'The centrefold: nine drawings in ink and pencil' },
+    { id: 'blog', href: 'blog.html', label: 'Blog', p: '20', dek: 'Runbooks and notes, starting with a headless M1 Air' },
+    { id: 'skills', href: 'skills.html', label: 'Skills', p: '24', dek: 'The ink index, plus three stamped certifications' },
+    { id: 'education', href: 'education.html', label: 'Education', p: '28', dek: 'B.Tech in Computer Science, SIETK' },
+    { id: 'contact', href: 'contact.html', label: 'Contact', p: '32', dek: 'Tear off a tab: GitHub, X, Instagram' },
 ];
-
-const ICONS = {
-    github: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.18 7.69 10.67.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.34-3.79-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.64 1.22 3.28.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.78.54a11.26 11.26 0 0 0 7.68-10.67C23.25 5.48 18.27.5 12 .5z"/></svg>',
-    twitter: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>',
-    arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-};
 
 const SOCIALS = [
-    { href: 'https://github.com/DVamsee', icon: ICONS.github, label: 'GitHub' },
-    { href: 'https://twitter.com/one_c_d', icon: ICONS.twitter, label: 'Twitter' },
+    { href: 'https://github.com/DVamsee', label: 'GitHub', handle: '@DVamsee' },
+    { href: 'https://twitter.com/one_c_d', label: 'X / Twitter', handle: '@one_c_d' },
+    { href: 'https://www.instagram.com/vamsee.d', label: 'Instagram', handle: '@vamsee.d' },
 ];
 
-const BRAND_MARK = '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">'
-    + '<circle cx="11" cy="12" r="8" fill="#E3A93B"/>'
-    + '<circle cx="21" cy="12" r="8" fill="#D9714E" opacity=".9"/>'
-    + '<circle cx="16" cy="21" r="8" fill="#3E5C8A" opacity=".85"/></svg>';
+const ARROW = '<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>';
+const REG_MARK = '<svg class="regmark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="20" r="5" fill="currentColor"/><path d="M20 2v36M2 20h36" stroke="currentColor" stroke-width="1.4"/></svg>';
 
-// Sun that becomes a moon: a cut-out circle slides over the orb while the rays fold away
-const THEME_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true">'
-    + '<mask id="theme-cut"><rect x="-4" y="-4" width="32" height="32" fill="#fff"/><circle class="cut" cx="17" cy="7" r="6" fill="#000"/></mask>'
-    + '<circle class="orb" cx="12" cy="12" r="5" fill="currentColor" mask="url(#theme-cut)"/>'
-    + '<g class="rays" stroke="currentColor" stroke-width="2" stroke-linecap="round">'
-    + '<path d="M12 1.5v2M12 20.5v2M1.5 12h2M20.5 12h2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M4.6 19.4L6 18M18 6l1.4-1.4"/></g></svg>';
-
-const currentPage = document.body.dataset.page || 'home';
+const root = document.documentElement;
+const body = document.body;
+root.classList.add('js');
+const currentPage = body.dataset.page || 'home';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pageIndex = PAGES.findIndex(function (p) { return p.id === currentPage; });
+const folio = body.dataset.folio || (pageIndex >= 0 ? 'p.' + PAGES[pageIndex].p : '');
 
 function current(id) {
     return id === currentPage ? ' aria-current="page"' : '';
 }
 
-function socialLinks() {
-    return SOCIALS.map(function (s) {
-        return '<a href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + s.label + '">' + s.icon + '</a>';
-    }).join('');
+function socialList(cls) {
+    return '<ul class="' + cls + '">' + SOCIALS.map(function (s) {
+        return '<li><a href="' + s.href + '" target="_blank" rel="noopener"><span>' + s.label + '</span> <b>' + s.handle + '</b></a></li>';
+    }).join('') + '</ul>';
 }
 
 function headerHtml() {
-    const links = PAGES.map(function (p) {
-        return '<a href="' + p.href + '"' + current(p.id) + '>' + p.label + '</a>';
+    const links = PAGES.slice(1).map(function (p, i) {
+        return '<li><a href="' + p.href + '"' + current(p.id) + '><span class="n">' + String(i + 1).padStart(2, '0') + '</span>' + p.label + '</a></li>';
     }).join('');
 
-    const mobileLinks = PAGES.map(function (p, i) {
-        const n = String(i + 1).padStart(2, '0');
-        return '<li style="transition-delay:' + (0.04 * i + 0.05) + 's"><a href="' + p.href + '"' + current(p.id) + '><small>' + n + '</small>' + p.label + '</a></li>';
+    const rows = PAGES.map(function (p, i) {
+        return '<li style="--i:' + i + '"><a href="' + p.href + '"' + current(p.id) + '>'
+            + '<span class="n">' + String(i).padStart(2, '0') + '</span>'
+            + '<span class="t">' + p.label + '<small>' + p.dek + '</small></span>'
+            + '<span class="dots" aria-hidden="true"></span>'
+            + '<span class="p">p.' + p.p + '</span></a></li>';
     }).join('');
 
     return `
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-        <div class="wrap nav-inner">
-            <a href="index.html" class="brand" aria-label="Vamsee, home">${BRAND_MARK}<span>Vamsee</span></a>
-            <nav class="nav-links" aria-label="Primary">${links}</nav>
-            <div class="nav-actions">
-                <button class="theme-btn" type="button" aria-label="Dark mode" aria-pressed="false">${THEME_ICON}</button>
-                <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
-            </div>
+    <header class="topbar">
+        <div class="bar-in">
+            <a href="index.html" class="logo" aria-label="Vamsee, cover page"${current('home')}><span class="reg reg--line" data-reg>VAMSEE</span></a>
+            <span class="issue mono">Issue 02 <i>/</i> 2026</span>
+            <nav class="contents-nav" aria-label="Contents"><ol>${links}</ol></nav>
+            <button class="paper-btn" type="button" aria-pressed="false" aria-label="Black paper (dark mode)">
+                <span class="chip w" aria-hidden="true"></span><span class="chip b" aria-hidden="true"></span><span class="lbl mono">Paper</span>
+            </button>
+            <button class="menu-btn mono" type="button" aria-expanded="false" aria-controls="contents-sheet">Contents</button>
         </div>
     </header>
-    <div class="mobile-menu" id="mobile-menu" aria-label="Menu">
-        <ol>${mobileLinks}</ol>
-        <div class="menu-foot"><span>&copy; 2026 Vamsee</span><span class="socials">${socialLinks()}</span></div>
+    <div class="contents-sheet" id="contents-sheet" role="dialog" aria-modal="true" aria-label="Contents">
+        <div class="sheet-in">
+            <p class="mono sheet-top"><span>VAMSEE &middot; Issue 02 / 2026</span><button class="sheet-close mono" type="button">Close &times;</button></p>
+            <h2 class="sheet-title reg" data-reg>Contents</h2>
+            <ol class="toc">${rows}</ol>
+            ${socialList('sheet-socials mono')}
+        </div>
     </div>`;
 }
 
 function footerHtml() {
-    const idx = 'detail' in document.body.dataset ? -1 : PAGES.findIndex(function (p) { return p.id === currentPage; });
+    const detail = 'detail' in body.dataset;
+    const idx = detail ? -1 : pageIndex;
     const prev = idx > 0 ? PAGES[idx - 1] : null;
     const next = idx >= 0 && idx < PAGES.length - 1 ? PAGES[idx + 1] : null;
 
-    const prevLink = prev
-        ? '<a class="prev" href="' + prev.href + '">' + ICONS.arrow + '<span><small>Previous</small><span>' + prev.label + '</span></span></a>'
-        : '';
-    const nextLink = next
-        ? '<a class="next" href="' + next.href + '"><span><small>Next</small><span>' + next.label + '</span></span>' + ICONS.arrow + '</a>'
-        : '';
-    const pager = idx >= 0 ? '<nav class="pager" aria-label="Pages">' + prevLink + nextLink + '</nav>' : '';
+    const pager = idx >= 0 ? '<nav class="pager" aria-label="Turn the page">'
+        + (prev ? '<a class="prev" href="' + prev.href + '"><small class="mono">Back to p.' + prev.p + '</small><span>' + prev.label + '</span></a>' : '<span></span>')
+        + (next ? '<a class="next" href="' + next.href + '"><small class="mono">Turn to p.' + next.p + '</small><span>' + next.label + ARROW + '</span></a>' : '')
+        + '</nav>' : '';
 
     const cta = currentPage === 'contact' ? '' : `
-        <div class="footer-cta">
-            <p class="eyebrow">Open to conversations</p>
-            <a href="contact.html" class="big display">Let's build something <em class="mark" data-color="ochre">thoughtful</em>.</a>
-            <span class="hand">backend, logistics tech, or just a hello</span>
-        </div>`;
+        <a class="letters" href="contact.html">
+            <span class="mono k">Letters to the editor</span>
+            <span class="big">Hiring, backend, logistics tech &mdash; or just a hello? <u>Tear off a tab on p.32</u></span>
+        </a>`;
 
     return `
-    <footer class="site-footer">
+    <footer class="back">
         <div class="wrap">
             ${pager}
             ${cta}
-            <div class="footer-bottom">
-                <div class="palette" aria-hidden="true" title="The palette">
-                    <i style="--c:var(--ochre)"></i><i style="--c:var(--terracotta)"></i><i style="--c:var(--rose)"></i><i style="--c:var(--indigo)"></i><i style="--c:var(--sage)"></i>
+            <div class="colophon">
+                <div class="colour-bar" aria-hidden="true">
+                    ${REG_MARK}<i class="s pk"></i><i class="s pk t50"></i><i class="s bl"></i><i class="s bl t50"></i><i class="s ov"></i><i class="s ye"></i><i class="s k"></i>${REG_MARK}
                 </div>
-                <p style="margin:0">&copy; 2026 Vamsee &middot; Designed &amp; built by hand</p>
-                <div class="socials">${socialLinks()}</div>
+                <div class="colo-text">
+                    <p class="colo-h">Colophon</p>
+                    <p>Printed digitally in two inks &middot; Issue 02 &middot; 2026 &middot; Made by Vamsee.</p>
+                    <p class="mono small">Set in Big Shoulders Display, Archivo &amp; IBM Plex Mono. Inks: Fluorescent Pink, Riso Blue, a little Yellow. Drawings by the author.</p>
+                </div>
+                ${socialList('colo-socials mono')}
             </div>
+            <p class="folio mono"><span>${folio}</span><span>VAMSEE &middot; Issue 02 / 2026</span><span>&copy; 2026 Vamsee</span></p>
         </div>
     </footer>`;
 }
@@ -119,12 +123,92 @@ function mount(id, html) {
 
 mount('site-header', headerHtml());
 mount('site-footer', footerHtml());
-document.body.insertAdjacentHTML('beforeend', '<div class="scroll-progress" aria-hidden="true"></div>');
+
+// ---------------------------------------------------------------------------
+// Ink separations. Each SVG filter turns an image's lightness into the alpha of one flat ink,
+// so paper shows through and inks overprint (multiply on white paper, screen on black paper).
+// Drawings mix a local-contrast term (blurred minus original) with a global threshold so uneven
+// paper photos drop out cleanly: alpha = a*blur - (a+b)*L + o.
+// ---------------------------------------------------------------------------
+(function () {
+    const LUM = '.2126 .7152 .0722';
+    const DRAW = {
+        line: { a: 2.2, b: 2.0, o: 1.75, blur: 14 },   // ink on white paper
+        grey: { a: 3.0, b: 1.6, o: 0.95, blur: 14 },   // pen/pencil on grey or tinted paper
+        bold: { a: 0.6, b: 2.4, o: 1.85, blur: 14 },   // heavy blacks; keep big solid areas solid
+    };
+    const INKS = ['blue', 'pink', 'ink', 'yellow'];
+    const dot = function (s) {
+        return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" + s + "' height='" + s + "'%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-opacity='0'/%3E%3Cstop offset='1' stop-opacity='1'/%3E%3C/radialGradient%3E%3Crect width='" + s + "' height='" + s + "' fill='url(%23g)'/%3E%3C/svg%3E";
+    };
+    // alpha = k*(p - L) as a colour-matrix row
+    function tone(k, p) {
+        const w = LUM.split(' ').map(function (x) { return (-k * parseFloat(x)).toFixed(4); });
+        return w.join(' ') + ' 0 ' + (k * p).toFixed(4);
+    }
+    let out = '';
+    Object.keys(DRAW).forEach(function (name) {
+        const d = DRAW[name];
+        INKS.forEach(function (ink) {
+            out += '<filter id="' + name + '-' + ink + '" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">'
+                + '<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ' + LUM + ' 0 0" result="L"/>'
+                + '<feGaussianBlur in="L" stdDeviation="' + d.blur + '" result="B"/>'
+                + '<feComposite in="B" in2="L" operator="arithmetic" k2="' + d.a + '" k3="' + (-(d.a + d.b)) + '" k4="' + d.o + '" result="A"/>'
+                + '<feComposite in="A" in2="SourceAlpha" operator="in" result="A2"/>'
+                + '<feFlood class="fl-' + ink + '"/><feComposite in2="A2" operator="in"/></filter>';
+        });
+    });
+    // Logos: plain threshold, and a silhouette version for white-on-transparent marks
+    INKS.forEach(function (ink) {
+        out += '<filter id="logo-' + ink + '" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">'
+            + '<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ' + tone(2.4, 0.76) + '" result="A"/>'
+            + '<feComposite in="A" in2="SourceAlpha" operator="in" result="A2"/>'
+            + '<feFlood class="fl-' + ink + '"/><feComposite in2="A2" operator="in"/></filter>'
+            + '<filter id="shape-' + ink + '" x="0" y="0" width="1" height="1">'
+            + '<feFlood class="fl-' + ink + '"/><feComposite in2="SourceAlpha" operator="in"/></filter>';
+    });
+    // Photos are printed as two separations on their own sheet of white stock (in both themes):
+    // Riso Blue carries the shadows, Fluorescent Pink carries the midtones through a halftone screen.
+    function photo(id, color, k, p, screen) {
+        let f = '<filter id="' + id + '" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">'
+            + '<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ' + tone(k, p) + '" result="A"/>';
+        if (screen) {
+            f += '<feImage href="' + dot(screen) + '" x="0" y="0" width="' + screen + '" height="' + screen + '" result="dot"/>'
+                + '<feTile in="dot" result="D"/>'
+                + '<feComposite in="A" in2="D" operator="arithmetic" k2="6" k3="-6" k4="0.1" result="A"/>';
+        }
+        return f + '<feFlood flood-color="' + color + '"/><feComposite in2="A" operator="in"/></filter>';
+    }
+    out += photo('photo-blue', '#0078BF', 2.1, 0.5, 0);
+    out += photo('photo-pink', '#FF48B0', 1.55, 0.9, 4);
+    out += photo('shot-blue', '#0078BF', 2.6, 0.82, 0);
+    out += photo('shot-pink', '#FF48B0', 2.4, 0.965, 3);
+    // Rubber stamps: speckled ink, slightly wobbly edges
+    out += '<filter id="stamp-rough" x="-5%" y="-5%" width="110%" height="110%">'
+        + '<feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="7" result="t"/>'
+        + '<feColorMatrix in="t" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.7 0 0 0 1.55" result="m"/>'
+        + '<feComposite in="SourceGraphic" in2="m" operator="in" result="s"/>'
+        + '<feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="2" result="w"/>'
+        + '<feDisplacementMap in="s" in2="w" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>';
+
+    body.insertAdjacentHTML('afterbegin', '<svg class="ink-defs" width="0" height="0" aria-hidden="true" focusable="false">' + out + '</svg>');
+    root.classList.add('inks');
+})();
+
+// Duplicate the text of every [data-reg] heading into a second, misregistered ink layer
+document.querySelectorAll('[data-reg]').forEach(function (el) {
+    el.classList.add('reg');
+    el.setAttribute('data-text', el.innerText.trim());
+});
+
+// Crop marks on every sheet
+document.querySelectorAll('.crops').forEach(function (el) {
+    el.insertAdjacentHTML('afterbegin', '<i class="crop tl" aria-hidden="true"></i><i class="crop tr" aria-hidden="true"></i><i class="crop bl" aria-hidden="true"></i><i class="crop br" aria-hidden="true"></i>');
+});
 
 // Theme: the inline script in <head> sets data-theme before first paint; this keeps it in sync
 (function () {
-    const root = document.documentElement;
-    const btn = document.querySelector('.theme-btn');
+    const btn = document.querySelector('.paper-btn');
     const meta = document.querySelector('meta[name="theme-color"]');
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -134,14 +218,14 @@ document.body.insertAdjacentHTML('beforeend', '<div class="scroll-progress" aria
 
     function apply(theme) {
         root.dataset.theme = theme;
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#1A1816' : '#FBF8F3');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#141316' : '#F3F0E9');
         if (btn) {
             btn.setAttribute('aria-pressed', String(theme === 'dark'));
-            btn.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+            btn.title = theme === 'dark' ? 'Print on white paper' : 'Print on black paper';
         }
     }
 
-    function switchTo(theme, x, y) {
+    function switchTo(theme) {
         try { localStorage.setItem('theme', theme); } catch (e) {}
         if (reduceMotion) {
             apply(theme);
@@ -153,13 +237,12 @@ document.body.insertAdjacentHTML('beforeend', '<div class="scroll-progress" aria
             setTimeout(function () { root.classList.remove('theme-fade'); }, 500);
             return;
         }
-        // New theme spreads out from the button like ink on paper
-        const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+        // The new sheet feeds through the drum from the top, like paper through a duplicator
         const t = document.startViewTransition(function () { apply(theme); });
         t.ready.then(function () {
             root.animate(
-                { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + r + 'px at ' + x + 'px ' + y + 'px)'] },
-                { duration: 700, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', pseudoElement: '::view-transition-new(root)' }
+                { clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0% 0)'] },
+                { duration: 650, easing: 'cubic-bezier(0.5, 0, 0.1, 1)', pseudoElement: '::view-transition-new(root)' }
             );
         }).catch(function () {});
     }
@@ -168,90 +251,55 @@ document.body.insertAdjacentHTML('beforeend', '<div class="scroll-progress" aria
 
     if (btn) {
         btn.addEventListener('click', function () {
-            const r = btn.getBoundingClientRect();
-            switchTo(root.dataset.theme === 'dark' ? 'light' : 'dark', r.left + r.width / 2, r.top + r.height / 2);
+            switchTo(root.dataset.theme === 'dark' ? 'light' : 'dark');
         });
     }
 
-    // Follow the OS setting until the visitor picks a theme themselves
+    // Follow the OS setting until the visitor picks a paper themselves
     systemDark.addEventListener('change', function (e) {
         const s = stored();
         if (s !== 'light' && s !== 'dark') apply(e.matches ? 'dark' : 'light');
     });
 })();
 
-// Hand-drawn underline under every .mark; each gets a slightly different stroke
-(function () {
-    const strokes = [
-        'M2 12 C 30 5, 70 3, 110 8 S 170 13, 198 6',
-        'M3 9 C 45 13, 95 4, 140 7 S 185 12, 197 8',
-        'M2 10 C 40 4, 80 12, 120 7 S 175 4, 198 10',
-    ];
-    document.querySelectorAll('.mark').forEach(function (el, i) {
-        el.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="' + strokes[i % strokes.length] + '"/></svg>');
-    });
-})();
-
-// Mobile menu
+// Contents sheet (mobile / narrow screens)
 (function () {
     const btn = document.querySelector('.menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (!btn || !menu) return;
+    const sheet = document.getElementById('contents-sheet');
+    if (!btn || !sheet) return;
+    const close = sheet.querySelector('.sheet-close');
 
     function setOpen(open) {
-        document.body.classList.toggle('menu-open', open);
-        document.body.style.overflow = open ? 'hidden' : '';
+        body.classList.toggle('sheet-open', open);
+        body.style.overflow = open ? 'hidden' : '';
         btn.setAttribute('aria-expanded', String(open));
-        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (open) {
+            const cur = sheet.querySelector('[aria-current]') || sheet.querySelector('a');
+            setTimeout(function () { (close || cur).focus(); }, 60);
+        }
     }
 
-    btn.addEventListener('click', function () {
-        setOpen(!document.body.classList.contains('menu-open'));
-    });
-    menu.querySelectorAll('a').forEach(function (a) {
+    btn.addEventListener('click', function () { setOpen(!body.classList.contains('sheet-open')); });
+    if (close) close.addEventListener('click', function () { setOpen(false); btn.focus(); });
+    sheet.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () { setOpen(false); });
     });
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        if (e.key === 'Escape' && body.classList.contains('sheet-open')) {
             setOpen(false);
             btn.focus();
         }
     });
-    window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) {
+    window.matchMedia('(min-width: 1121px)').addEventListener('change', function (e) {
         if (e.matches) setOpen(false);
     });
 })();
 
-// Count-up numbers: <p data-count="9.36" data-decimals="2" data-suffix="+">
-function countUp(el) {
-    const target = parseFloat(el.dataset.count);
-    const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const suffix = el.dataset.suffix || '';
-    if (reduceMotion) {
-        el.textContent = target.toFixed(decimals) + suffix;
-        return;
-    }
-    const duration = 1600;
-    const start = performance.now();
-    function step(now) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = (target * eased).toFixed(decimals) + suffix;
-        if (t < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-}
-
-// Scroll reveal for .reveal blocks and .mark underlines
+// Sections slide in like pages being turned
 (function () {
-    const items = document.querySelectorAll('.reveal, .mark');
-    if (!reduceMotion) {
-        document.querySelectorAll('[data-count]').forEach(function (el) {
-            el.textContent = '0' + (el.dataset.suffix || '');
-        });
-    }
-    if (!('IntersectionObserver' in window)) {
-        items.forEach(function (el) { el.classList.add('visible', 'in'); });
+    const items = document.querySelectorAll('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
         return;
     }
     const observer = new IntersectionObserver(function (entries) {
@@ -259,69 +307,61 @@ function countUp(el) {
             if (!entry.isIntersecting) return;
             const el = entry.target;
             observer.unobserve(el);
-            if (el.classList.contains('mark')) {
-                el.classList.add('in');
-                return;
-            }
-            // Stagger siblings that come into view together
             const siblings = Array.from(el.parentElement.children).filter(function (c) { return c.classList.contains('reveal'); });
-            const delay = Math.min(siblings.indexOf(el), 5) * 0.1;
+            const delay = Math.min(Math.max(siblings.indexOf(el), 0), 5) * 0.07;
             el.style.transitionDelay = delay + 's';
             el.classList.add('visible');
-            el.querySelectorAll('[data-count]').forEach(countUp);
-            setTimeout(function () { el.style.transitionDelay = ''; }, delay * 1000 + 900);
+            setTimeout(function () { el.style.transitionDelay = ''; }, delay * 1000 + 700);
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-
+    }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
     items.forEach(function (el) { observer.observe(el); });
 })();
 
-// Scroll-driven: progress bar, header background, hide header while reading down
+// Plate viewer for the centrefold: <a data-plate href="full.jpg"> opens a larger print
 (function () {
-    const progress = document.querySelector('.scroll-progress');
-    const header = document.querySelector('.site-header');
+    const plates = document.querySelectorAll('[data-plate]');
+    if (!plates.length || typeof HTMLDialogElement !== 'function') return;
+    body.insertAdjacentHTML('beforeend',
+        '<dialog class="viewer" aria-label="Plate viewer"><figure><div class="viewer-img"></div><figcaption class="mono"></figcaption></figure>'
+        + '<button class="viewer-close mono" type="button">Close &times;</button></dialog>');
+    const dlg = document.querySelector('.viewer');
+    const holder = dlg.querySelector('.viewer-img');
+    const cap = dlg.querySelector('figcaption');
+    plates.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            const img = a.querySelector('img');
+            holder.innerHTML = '';
+            const big = img.cloneNode();
+            big.removeAttribute('loading');
+            big.className = img.className;
+            holder.className = 'viewer-img ' + (a.dataset.plate || '');
+            holder.appendChild(big);
+            cap.textContent = a.dataset.caption || img.alt;
+            dlg.showModal();
+        });
+    });
+    dlg.querySelector('.viewer-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+
+// Header: tuck away while reading down, come back when scrolling up
+(function () {
+    const header = document.querySelector('.topbar');
+    if (!header) return;
     let lastY = window.scrollY;
     let ticking = false;
-
     function update() {
         const y = window.scrollY;
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        if (progress) progress.style.transform = 'scaleX(' + (maxScroll > 0 ? y / maxScroll : 0) + ')';
-        if (header) {
-            header.classList.toggle('scrolled', y > 12);
-            if (y > lastY && y > 240) header.classList.add('hidden-up');
-            else if (y < lastY) header.classList.remove('hidden-up');
-        }
+        header.classList.toggle('scrolled', y > 8);
+        if (y > lastY && y > 260 && !body.classList.contains('sheet-open')) header.classList.add('tucked');
+        else if (y < lastY) header.classList.remove('tucked');
         lastY = y;
         ticking = false;
     }
-
     window.addEventListener('scroll', function () {
-        if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(update);
-        }
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
-    window.addEventListener('resize', update);
+    header.addEventListener('focusin', function () { header.classList.remove('tucked'); });
     update();
-})();
-
-// Fade out before moving to another page on this site
-(function () {
-    if (reduceMotion) return;
-    document.addEventListener('click', function (e) {
-        const a = e.target.closest('a');
-        if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-        if ((a.target && a.target !== '_self') || a.hasAttribute('download')) return;
-        const url = new URL(a.href, location.href);
-        if (url.origin !== location.origin) return;
-        if (url.pathname === location.pathname && url.hash) return;
-        e.preventDefault();
-        document.body.classList.add('is-leaving');
-        setTimeout(function () { location.href = url.href; }, 230);
-    });
-    // Coming back via the back button restores the page from cache, still faded out
-    window.addEventListener('pageshow', function (e) {
-        if (e.persisted) document.body.classList.remove('is-leaving');
-    });
 })();
