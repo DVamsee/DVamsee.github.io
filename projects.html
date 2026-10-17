@@ -1,91 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected projects by Vamsee — Veggy, an agri e-commerce platform, and Taskify, a task manager.">
+    <meta name="theme-color" content="#FBF8F3">
+    <title>Projects · Vamsee</title>
+    <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="dist/site.css" rel="stylesheet">
+    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+</head>
+<body data-page="projects">
 
-        <title>Projects · Vamsee</title>
-        <link rel="icon" type="image/x-icon" href="dist/img/1c1.png">
-        <link href = 'dist/output.css' rel = 'stylesheet' type = 'text/css'>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="dist/site.css" rel="stylesheet">
-    </head>
-    <body class="bg-black font-mono" data-page="projects">
+    <div id="site-header"></div>
 
-      <canvas id="bg-canvas"></canvas>
-      <div id="site-header"></div>
+    <main id="main">
 
-          <!-- Page hero -->
-          <section class="body-font px-5 pt-28 md:pt-48 lg:pt-36 pb-6 sm:pb-10">
-            <div class="hero-stagger max-w-3xl mx-auto flex flex-col items-center text-center" data-parallax>
-              <p class="text-green-400 text-xs sm:text-sm tracking-widest uppercase mb-3 opacity-80">~/projects</p>
-              <h1 class="title-font text-gradient text-4xl sm:text-6xl font-bold text-white mb-4">Projects</h1>
-              <div class="w-16 sm:w-24 h-1 bg-green-500 rounded-full mb-5 opacity-70"></div>
-              <p class="text-gray-400 text-base sm:text-xl leading-relaxed">Things I've designed and built end to end.</p>
+        <section class="page-hero">
+            <div class="wrap page-hero-grid">
+                <div class="hero-stagger">
+                    <p class="eyebrow">Chapter 02 &middot; Projects</p>
+                    <h1 class="display">Selected <em>work</em></h1>
+                    <p class="lede">Things I've designed and built end to end.</p>
+                </div>
+                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="6" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+                    <rect class="wash" filter="url(#wc)" x="44" y="36" width="104" height="126" fill="#D9714E" opacity=".86"/>
+                    <circle class="wash" filter="url(#wc)" cx="142" cy="138" r="38" fill="#6E9C82" opacity=".86"/>
+                    <path class="ink" pathLength="1" d="M32 26 H160 V174 H32 Z M64 174 L46 198 M128 174 L146 198 M96 26 V10"/>
+                </svg>
             </div>
-          </section>
+        </section>
 
-          <!-- Projects -->
-          <section id="projects" class="text-gray-400 body-font">
-            <div class="container px-5 lg:px-20 py-10 sm:py-16 mx-auto">
-              <div class="dim-group grid md:grid-cols-2 gap-8">
+        <section class="section" style="padding-top:24px">
+            <div class="wrap">
+                <div class="works">
 
-                <!--veggy-->
-                <a href="veggy.html" class="reveal glass-card rounded-xl overflow-hidden flex flex-col" data-reveal="zoom">
-                  <div class="card-media h-48 sm:h-56 overflow-hidden border-b border-green-900 border-opacity-40">
-                    <img src="dist/img/veggy/home.png" alt="Veggy home page" class="w-full h-full object-cover object-top">
-                  </div>
-                  <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex items-center mb-3">
-                      <img src="dist/img/veggy/veggy_logo.jpg" alt="Veggy logo" class="w-10 h-10 rounded-full mr-3">
-                      <h2 class="text-2xl sm:text-4xl text-white font-medium title-font">Veggy</h2>
-                    </div>
-                    <p class="leading-relaxed text-lg sm:text-xl mb-4 flex-grow text-gray-500">E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">E-Commerce</span>
-                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">C2C</span>
-                    </div>
-                    <span class="cta text-green-400 inline-flex items-center">Learn More
-                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </span>
-                  </div>
-                </a>
+                    <article class="work reveal a-sage">
+                        <a href="veggy.html" class="frame" aria-label="Veggy — view project">
+                            <span class="tape" aria-hidden="true"></span>
+                            <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
+                        </a>
+                        <div class="label">
+                            <p class="plate">Plate I &middot; E-Commerce &middot; C2C</p>
+                            <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
+                            <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
+                            <a href="veggy.html" class="link-arrow">View project
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <!--taskify-->
-                <a href="taskify.html" class="reveal glass-card rounded-xl overflow-hidden flex flex-col" data-reveal="zoom">
-                  <div class="card-media h-48 sm:h-56 overflow-hidden border-b border-green-900 border-opacity-40">
-                    <img src="dist/img/taskify/home_.png" alt="Taskify home page" class="w-full h-full object-cover object-top">
-                  </div>
-                  <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex items-center mb-3">
-                      <img src="dist/img/taskify/logo.png" alt="Taskify logo" class="w-10 h-10 rounded-full mr-3">
-                      <h2 class="text-2xl sm:text-4xl text-white font-medium title-font">Taskify</h2>
-                    </div>
-                    <p class="leading-relaxed text-lg sm:text-xl mb-4 flex-grow text-gray-500">Online task management application to organize, prioritize and track work for individuals and teams.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">Productivity</span>
-                      <span class="px-3 py-1 text-xs rounded-full border border-green-500 border-opacity-30 text-green-400 bg-green-900 bg-opacity-20">Web App</span>
-                    </div>
-                    <span class="cta text-green-400 inline-flex items-center">Learn More
-                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </span>
-                  </div>
-                </a>
+                    <article class="work reveal a-indigo">
+                        <a href="taskify.html" class="frame" aria-label="Taskify — view project">
+                            <span class="tape" aria-hidden="true"></span>
+                            <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
+                        </a>
+                        <div class="label">
+                            <p class="plate">Plate II &middot; Productivity &middot; Web app</p>
+                            <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
+                            <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
+                            <a href="taskify.html" class="link-arrow">View project
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                    </article>
 
-              </div>
+                </div>
 
-              <p class="reveal text-center mt-12 text-gray-500">More on
-                <a href="https://github.com/DVamsee" target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 underline">GitHub</a>
-              </p>
+                <p class="aside-note reveal"><span class="hand">more sketches &amp; experiments on</span> <a href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub</a></p>
             </div>
-          </section>
+        </section>
 
-      <div id="site-footer"></div>
+    </main>
 
-        <script type="text/javascript" src="dist/main.js"></script>
-    </body>
+    <div id="site-footer"></div>
+
+    <script src="dist/main.js"></script>
+</body>
 </html>

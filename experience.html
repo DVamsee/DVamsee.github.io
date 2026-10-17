@@ -1,116 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vamsee's experience — Backend Developer at Shipsy and SQL/PL-SQL intern at Virtusa.">
+    <meta name="theme-color" content="#FBF8F3">
+    <title>Experience · Vamsee</title>
+    <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="dist/site.css" rel="stylesheet">
+    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+</head>
+<body data-page="experience">
 
-        <title>Experience · Vamsee</title>
-        <link rel="icon" type="image/x-icon" href="dist/img/1c1.png">
-        <link href = 'dist/output.css' rel = 'stylesheet' type = 'text/css'>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="dist/site.css" rel="stylesheet">
-    </head>
-    <body class="bg-black font-mono" data-page="experience">
+    <div id="site-header"></div>
 
-      <canvas id="bg-canvas"></canvas>
-      <div id="site-header"></div>
+    <main id="main">
 
-          <!-- Page hero -->
-          <section class="body-font px-5 pt-28 md:pt-48 lg:pt-36 pb-6 sm:pb-10">
-            <div class="hero-stagger max-w-3xl mx-auto flex flex-col items-center text-center" data-parallax>
-              <p class="text-green-400 text-xs sm:text-sm tracking-widest uppercase mb-3 opacity-80">~/experience</p>
-              <h1 class="title-font text-gradient text-4xl sm:text-6xl font-bold text-white mb-4">Experience</h1>
-              <div class="w-16 sm:w-24 h-1 bg-green-500 rounded-full mb-5 opacity-70"></div>
-              <p class="text-gray-400 text-base sm:text-xl leading-relaxed">Where I've been building &mdash; from SQL internships to backend services for enterprise logistics.</p>
+        <section class="page-hero">
+            <div class="wrap page-hero-grid">
+                <div class="hero-stagger">
+                    <p class="eyebrow">Chapter 01 &middot; Experience</p>
+                    <h1 class="display">Where I&rsquo;ve <em>worked</em></h1>
+                    <p class="lede">Where I've been building &mdash; from SQL internships to backend services for enterprise logistics.</p>
+                </div>
+                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+                    <circle class="wash" filter="url(#wc)" cx="134" cy="66" r="46" fill="#E3A93B" opacity=".9"/>
+                    <rect class="wash" filter="url(#wc)" x="28" y="92" width="92" height="92" fill="#3E5C8A" opacity=".82"/>
+                    <path class="ink" pathLength="1" d="M18 186 H58 V150 H98 V114 H138 V78 H186"/>
+                </svg>
             </div>
-          </section>
+        </section>
 
-          <!-- Experience (Desktop) -->
-          <section id="experience" class="hidden text-gray-400 pb-16 body-font sm:block">
-            <div class="container px-5 py-10 mx-auto flex flex-wrap place-items-center">
+        <section class="section" style="padding-top:24px">
+            <div class="wrap">
+                <ol class="timeline">
 
-              <div class="reveal timeline-item flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="tl-line h-full w-1 bg-gray-800 pointer-events-none"></div>
-                </div>
-                <div class="tl-badge flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2023-Present</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 text-green-400 inline-flex items-center justify-center">
-                    <img src="dist/img/shipsy_logo.png" alt="Shipsy logo">
-                  </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-white mb-1 text-4xl">Shipsy</h2>
-                    <p class="text-green-500 text-2xl font-medium">Backend Developer</p>
-                    <p class="text-green-500 text-xl font-medium">Started as Intern, 2023 - Present</p>
-                    <p class="leading-relaxed text-lg mt-2">Working as a Backend Developer at Shipsy, a leading logistics software solution provider. Building and maintaining scalable backend services for enterprise transportation and supply chain management platforms.</p>
-                  </div>
-                </div>
-              </div>
+                    <li class="entry reveal a-ochre">
+                        <span class="entry-dot" aria-hidden="true"></span>
+                        <article class="entry-card">
+                            <div class="entry-logo"><img src="dist/img/shipsy_logo.png" alt="Shipsy logo"></div>
+                            <div>
+                                <p class="entry-when">2023 &mdash; Present</p>
+                                <h2>Shipsy</h2>
+                                <p class="role">Backend Developer <span>&middot; started as an intern</span></p>
+                                <p>Working as a Backend Developer at Shipsy, a leading logistics software solution provider. Building and maintaining scalable backend services for enterprise transportation and supply chain management platforms.</p>
+                                <ul class="tags">
+                                    <li class="tag-pill">Microservices</li>
+                                    <li class="tag-pill">REST APIs</li>
+                                    <li class="tag-pill">Databases</li>
+                                    <li class="tag-pill">Cloud</li>
+                                    <li class="tag-pill">Distributed systems</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </li>
 
-              <div class="reveal timeline-item flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="tl-line h-full w-1 bg-gray-800 pointer-events-none"></div>
-                </div>
-                <div class="tl-badge flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">May-Aug 2023</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 text-green-400 inline-flex items-center justify-center">
-                    <img src="dist/img/virtusa_logo.jpeg" alt="Virtusa logo">
-                  </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-white mb-1 text-4xl">Virtusa</h2>
-                    <p class="text-green-500 text-2xl font-medium">Intern</p>
-                    <p class="text-green-500 text-xl font-medium">Remote</p>
-                    <p class="leading-relaxed text-lg mt-2">Worked on SQL and PL/SQL during the internship, gaining hands-on experience with database development, query optimization, and stored procedures.</p>
-                  </div>
-                </div>
-              </div>
+                    <li class="entry reveal a-indigo">
+                        <span class="entry-dot" aria-hidden="true"></span>
+                        <article class="entry-card">
+                            <div class="entry-logo"><img src="dist/img/virtusa_logo.jpeg" alt="Virtusa logo"></div>
+                            <div>
+                                <p class="entry-when">May &mdash; Aug 2023</p>
+                                <h2>Virtusa</h2>
+                                <p class="role">Intern <span>&middot; remote</span></p>
+                                <p>Worked on SQL and PL/SQL during the internship, gaining hands-on experience with database development, query optimisation, and stored procedures.</p>
+                                <ul class="tags">
+                                    <li class="tag-pill">SQL</li>
+                                    <li class="tag-pill">PL/SQL</li>
+                                    <li class="tag-pill">Query optimisation</li>
+                                    <li class="tag-pill">Stored procedures</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </li>
 
+                </ol>
             </div>
-          </section>
+        </section>
 
-          <!-- Experience (Mobile) -->
-          <section id="experience_m" class="text-gray-400 pt-4 pb-12 body-font sm:hidden">
-            <div class="px-5">
-              <div class="flex flex-col space-y-4">
+    </main>
 
-                <div data-reveal="left" class="reveal p-4 rounded-xl border border-green-900 border-opacity-40 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
-                  <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-green-500 text-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xl font-semibold text-white">Shipsy</p>
-                      <p class="text-sm text-green-400">Backend Developer</p>
-                    </div>
-                  </div>
-                  <p class="text-xs text-gray-500 mb-2">2023 - Present (Started as Intern)</p>
-                  <p class="text-sm text-gray-300 leading-relaxed">Building scalable backend services for enterprise logistics and supply chain management platforms.</p>
-                </div>
+    <div id="site-footer"></div>
 
-                <div data-reveal="left" class="reveal p-4 rounded-xl border border-green-900 border-opacity-40 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
-                  <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-green-500 text-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xl font-semibold text-white">Virtusa</p>
-                      <p class="text-sm text-green-400">Intern</p>
-                    </div>
-                  </div>
-                  <p class="text-xs text-gray-500 mb-2">May - August 2023 (Remote)</p>
-                  <p class="text-sm text-gray-300 leading-relaxed">Worked on SQL and PL/SQL, gaining hands-on experience with database development and query optimization.</p>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-      <div id="site-footer"></div>
-
-        <script type="text/javascript" src="dist/main.js"></script>
-    </body>
+    <script src="dist/main.js"></script>
+</body>
 </html>

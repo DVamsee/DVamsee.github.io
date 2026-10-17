@@ -1,141 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vamsee's education — B.Tech in Computer Science and Engineering from SIETK.">
+    <meta name="theme-color" content="#FBF8F3">
+    <title>Education · Vamsee</title>
+    <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="dist/site.css" rel="stylesheet">
+    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+</head>
+<body data-page="education">
 
-        <title>Education · Vamsee</title>
-        <link rel="icon" type="image/x-icon" href="dist/img/1c1.png">
-        <link href = 'dist/output.css' rel = 'stylesheet' type = 'text/css'>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="dist/site.css" rel="stylesheet">
-    </head>
-    <body class="bg-black font-mono" data-page="education">
+    <div id="site-header"></div>
 
-      <canvas id="bg-canvas"></canvas>
-      <div id="site-header"></div>
+    <main id="main">
 
-          <!-- Page hero -->
-          <section class="body-font px-5 pt-28 md:pt-48 lg:pt-36 pb-6 sm:pb-10">
-            <div class="hero-stagger max-w-3xl mx-auto flex flex-col items-center text-center" data-parallax>
-              <p class="text-green-400 text-xs sm:text-sm tracking-widest uppercase mb-3 opacity-80">~/education</p>
-              <h1 class="title-font text-gradient text-4xl sm:text-6xl font-bold text-white mb-4">Education</h1>
-              <div class="w-16 sm:w-24 h-1 bg-green-500 rounded-full mb-5 opacity-70"></div>
-              <p class="text-gray-400 text-base sm:text-xl leading-relaxed">The foundations &mdash; from school to a degree in Computer Science.</p>
+        <section class="page-hero">
+            <div class="wrap page-hero-grid">
+                <div class="hero-stagger">
+                    <p class="eyebrow">Chapter 05 &middot; Education</p>
+                    <h1 class="display">Where I <em>learned</em></h1>
+                    <p class="lede">The foundations &mdash; from school to a degree in Computer Science.</p>
+                </div>
+                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+                    <path class="wash" filter="url(#wc)" d="M36 190 V112 a62 62 0 0 1 124 0 V190 Z" fill="#3E5C8A" opacity=".82"/>
+                    <circle class="wash" filter="url(#wc)" cx="156" cy="46" r="28" fill="#E3A93B" opacity=".9"/>
+                    <path class="ink" pathLength="1" d="M56 156 C 76 146, 92 146, 98 152 C 104 146, 120 146, 140 156 M98 152 V188 M56 156 V190 C 76 180, 92 180, 98 188 C 104 180, 120 180, 140 190 V156"/>
+                </svg>
             </div>
-          </section>
+        </section>
 
-          <!-- Education (Desktop) -->
-          <section id="education" class="hidden text-gray-400 pb-16 body-font sm:block">
-            <div class="container px-5 py-10 mx-auto flex flex-wrap place-items-center">
+        <section class="section" style="padding-top:24px">
+            <div class="wrap">
+                <ol class="timeline">
 
-              <div class="reveal timeline-item flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="tl-line h-full w-1 bg-gray-800 pointer-events-none"></div>
-                </div>
-                <div class="tl-badge flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2019-23</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 text-green-400 inline-flex items-center justify-center">
-                    <img src="dist/img/sietk-logo.png" alt="SIETK logo">
-                  </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-white mb-1 text-4xl">Bachelor of Technology</h2>
-                    <p class="text-green-500 text-2xl font-medium">Institution : Siddharth Institute of Engineering and Technology</p>
-                    <p class="text-green-500 text-xl font-medium">Course : Computer Science and Engineering</p>
-                    <p class="text-green-500 text-xl font-medium">CGPA : 9.36</p>
-                  </div>
-                </div>
-              </div>
+                    <li class="entry reveal a-indigo">
+                        <span class="entry-dot" aria-hidden="true"></span>
+                        <article class="entry-card">
+                            <div class="entry-logo"><img src="dist/img/sietk-logo.png" alt="SIETK logo"></div>
+                            <div>
+                                <p class="entry-when">2019 &mdash; 2023</p>
+                                <h2>Bachelor of Technology</h2>
+                                <dl>
+                                    <dt>Institution</dt><dd>Siddharth Institute of Engineering and Technology</dd>
+                                    <dt>Course</dt><dd>Computer Science and Engineering</dd>
+                                    <dt>CGPA</dt><dd>9.36</dd>
+                                </dl>
+                            </div>
+                        </article>
+                    </li>
 
-              <div class="reveal timeline-item flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="tl-line h-full w-1 bg-gray-800 pointer-events-none"></div>
-                </div>
-                <div class="tl-badge flex-shrink-0 rounded-xl px-2 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2017-19</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 text-green-400 inline-flex items-center justify-center">
-                    <img src="dist/img/bvb_logo_1.png" alt="Bharathiya Vidya Bhavan logo">
-                  </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-white mb-1 text-4xl">Senior Secondary Education</h2>
-                    <p class="text-green-500 text-2xl font-medium">Institution : Bharathiya Vidya Bhavan’s SV Vidyalaya</p>
-                    <p class="text-green-500 text-xl font-medium">Course : MPC (Mathematics, Physics, Chemistry)</p>
-                    <p class="text-green-500 text-xl font-medium">CGPA : 9.12</p>
-                  </div>
-                </div>
-              </div>
+                    <li class="entry reveal a-ochre">
+                        <span class="entry-dot" aria-hidden="true"></span>
+                        <article class="entry-card">
+                            <div class="entry-logo"><img src="dist/img/bvb_logo_1.png" alt="Bharathiya Vidya Bhavan logo"></div>
+                            <div>
+                                <p class="entry-when">2017 &mdash; 2019</p>
+                                <h2>Senior Secondary Education</h2>
+                                <dl>
+                                    <dt>Institution</dt><dd>Bharathiya Vidya Bhavan&rsquo;s SV Vidyalaya</dd>
+                                    <dt>Course</dt><dd>MPC (Mathematics, Physics, Chemistry)</dd>
+                                    <dt>CGPA</dt><dd>9.12</dd>
+                                </dl>
+                            </div>
+                        </article>
+                    </li>
 
-              <div class="reveal timeline-item flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="tl-line h-full w-1 bg-gray-800 pointer-events-none"></div>
-                </div>
-                <div class="tl-badge flex-shrink-0 rounded-xl px-5 py-1 mt-10 sm:mt-0 inline-flex items-center justify-center bg-green-500 text-gray-950 relative z-10 title-font font-medium text-lg">2017</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 mx-4 w-32 h-32 text-green-400 inline-flex items-center justify-center">
-                    <img src="dist/img/chinmaya_logo.png" alt="Chinmaya Vidyalaya logo">
-                  </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-white mb-1 text-4xl">Secondary Education</h2>
-                    <p class="text-green-500 text-2xl font-medium">Institution : MARG Chinmaya Vidyalaya</p>
-                    <p class="text-green-500 text-xl font-medium">CGPA : 10</p>
-                  </div>
-                </div>
-              </div>
+                    <li class="entry reveal a-sage">
+                        <span class="entry-dot" aria-hidden="true"></span>
+                        <article class="entry-card">
+                            <div class="entry-logo"><img class="logo-light" src="dist/img/chinmaya_logo.png" alt="Chinmaya Vidyalaya logo"></div>
+                            <div>
+                                <p class="entry-when">2017</p>
+                                <h2>Secondary Education</h2>
+                                <dl>
+                                    <dt>Institution</dt><dd>MARG Chinmaya Vidyalaya</dd>
+                                    <dt>CGPA</dt><dd>10</dd>
+                                </dl>
+                            </div>
+                        </article>
+                    </li>
 
+                </ol>
             </div>
-          </section>
+        </section>
 
-          <!-- Education (Mobile) -->
-          <section id="education_m" class="text-gray-400 pt-4 pb-12 body-font sm:hidden">
-            <div class="px-5">
-              <div class="flex flex-col space-y-4">
-                <div data-reveal="left" class="reveal p-4 rounded-xl border border-green-900 border-opacity-40 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
-                  <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-green-500 text-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                      </svg>
-                    </div>
-                    <p class="text-lg font-semibold text-white">Bachelor of Technology</p>
-                  </div>
-                  <p class="text-sm text-gray-300">Siddharth Institute of Engineering and Technology</p>
-                  <p class="text-xs text-green-400 mt-1">Computer Science and Engineering</p>
-                  <p class="text-xs text-gray-500 mt-1">2019 - 2023 &middot; CGPA: 9.36</p>
-                </div>
+    </main>
 
-                <div data-reveal="left" class="reveal p-4 rounded-xl border border-green-900 border-opacity-40 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
-                  <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-green-500 text-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                      </svg>
-                    </div>
-                    <p class="text-lg font-semibold text-white">Senior Secondary</p>
-                  </div>
-                  <p class="text-sm text-gray-300">Bharathiya Vidya Bhavan's SV Vidyalaya</p>
-                  <p class="text-xs text-green-400 mt-1">MPC (Mathematics, Physics, Chemistry)</p>
-                  <p class="text-xs text-gray-500 mt-1">2017 - 2019 &middot; CGPA: 9.12</p>
-                </div>
+    <div id="site-footer"></div>
 
-                <div data-reveal="left" class="reveal p-4 rounded-xl border border-green-900 border-opacity-40 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
-                  <div class="flex items-center mb-2">
-                    <div class="w-8 h-8 bg-green-500 text-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                      </svg>
-                    </div>
-                    <p class="text-lg font-semibold text-white">Secondary Education</p>
-                  </div>
-                  <p class="text-sm text-gray-300">MARG Chinmaya Vidyalaya</p>
-                  <p class="text-xs text-gray-500 mt-1">2017 &middot; CGPA: 10</p>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-      <div id="site-footer"></div>
-
-        <script type="text/javascript" src="dist/main.js"></script>
-    </body>
+    <script src="dist/main.js"></script>
+</body>
 </html>
