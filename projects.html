@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selected projects by Vamsee — Veggy, an agri e-commerce platform, and Taskify, a task manager.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Projects · Vamsee</title>
+    <meta name="theme-color" content="#F3F7F9">
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;d.classList.add('js');setTimeout(function(){if(!window.__bp)d.classList.remove('js')},3000)})()</script>
+    <meta name="description" content="Projects by Vamsee — Veggy, an agricultural e-commerce platform, and Taskify, a task management app.">
+    <title>Projects · Vamsee</title>
 </head>
 <body data-page="projects">
 
@@ -19,60 +19,72 @@
 
     <main id="main">
 
-        <section class="page-hero">
-            <div class="wrap page-hero-grid">
-                <div class="hero-stagger">
-                    <p class="eyebrow">Chapter 02 &middot; Projects</p>
-                    <h1 class="display">Selected <em>work</em></h1>
-                    <p class="lede">Things I've designed and built end to end.</p>
-                </div>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true">
-                    <defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="6" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                    <rect class="wash" filter="url(#wc)" x="44" y="36" width="104" height="126" fill="#D9714E" opacity=".86"/>
-                    <circle class="wash" filter="url(#wc)" cx="142" cy="138" r="38" fill="#6E9C82" opacity=".86"/>
-                    <path class="ink" pathLength="1" d="M32 26 H160 V174 H32 Z M64 174 L46 198 M128 174 L146 198 M96 26 V10"/>
-                </svg>
+        <header class="sheet-head wrap">
+            <div class="sh-top">
+                <h1 class="stencil">Projects</h1>
+                <div class="dwg-no" aria-label="Sheet 03 of 08"><span>Sheet</span><span>Rev 2026</span><b>03 <small>/ 08</small></b><span>Details</span><span>2 parts</span></div>
             </div>
-        </section>
+            <p class="lede">Things I&rsquo;ve designed and built end to end. Each one gets a detail on this sheet, with callouts on what you can see in the screenshot &mdash; and a full sheet of its own.</p>
+        </header>
 
-        <section class="section" style="padding-top:24px">
-            <div class="wrap">
-                <div class="works">
+        <section class="wrap">
 
-                    <article class="work reveal a-sage">
-                        <a href="veggy.html" class="frame" aria-label="Veggy — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/veggy/home.png" alt="Veggy home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate I &middot; E-Commerce &middot; C2C</p>
-                            <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
-                            <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
-                            <a href="veggy.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
+            <article class="pdetail reveal">
+                <header class="pd-head">
+                    <span class="dno">Detail<b>03-A</b></span>
+                    <h2><img src="dist/img/veggy/veggy_logo.jpg" alt="">Veggy</h2>
+                    <span class="type">E-Commerce &middot; C2C<br>Farmers &rarr; consumers</span>
+                </header>
+                <div class="pd-grid">
+                    <figure class="vp" id="p-veggy">
+                        <div class="vp-box measure"><img src="dist/img/veggy/home.png" width="1402" height="678" alt="Veggy home page: a filter panel for farmer, product and distance, and a product card for tomatoes priced per kilogram."></div>
+                        <figcaption class="vp-cap"><b>View A &mdash; Home</b><span>Screenshot &middot; n.t.s.</span></figcaption>
+                    </figure>
+                    <div class="pd-text">
+                        <p>E-Commerce application to market agricultural products, letting consumers buy directly from farmers.</p>
+                        <ol class="legend" data-for="p-veggy">
+                            <li data-at="11.9,31.6" data-b="27,31"><span class="balloon">1</span><span>Filter by farmer, product and distance.</span></li>
+                            <li data-at="33,45" data-b="52,40"><span class="balloon">2</span><span>A product card: the produce, where it is, how much is available.</span></li>
+                            <li data-at="28.5,77.4" data-b="52,80"><span class="balloon">3</span><span>Price per kilogram, with an order button.</span></li>
+                            <li data-at="86.3,5" data-b="84,26"><span class="balloon">4</span><span>Switch the interface between English and Telugu.</span></li>
+                        </ol>
+                        <div class="btn-row">
+                            <a class="btn btn-ink" href="veggy.html">Open sheet 03.1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+                            <a class="btn btn-line" href="https://github.com/DVamsee/veggy.git" target="_blank" rel="noopener">Source</a>
                         </div>
-                    </article>
-
-                    <article class="work reveal a-indigo">
-                        <a href="taskify.html" class="frame" aria-label="Taskify — view project">
-                            <span class="tape" aria-hidden="true"></span>
-                            <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
-                        </a>
-                        <div class="label">
-                            <p class="plate">Plate II &middot; Productivity &middot; Web app</p>
-                            <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
-                            <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
-                            <a href="taskify.html" class="link-arrow">View project
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </a>
-                        </div>
-                    </article>
-
+                    </div>
                 </div>
+            </article>
 
-                <p class="aside-note reveal"><span class="hand">more sketches &amp; experiments on</span> <a href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub</a></p>
-            </div>
+            <article class="pdetail reveal">
+                <header class="pd-head">
+                    <span class="dno">Detail<b>03-B</b></span>
+                    <h2><img src="dist/img/taskify/logo.png" alt="">Taskify</h2>
+                    <span class="type">Productivity &middot; Web app<br>Individuals &amp; teams</span>
+                </header>
+                <div class="pd-grid">
+                    <figure class="vp" id="p-taskify">
+                        <div class="vp-box measure"><img src="dist/img/taskify/Home.png" width="3134" height="1600" alt="Taskify dashboard: a profile panel with an Add Task button, a monthly calendar, priority and status filters, and a task card.">
+                            <i class="redact" style="left:5.4%;top:38.4%;width:17%;height:4.8%" title="Redacted"></i></div>
+                        <figcaption class="vp-cap"><b>View A &mdash; Dashboard</b><span>Screenshot &middot; n.t.s.</span></figcaption>
+                    </figure>
+                    <div class="pd-text">
+                        <p>Online task management application to organise, prioritise and track work for individuals and teams.</p>
+                        <ol class="legend" data-for="p-taskify">
+                            <li data-at="4.7,47.4" data-b="33,50"><span class="balloon">1</span><span>Profile panel with an Add Task button.</span></li>
+                            <li data-at="13.5,72" data-b="33,74"><span class="balloon">2</span><span>A month calendar alongside the tasks.</span></li>
+                            <li data-at="70.3,14" data-b="62,42"><span class="balloon">3</span><span>Filter tasks by priority and status.</span></li>
+                            <li data-at="82.7,34" data-b="84,58"><span class="balloon">4</span><span>Each task carries a priority and a status: pending, in progress, completed.</span></li>
+                        </ol>
+                        <div class="btn-row">
+                            <a class="btn btn-ink" href="taskify.html">Open sheet 03.2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+                            <a class="btn btn-line" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">Source</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <p class="lbl reveal" style="margin-top:8px">Note &middot; more experiments on <a class="tlink" href="https://github.com/DVamsee" target="_blank" rel="noopener">GitHub @DVamsee</a></p>
         </section>
 
     </main>

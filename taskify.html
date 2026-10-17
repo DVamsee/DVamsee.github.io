@@ -3,67 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taskify — a task management application to organise, prioritise and track work for individuals and teams.">
-    <meta name="theme-color" content="#FBF8F3">
-    <title>Taskify · Vamsee</title>
+    <meta name="theme-color" content="#F3F7F9">
     <link rel="icon" type="image/svg+xml" href="dist/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="dist/site.css" rel="stylesheet">
-    <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+    <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;d.classList.add('js');setTimeout(function(){if(!window.__bp)d.classList.remove('js')},3000)})()</script>
+    <meta name="description" content="Taskify — a task management application for individuals and teams. A project by Vamsee.">
+    <title>Taskify · Projects · Vamsee</title>
 </head>
-<body data-page="projects" data-detail>
+<body data-page="projects" data-detail data-sheet="03.2" data-title="Detail — Taskify">
 
     <div id="site-header"></div>
 
-    <main id="main" class="a-indigo">
+    <main id="main">
 
-        <section class="detail-hero">
-            <div class="wrap">
-                <a href="projects.html" class="link-arrow link-back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    All projects
-                </a>
-                <div class="detail-head hero-stagger">
-                    <div>
-                        <p class="eyebrow">Plate II &middot; Productivity &middot; Web app</p>
-                        <h1 class="display"><img src="dist/img/taskify/logo.png" alt="">Taskify</h1>
-                        <p class="lede">Online task management app.</p>
-                    </div>
-                    <a class="btn btn-line" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">View on GitHub
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-                    </a>
-                </div>
-                <div class="frame reveal" data-reveal="zoom">
-                    <div class="frame-img"><img src="dist/img/taskify/home_.png" alt="Taskify home page"></div>
-                </div>
+        <header class="sheet-head wrap">
+            <a class="tlink back" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg> Sheet 03 &middot; all projects</a>
+            <div class="sh-top">
+                <h1 class="stencil">Taskify</h1>
+                <div class="dwg-no" aria-label="Sheet 03.2"><span>Sheet</span><span>Rev 2026</span><b>03.2 <small>/ 08</small></b><span>Detail</span><span>7 views</span></div>
             </div>
-        </section>
+            <p class="lede">Online task management app &mdash; organise, prioritise and track work.</p>
+            <div class="btn-row" style="margin-top:24px">
+                <a class="btn btn-ink" href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+            </div>
+        </header>
 
-        <section class="wrap detail-body">
-            <dl class="facts reveal" data-reveal="left">
+        <section class="wrap">
+            <dl class="facts reveal">
                 <div><dt>Type</dt><dd>Productivity &middot; Web app</dd></div>
                 <div><dt>For</dt><dd>Individuals and teams</dd></div>
                 <div><dt>Source</dt><dd><a href="https://github.com/DVamsee/taskify.git" target="_blank" rel="noopener">github.com/DVamsee/taskify</a></dd></div>
+                <div><dt>Views</dt><dd>A&ndash;G &middot; screenshots</dd></div>
             </dl>
-            <div class="detail-text reveal">
-                <p>Taskify is a comprehensive task management application designed to help individuals and teams efficiently organise and track their tasks and projects. It was developed with the aim of providing a user-friendly interface, robust functionality, and a seamless experience for users to manage their tasks with ease.</p>
+            <div class="detail-intro">
+                <div class="prose reveal">
+                    <p>Taskify is a comprehensive task management application designed to help individuals and teams efficiently organise and track their tasks and projects.</p>
+                    <p>It was developed with the aim of providing a user-friendly interface, robust functionality, and a seamless experience for users to manage their tasks with ease.</p>
+                </div>
+                <div class="notes-box reveal">
+                    <p class="lbl">General notes</p>
+                    <ol>
+                        <li>All views are screenshots of the running application.</li>
+                        <li>Callouts mark what is visible in each view.</li>
+                        <li>Personal contact details are blanked out with hatching.</li>
+                        <li>Not to scale.</li>
+                    </ol>
+                </div>
             </div>
         </section>
 
-        <section class="wrap" style="padding-bottom:40px">
-            <div class="section-head reveal">
-                <p class="eyebrow">Studies</p>
-                <h2 class="display">Project <em class="mark" data-color="indigo">screenshots</em></h2>
+        <section class="sec wrap" aria-label="Views">
+            <div class="view-a reveal">
+                <figure class="vp" id="vA">
+                    <div class="vp-box measure"><img src="dist/img/taskify/Home.png" width="3134" height="1600" alt="Taskify dashboard: a profile panel with an Add Task button, a monthly calendar, priority and status filters, and a task card. The email address is blanked out.">
+                        <i class="redact" style="left:5.4%;top:38.4%;width:17%;height:4.8%"></i></div>
+                    <figcaption class="vp-cap"><b>View A &mdash; Dashboard</b><span>Screenshot &middot; n.t.s.</span></figcaption>
+                </figure>
+                <ol class="legend" data-for="vA">
+                    <li data-at="4.7,47.4" data-b="33,50"><span class="balloon">1</span><span>Profile panel with an Add Task button.</span></li>
+                    <li data-at="13.5,72" data-b="33,74"><span class="balloon">2</span><span>A month calendar alongside the tasks.</span></li>
+                    <li data-at="70.3,14" data-b="62,42"><span class="balloon">3</span><span>Filter tasks by priority and status.</span></li>
+                    <li data-at="78.1,24" data-b="70,62"><span class="balloon">4</span><span>A task card with its title, description, due date and priority badge.</span></li>
+                    <li data-at="82.7,34" data-b="88,62"><span class="balloon">5</span><span>Status: pending, in progress or completed.</span></li>
+                </ol>
             </div>
-            <div class="gallery">
-                <figure class="reveal"><img src="dist/img/taskify/Home.png" alt="Taskify home" loading="lazy"><figcaption>Home</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/login.png" alt="Taskify login" loading="lazy"><figcaption>Login</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/register.png" alt="Taskify registration" loading="lazy"><figcaption>Register</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/addtask.png" alt="Taskify add task" loading="lazy"><figcaption>Add a task</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/priority.png" alt="Taskify priority view" loading="lazy"><figcaption>Priorities</figcaption></figure>
-                <figure class="reveal"><img src="dist/img/taskify/comments.png" alt="Taskify comments" loading="lazy"><figcaption>Comments</figcaption></figure>
+
+            <div class="views" style="margin-top:clamp(40px,5vw,72px)">
+                <div class="view wide reveal">
+                    <figure class="vp" id="vB">
+                        <div class="vp-box measure"><img src="dist/img/taskify/home_.png" width="3092" height="1554" loading="lazy" alt="Taskify landing page: the headline 'One stop to organize your Tasks', Register and Login buttons, and an illustration of an open notebook."></div>
+                        <figcaption class="vp-cap"><b>View B &mdash; Landing</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vB">
+                        <li data-at="21.6,42" data-b="42,24"><span class="balloon">1</span><span>&ldquo;One stop to organize your Tasks.&rdquo;</span></li>
+                        <li data-at="11,57" data-b="30,74"><span class="balloon">2</span><span>Register and log in.</span></li>
+                    </ol>
+                </div>
+                <div class="view reveal">
+                    <figure class="vp" id="vC">
+                        <div class="vp-box measure"><img src="dist/img/taskify/login.png" width="1558" height="1240" loading="lazy" alt="Taskify login card: 'Welcome Back', username and password fields, and a link to register."></div>
+                        <figcaption class="vp-cap"><b>View C &mdash; Login</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vC">
+                        <li data-at="49,46" data-b="84,40"><span class="balloon">1</span><span>Username and password sign-in.</span></li>
+                        <li data-at="59.5,87" data-b="84,80"><span class="balloon">2</span><span>A link through to registration.</span></li>
+                    </ol>
+                </div>
+                <div class="view reveal">
+                    <figure class="vp" id="vD">
+                        <div class="vp-box measure"><img src="dist/img/taskify/register.png" width="2600" height="1644" loading="lazy" alt="Taskify registration card with username, email, password, first name and last name fields."></div>
+                        <figcaption class="vp-cap"><b>View D &mdash; Register</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vD">
+                        <li data-at="53,42" data-b="84,42"><span class="balloon">1</span><span>Username, email, password, first and last name.</span></li>
+                    </ol>
+                </div>
+                <div class="view wide reveal">
+                    <figure class="vp" id="vE">
+                        <div class="vp-box measure"><img src="dist/img/taskify/addtask.png" width="2148" height="700" loading="lazy" alt="Taskify add-task form with title, description, priority, status and due date, and Cancel and Add buttons."></div>
+                        <figcaption class="vp-cap"><b>View E &mdash; Add a task</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vE">
+                        <li data-at="16.8,33.6" data-b="40,26"><span class="balloon">1</span><span>Title and description.</span></li>
+                        <li data-at="69,34" data-b="62,66"><span class="balloon">2</span><span>Priority and status selects.</span></li>
+                        <li data-at="19.5,61" data-b="40,80"><span class="balloon">3</span><span>Due date and time.</span></li>
+                    </ol>
+                </div>
+                <div class="view reveal">
+                    <figure class="vp" id="vF">
+                        <div class="vp-box measure"><img src="dist/img/taskify/priority.png" width="838" height="496" loading="lazy" alt="Taskify priority menu open under a task, offering High, Medium and Low."></div>
+                        <figcaption class="vp-cap"><b>View F &mdash; Priorities</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vF">
+                        <li data-at="29.8,16" data-b="16,52"><span class="balloon">1</span><span>The task&rsquo;s current priority.</span></li>
+                        <li data-at="54.8,51" data-b="84,62"><span class="balloon">2</span><span>Choose high, medium or low.</span></li>
+                    </ol>
+                </div>
+                <div class="view reveal">
+                    <figure class="vp" id="vG">
+                        <div class="vp-box measure"><img src="dist/img/taskify/comments.png" width="908" height="568" loading="lazy" alt="Taskify comments panel with a posted comment 'first task completed', an input to add a new comment, and a Submit button."></div>
+                        <figcaption class="vp-cap"><b>View G &mdash; Comments</b><span>n.t.s.</span></figcaption>
+                    </figure>
+                    <ol class="legend" data-for="vG">
+                        <li data-at="45,34" data-b="14,36"><span class="balloon">1</span><span>A comment posted on the task.</span></li>
+                        <li data-at="36,61" data-b="14,74"><span class="balloon">2</span><span>Add a new comment and submit.</span></li>
+                    </ol>
+                </div>
             </div>
         </section>
 
